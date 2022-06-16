@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <title>Limousine</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content=" Plan your next trip . Read reviews on thousands of hotels. Buy airline tickets easily, and bundle for even more savings. Price Guarantee! ">
+
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+      crossorigin="anonymous"> -->
+  <!--for nav icon-->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <meta name="google-site-verification" content="T6ctdJLtVIcQYY-p4cSZort44CSd2dh1TdmBO-c9aQ4" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-179424813-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-179424813-1');
+  </script>
+
+
+  <link href="./style/main.css" rel="stylesheet" />
+  <link href="./style/explore.css" rel="stylesheet" />
+  <link href="./style/btn_slider.css" rel="stylesheet" />
+  <link href="./style/multislider.css" rel="stylesheet" />
+  <link rel="shortcut icon" type="image/png" href="media/favicon1.png">
+</head>
+
+<body>
+  <!-- to do list 
+  1-add .htaccess file
+  6-api for travel api for map
+  7- nice logo red and black travel... not yet-->
+
+  <!-- Navbar (sit on top) -->
+
+  <div class="w3-top">
+    <div class="w3-bar" id="myNavbar">
+      <a class="w3-bar-item w3-button w3-hover-black w3-hide-large w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()"
+        title="Toggle Navigation Menu">
+        <i class="fa fa-bars"></i>
+      </a>
+      <a href="#home" class="w3-bar-item w3-button w3-hide-small w3-hide-medium  w3-large">
+        <i class="icon fa fa-home"></i> HOME</a>
+      <a href="#travel" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-large">
+        <i class="fa fa-plane"></i> Travel</a>
+      <a href="#Activities" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-large">
+        <i class="fas fa-swimmer"></i> Activities</a>
+      <a href="#articles" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-large">
+        <i class="icon fa fa-pen-alt"></i> Articles</a>
+      <a href="#contact" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-large">
+        <i class="fa fa-envelope"></i> Contact</a>
+
+      <span class="underline-logo logo" id="travel">TRUS
+        <span style="color: red">T </span> Limo
+      </span>
+    </div>
+
+    <!-- Navbar on small screens (hamburger menu icon)-->
+    <div id="NavSmall" class="w3-bar-block w3-white w3-hide w3-hide-large ">
+      <a href="#Travel" class="w3-bar-item w3-button" onclick="toggleFunction()">
+        <i class="fa fa-plane"></i> Travel</a>
+      <a href="#Activities" class="w3-bar-item w3-button" onclick="toggleFunction()">
+        <i class="fas fa-swimmer"></i> Activities</a>
+      <a href="#articles" class="w3-bar-item w3-button" onclick="toggleFunction()">
+        <i class="icon fas fa-pen-alt"></i> Articles</a>
+      <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">
+        <i class="fa fa-envelope"></i> Contact</a>
+    </div>
+  </div>
+
+  <!--  ( background Hero img) without Logo Text -->
+  <!-- w3-opacity-min -->
+
+  <div class="bgimg-1
+              w3-display-container" id="home" style="position: relative;">
+
+    <div class="w3-display-left  
+                span-left
+                w3-animate-left">
+
+      <span class="w3-xxlarge
+                  hero-span
+                  w3-text-black
+                  " style="margin-bottom:150px"> Your global chauffeur service</span>
+
+      <span class="w3-xxlarge
+                  hero-span
+                  w3-text-black
+                  w3-wide">You will Love The Ride</span>
+
+      <div class=" hero-btn">
+        <button class="btn
+                btn-color
+                btn-block
+                bg_slider
+                w3-padding-large " href="#travel">
+          Book Now
+          <i class="fa fa-lg fa-angle-double-down" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+
+    <img style="position:absolute;  bottom: 0; " src="img1.svg" />
+
+  </div>
+
+
+
+  <!---------------Frist section after video Container (About Section) link to cites-------->
+
+
+
+  <!---------------Frist section after video Container (About Section) link to cites-------->
+
+
+  <div class="w3-content w3-container ">
+
+    <h1 style="font-size:3rem;" class="w3-center intro-narrative__heading welcome" id="travel">OUR SERVICES</h1>
+
+
+    <h2 class="w3-center welcome w3-hide-small">
+      <em>Your stress-free solution for traveling between cities, with chauffeurs across the globe.</em>
+    </h2>
+    <br>
+
+
+  </div>
+
+  <!-- -------------------------------start of frist card raw---------------------- -->
+  <!-- -------------------------------start of frist card raw---------------------- -->
+  <!-- -------------------------------start of frist card raw---------------------- -->
+
+  <!-- -------------------------------start of frist card raw---------------------- -->
+  <!-- -------------------------------start of frist card raw---------------------- -->
+
+  <div class="w3-row-padding w3-center box-hidden">
+    <!-- start of first card    -->
+    <!-- start of first card    -->
+    <!-- start of first card    -->
+
+    <div class="card">
+      <img class="card-img-top" src="./media/airport-trans.jpeg" alt="Card image cap" loading="lazy">
+      <div class="card-body">
+        <h5 class="card-title">Airport Transfers</h5>
+        <p class="card-text">LUX offers a reliable , luxurious chauffeur service right within your budget.you will have our airport transfer service
+        </p>
+
+      </div>
+    </div>
+    <!-- end of  first card -->
+    <!-- end of  first card -->
+    <!-- end of  first card -->
+
+
+
+    <!-- start of 2nd card  -->
+    <!-- start of 2nd card  -->
+    <!-- start of 2nd card  -->
+
+    <div class="card">
+      <img class="card-img-top" src="./media/corporate-1.jpeg" alt="Card image cap" loading="lazy">
+      <div class="card-body">
+        <h5 class="card-title">Corporate Limo Service</h5>
+        <p class="card-text">Specializing in corporate luxury transfers, we are a full service limousine company dedicated to providing for hard-working
+          clients </p>
+
+      </div>
+    </div>
+    <!-- end of 2nd card -->
+    <!-- end of 2nd card -->
+    <!-- end of 2nd card -->
+
+    <!-- start of 3d card    -->
+    <!-- start of 3d card    -->
+    <!-- start of 3d card    -->
+    <div class="card">
+      <img class="card-img-top" src="./media/Private_transport-1.jpeg" alt="Card image cap" loading="lazy">
+      <div class="card-body">
+        <h5 class="card-title">FBO Airport Transportation</h5>
+        <p class="card-text">Delivers reliable private limousine and chauffeured transportation serving all Aviation FBO Flight Centers, Signature
+          Flight Support..
+
+        </p>
+
+      </div>
+    </div>
+    <!-- end of  card -->
+  </div>
+  <!-- end of raw -->
+  <!-- end of raw -->
+  <!-- end of raw -->
+  <!-- end of raw -->
+  <!-- end of raw -->
+  <!-- end of raw -->
+  <!-- end of raw -->
+
+  <!-- start of raw -->
+  <div class="w3-row-padding w3-center box-hidden">
+    <!-- start of card    -->
+    <div class="card">
+      <img class="card-img-top" src="./media/weddings-1.jpeg" alt="Card image cap" loading="lazy">
+      <div class="card-body">
+        <h5 class="card-title">Wedding</h5>
+        <p class="card-text"> We team up with your event planner to take out the stress of planning so you can simply enjoy the big day.</p>
+      </div>
+    </div>
+    <!-- end of  card -->
+    <!-- start of card    -->
+    <div class="card">
+      <img class="card-img-top" src="./media/night-in-town.jpeg" alt="Card image cap" loading="lazy">
+      <div class="card-body">
+        <h5 class="card-title">Night in Town</h5>
+        <p class="card-text">To make your Night in Town Special, LUX has the right vehicle for you!</p>
+
+      </div>
+    </div>
+    <!-- end of  card -->
+    <!-- start of card    -->
+    <div class="card">
+      <img class="card-img-top" src="./media/Limo-proms.jpeg" alt="Card image cap" loading="lazy">
+      <div class="card-body">
+        <h5 class="card-title">Prom</h5>
+        <p class="card-text">We offer an unforgettable prom day experience you won’t find anywhere else.</p>
+
+      </div>
+    </div>
+    <!-- end of  card -->
+  </div>
+  <!-- end of raw -->
+  <!-- end of raw -->
+  <!-- end of raw -->
+  <!-- end of raw -->
+  <!-- end of raw -->
+  <!-- end of raw -->
+
+
+  <!-- start of raw -->
+  <div class="w3-row-padding w3-center box-hidden">
+    <!-- start of card    -->
+    <div class="card">
+      <img class="card-img-top" src="./picture/giza/giza.jpg" alt="Card image cap">
+      <div class="card-body" loading="lazy">
+        <h5 class="card-title">Giza</h5>
+        <p class="card-text">Giza is the third-largest city in Egypt and the capital of the Giza Governorate. It is located on the ...</p>
+        <a class="icon" href="html/giza.html" target="_blank">
+          <i class="material-icons"> explore</i>
+          <div> explore </div>
+        </a>
+        <a class="icon" href="https://www.jetradar.com/flights/?marker=170245" target="_blank">
+          <i class="material-icons"> flight</i>
+          <div> flight </div>
+        </a>
+
+        <a class="icon" href="https://hotels.jetradar.com/?utm_source=jetradar&utm_medium=hotel_mainpage&marker=170245&_ga=2.96375388.1530649166.1547859516-1533640177.1547497984"
+          target="_blank">
+          <i class="material-icons"> hotel</i>
+          <div> Hotels </div>
+        </a>
+      </div>
+    </div>
+    <!-- end of  card --
+<!-- start of card    -->
+    <div class="card">
+      <img class="card-img-top" src="./picture/dahab/dahab.jpg" alt="Card image cap" loading="lazy">
+      <div class="card-body">
+        <h5 class="card-title">Dahab</h5>
+        <p class="card-text">Dahab is a small town on the southeast coast of the Sinai Peninsula in Egypt, approximately ...</p>
+        <a class="icon" href="html/dahab.html" target="_blank">
+          <i class="material-icons"> explore</i>
+          <div> explore </div>
+        </a>
+        <a class="icon" href="https://www.jetradar.com/flights/?marker=170245" target="_blank">
+          <i class="material-icons"> flight</i>
+          <div> flight </div>
+        </a>
+        <a class="icon" href="https://www.expedia.com/Cairo-Hotels.d178243.Travel-Guide-Hotels">
+          <i class="material-icons" target="_blank"> hotel</i>
+          <div> Hotels </div>
+        </a>
+      </div>
+    </div>
+    <!-- end of  card -->
+    <!-- start of card    -->
+    <div class="card">
+      <img class="card-img-top" src="./picture/el-gouna/el-gouna.jpg" alt="Card image cap" loading="lazy">
+      <div class="card-body">
+        <h5 class="card-title">El Gouna</h5>
+        <p class="card-text">El Gouna is a modern resort town on Egypt’s Red Sea, near Hurghada. It’s built along the shore and on small.</p>
+        <a class="icon" href="html/el-gouna.html" target="_blank">
+          <i class="material-icons"> explore</i>
+          <div> explore </div>
+        </a>
+        <a class="icon" href="https://www.jetradar.com/flights/?marker=170245" target="_blank">
+          <i class="material-icons"> flight</i>
+          <div> flight </div>
+        </a>
+        <a class="icon" href="https://hotels.jetradar.com/?utm_source=jetradar&utm_medium=hotel_mainpage&marker=170245&_ga=2.96375388.1530649166.1547859516-1533640177.1547497984"
+          target="_blank">
+          <i class="material-icons"> hotel</i>
+          <div> Hotels </div>
+        </a>
+      </div>
+    </div>
+    <!-- end of  card -->
+  </div>
+
+  <!-- end of raw -->
+  <!-- end of raw -->
+  <!-- end of raw -->
+  <!-- end of raw -->
+  <!-- end of raw -->
+  <!-- end of raw -->
+
+
+  <!-- ---------------------------end of last raw  ------------------- -->
+  <!-- ---------------------------end of last raw  ------------------- -->
+  <!-- ---------------------------end of last raw  ------------------- -->
+  <!-- ---------------------------end of last raw  ------------------- -->
+  <!-- ---------------------------end of last raw  ------------------- -->
+
+
+
+  <!-- -------------------------LOAD MORE button------------------------ -->
+  <!-- -------------------------LOAD MORE button------------------------ -->
+  <!-- -------------------------LOAD MORE button------------------------ -->
+  <!-- -------------------------LOAD MORE button------------------------ -->
+  <!-- -------------------------LOAD MORE button------------------------ -->
+
+  <div class=" w3-center">
+    <button class="btn 
+              btn-color
+              btn-block
+              bg_slider
+              w3-padding-large " id="loadMore">
+      MORE SERVICES
+      <i class="fa fa-lg fa-angle-double-down" aria-hidden="true"></i>
+    </button>
+  </div>
+  <!-- -----------------------------End Of LOAD MORE button -------------------- -->
+  <!-- -----------------------------End Of LOAD MORE button -------------------- -->
+  <!-- -----------------------------End Of LOAD MORE button -------------------- -->
+  <!-- -----------------------------End Of LOAD MORE button -------------------- -->
+  <!-- -----------------------------End Of LOAD MORE button -------------------- -->
+
+
+
+
+
+
+  <!-- frist Parallax Image with Portfolio Text -->
+
+  <div class="bgimg-2 w3-display-container w3-opacity-min">
+    <div class="w3-display-middle">
+      <span class="w3-xxlarge w3-text-white w3-wide">Chauffeurs at your fingertips</span>
+    </div>
+  </div>
+
+
+  <!-- start (slide Explore image) -->
+  <!--  (slide Explore image) -->
+  <!--  (slide Explore image) -->
+  <!--  (slide Explore image) -->
+
+
+  <div class="w3-content w3-container " id="Activities">
+
+
+    <h2 style="font-size:3rem;" class="w3-center intro-narrative__heading what_to_do">Why choose US ?
+    </h2>
+    <div class="slideshow-container">
+
+      <div class="mySlides fade">
+
+        <img src="./media/safty.jpeg" class="explore" style="width:100%" height="562">
+
+        <div class="content">
+          <!-- i use style="font-size:5vw;" to resize te <h1> text -->
+
+          <h2 style="font-size:5vw;">Safty</h2>
+          <p>Not only do limo services provide a smooth, hassle-free ride, but they also offer much better safety when compared
+            to other transportation options. The professional chauffeurs that are hired by the limo service company have
+            clean track records and are very trustworthy.
+          </p>
+          <!-- <a href="#" target="_blank">
+            <button class="button">Explore</button>
+          </a> -->
+        </div>
+      </div>
+      <!--  -->
+      <div class="mySlides fade">
+        <img src="./media/open-door.jpeg" class="explore" style="width:100%" height="562">
+        <div class="content">
+          <!-- i use style="font-size:5vw;" to resize te <h1> text -->
+          <h2 style="font-size:5vw;">luxury</h2>
+          <p>
+            A limousine is synonymous with class and style. No other vehicle can compare to the luxury of a limousine. The sophistication
+            and treatment that you receive from the chauffeurs will set you off for a good start. These chauffeurs are trained
+            and know how to treat their passengers with utmost care and respect.
+          </p>
+          <!-- <a href="#" target="_blank">
+            <button class="button">Explore</button>
+          </a> -->
+        </div>
+      </div>
+      <!--  -->
+      <div class="mySlides fade">
+        <img src="./media/husle-free.jpeg" class="explore" style="width:100%" height="562">
+        <div class="content">
+          <!-- i use style="font-size:5vw;" to resize te <h1> text -->
+          <h2 style="font-size:5vw;">Hassle free</h2>
+          <p>
+            A hassle-free trip is another great thing that you get with a limousine service. Chauffeurs usually have years of experience
+            and know every street within a city. They know how to get you to any place safely and on time.
+          </p>
+          <!-- <a href="#" target="_blank">
+            <button class="button">Explore</button>
+          </a> -->
+        </div>
+      </div>
+      <!--  -->
+    </div>
+    <!-- <br> -->
+
+    <div style="text-align:center; margin-bottom:20px;">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </div>
+
+
+
+  <!--  End(slide Explore image) -->
+  <!--  End(slide Explore image) -->
+  <!--  End(slide Explore image) -->
+
+
+
+
+
+  <!-- Third Parallax Image with Text -->
+
+
+
+  <div class="bgimg-3 w3-display-container w3-opacity-min">
+    <div class="w3-display-middle">
+      <span class="w3-xxlarge w3-text-white w3-wide">Want To See Magic</span>
+    </div>
+  </div>
+
+  <!-- End Third Parallax Image with Text -->
+
+  <!-- here Responsive-Multi-slide-Carousel-Plugin-jQuery-Multislider -->
+  <!-- here Responsive-Multi-slide-Carousel-Plugin-jQuery-Multislider -->
+  <!-- here Responsive-Multi-slide-Carousel-Plugin-jQuery-Multislider -->
+  <!-- here Responsive-Multi-slide-Carousel-Plugin-jQuery-Multislider -->
+  <!-- here Responsive-Multi-slide-Carousel-Plugin-jQuery-Multislider -->
+
+
+  <h2 style="font-size:3rem;" class="w3-center intro-narrative__heading what_to_do" id="articles">OUR FLEET</h2>
+  <p class="articales">Compatible Prices</p>
+
+  <div id="mixedSlider">
+    <div class="MS-content">
+      <div class="item ">
+        <div class="imgTitle">
+          <h2 class="blogTitle">Mkt</h2>
+          <img src="./media/car-1.jpeg" alt="car-img" />
+        </div>
+      </div>
+
+
+      <div class="item">
+        <div class="imgTitle">
+          <h2 class="blogTitle">Suv</h2>
+          <img src="./media/car-5.jpeg" alt="car-img" />
+        </div>
+
+      </div>
+      <div class="item">
+        <div class="imgTitle">
+          <h2 class="blogTitle">Tesla</h2>
+          <img src="./media/Tesla-Model-Y.png" alt="tesla-img" />
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="imgTitle">
+          <h2 class="blogTitle">Sedan</h2>
+          <img src="./media/car-4.jpeg" alt="car-img" />
+        </div>
+
+      </div>
+      <div class="item">
+        <div class="imgTitle">
+          <h2 class="blogTitle">lg</h2>
+          <img src="./media/car-9.jpeg" alt="car-img" />
+        </div>
+
+      </div>
+    </div>
+
+    <div class="MS-controls">
+      <button class="MS-left">
+        <i class="fa fa-angle-left" aria-hidden="true"></i>
+      </button>
+      <button class="MS-right">
+        <i class="fa fa-angle-right" aria-hidden="true"></i>
+      </button>
+    </div>
+
+  </div>
+
+
+  <!-- end of Responsive Multislider -->
+
+  <!-- end of Responsive Multislider -->
+
+  <!-- end of Responsive Multislider -->
+
+  <!-- end of Responsive Multislider -->
+
+
+
+  <!--- last (fourth) Parallax Image with Text -->
+
+  <div class="bgimg-4 w3-display-container w3-opacity-min" style="position: relative;">
+
+    <div class="w3-display-middle">
+      <span class="w3-xxlarge  w3-wide">CONTACT US</span>
+    </div>
+
+    <img style="position:absolute;  bottom: 0; " src="img1.svg" />
+
+  </div>
+
+
+
+
+
+
+  <!-- End (fourth) Parallax Image with Text -->
+
+
+
+
+  <!-- Container (Contact Section) -->
+  <div class="w3-content w3-container w3-padding-64" id="contact">
+    <h3 class="w3-center">WHERE WE WORK</h3>
+    <p class="w3-center">
+      <em>I'd love your feedback!</em>
+    </p>
+
+    <div class="w3-row w3-padding-32 w3-section">
+      <div class="w3-col m4 w3-container">
+        <!-- Add Google Maps -->
+        <div id="map" class="w3-round-large w3-greyscale" style="width:100%;height:400px;"></div>
+      </div>
+
+      <div class="w3-col m8 w3-panel">
+        <div class="w3-large w3-margin-bottom">
+          <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> NEW JERSEY, US
+          <br>
+          <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Phone: +01 3472060083
+          <br>
+          <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: hossam.elnaggar.ny@gmail.com
+          <br>
+        </div>
+        <p>Swing by for a cup of
+          <i class="fa fa-coffee"></i>, or leave me a note:</p>
+
+
+
+        <!-- ---------------------- form --------------------- -->
+        <!-- ---------------------- form --------------------- -->
+        <!-- ---------------------- form --------------------- -->
+
+
+        <form action="https://formsubmit.co/spiderdash4u@gmail.com" method="POST" target="_blank">
+          <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+            <div class="w3-half">
+              <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+            </div>
+            <div class="w3-half">
+              <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+            </div>
+          </div>
+          <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
+
+          <input type="hidden" name="_next" value="http://127.0.0.1:5500/welcome.html">
+
+          <input type="hidden" name="_subject" value="New submission!">
+
+          <button class="
+          btn 
+          btn-color
+          btn-block
+          bg_slider
+          w3-black w3-right w3-section send-msg-btn" type="submit">
+            <!-- <a href="mailto:hossam.elnaggar.ny@gmail.com?subject=hi&body=welcome"> -->
+            <i class="fa fa-paper-plane"></i> SEND MESSAGE
+            <!-- </a> -->
+          </button>
+        </form>
+
+        <!-- -------------------end form ------------------ -->
+        <!-- -------------------end form ------------------ -->
+        <!-- -------------------end form ------------------ -->
+
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- Footer -->
+  <!-- Footer -->
+  <!-- Footer -->
+  <!-- Footer -->
+
+
+  <img src="./media/footer.png" class="img-footer" alt="footer-image">
+
+  <!-- convert my svg to png faster and easy to modify -->
+
+  <!-- <img src="footer-figma.svg" class="img-footer" alt="" height=100%" width="100%"> -->
+  <!-- <object data="footer-figma.svg" type=""></object> -->
+
+
+
+  <footer class="w3-center w3-black w3-padding-64  w3-hover-opacity-off">
+
+    <!-- w3-opacity -->
+
+
+    <a href="#home">
+      <!-- <i class="fa fa-arrow-up w3-margin-right"></i>To the top</a> -->
+      <span class="fa fa-arrow-circle-up w3-margin-right"></span>
+    </a>
+    <div class="w3-xlarge w3-section">
+      <a href="https://www.facebook.com/DiscoverbeautyofEgypt" target="_blank">
+        <i class="fa fa-facebook-official w3-hover-opacity"></i>
+      </a>
+
+      <a href="https://www.instagram.com/princerocky4u/" target="_blank">
+        <i class="fa fa-instagram w3-hover-opacity"></i>
+      </a>
+
+      <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+      <a href="https://twitter.com/Hossam_NY" target="_blank">
+        <i class="fa fa-twitter w3-hover-opacity"></i>
+      </a>
+
+      <a href="https://www.linkedin.com/in/helnaggar/" target="_blank">
+        <i class="fa fa-linkedin w3-hover-opacity"></i>
+      </a>
+    </div>
+    <p>Powered by
+      <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a>
+
+    </p>
+  </footer>
+
+
+  <!-- End Footer -->
+  <!-- End Footer -->
+  <!-- End Footer -->
+
+
+
+  <script type="text/javascript" src="./script/script.js"></script>
+  <script type="text/javascript" src="./script/load-more.js"></script>
+  <script type="text/javascript" src="./script/multislider.js"></script>
+  <script type="text/javascript" src="./script/videoControl.js"></script>
+  <script type="text/javascript" src="./script/explore_slide.js"></script>
+  <script type="text/javascript" src="./script/multislider.min.js"></script>
+  <script type="text/javascript" src="./script/videoControlMute.js"></script>
+
+  <script>
+    // this code for multi slider going to the left...
+    $('#mixedSlider').multislider({
+      duration: 750,
+      interval: 2500
+    });
+  </script>
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOSOp6FFbin27a6eN3EW2ftUxX0qA0buk&callback=myMap"></script>
+
+</body>
+
+</html>

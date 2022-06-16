@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cairo page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+
+    <link href="../style/main.css" rel="stylesheet" />
+    <link href="../style/explore.css" rel="stylesheet" />
+    <link href="../style/multislider.css" rel="stylesheet" />
+</head>
+<style>
+    img.explore {
+        margin-top: auto
+    }
+
+    p {
+        font-size: 20px;
+        font-weight: 300;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    .custom {
+        margin-bottom: auto!important;
+    }
+
+    /* joe slideshow */
+
+    .slideshow-container {
+        height: 445px;
+        overflow: hidden;
+        border-radius: 10px;
+    }
+
+    h1.what_to_do {
+        letter-spacing: 2px;
+    }
+
+    .mySlides {
+        height: 100%;
+    }
+
+    img.explore {
+        height: 100%;
+    }
+
+    /* -- end of joe css -- */
+
+    /* read less or more css */
+
+    .lessMorebtn {
+        cursor: pointer;
+    }
+
+    @media only screen and (min-width: 900px) {
+        .lessMorebtn {
+            display: none;
+        }
+    }
+
+    @media only screen and (max-width: 900px) {
+
+        #more {
+            display: none;
+        }
+
+        .slideshow-container {
+            height: inherit;
+        }
+    }
+
+    /* --- end read less or more ---  */
+</style>
+
+<body>
+
+
+    <!-- Container (About Section) -->
+    <div class="custom w3-content w3-container w3-padding" id="home">
+
+        <h1 class="w3-center intro-narrative__heading what_to_do">Cairo</h1>
+
+        <!-- <div class="w3-col m6 w3-center w3-padding-large"> -->
+
+        <div class="slideshow-container">
+
+            <div class="mySlides fade">
+                <img src="../picture/cairo/cairo-1.jpg" class="explore" style="width:100%" height="100%">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="../picture/cairo/cairo-2.jpg" class="explore" style="width:100%" height="100%">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="../picture/cairo/cairo-3.jpg" class="explore" style="width:100%" height="100%">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="../picture/cairo/cairo-4.jpg" class="explore" style="width:100%" height="100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="../picture/cairo/cairo-5.jpg" class="explore" style="width:100%" height="100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="../picture/cairo/cairo-6.jpg" class="explore" style="width:100%" height="100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="../picture/cairo/cairo-7.jpg" class="explore" style="width:100%" height="100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="../picture/cairo/cairo-8.jpg" class="explore" style="width:100%" height="100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="../picture/cairo/cairo-9.jpg" class="explore" style="width:100%" height="100%">
+            </div>
+
+
+            <!-- </div> -->
+            <br>
+
+            <div style="text-align:center; display:none;">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+            <!-- </div>  -->
+
+        </div>
+        <div class="w3-col m12  w3-padding-large">
+            <p>
+                <strong>Cairo,</strong> Egypt’s sprawling capital, is set on the Nile River. At its heart is Tahrir Square and the
+                vast Egyptian Museum,
+                <span id="dots"></span>
+                <span id="more">
+
+                    a trove of antiquities including royal mummies and gilded King Tutankhamun artifacts. Nearby, Giza is the site of the iconic
+                    pyramids and Great Sphinx, dating to the 26th century BC. In Gezira Island’s leafy Zamalek district,
+                    187m Cairo Tower affords panoramic city views.
+                </span>
+            </p>
+            <button class="lessMorebtn" onclick="myFunction()" id="myBtn">Read more</button>
+        </div>
+    </div>
+    </div>
+
+
+    <!-- google map -->
+    <div class="w3-content w3-container w3-padding-64" id="contact">
+
+        <div id="map" class="w3-round-large w3-greyscale" style="width:100%;height:400px;">
+
+        </div>
+    </div>
+    <!-- <end of google map -->
+    <hr>
+    <h1 class="w3-center intro-narrative__heading what_to_do">Things to do </h1>
+
+    <!-- here Responsive-Multi-slide-Carousel-Plugin-jQuery-Multislider -->
+
+    <div id="mixedSlider">
+        <div class="MS-content">
+
+            <div class="item ">
+                <div class="imgTitle">
+                    <h2 class="blogTitle">Khan el-Khalili</h2>
+                    <img src="../picture/cairo/bazzar.jpg" alt="" />
+                </div>
+                <p>Khan el-Khalili is a major souk in the historic center of Islamic Cairo. The bazaar district is one of Cairo's
+                    main attractions for tourists and Egyptians alike ...</p>
+                <a href="https://en.wikipedia.org/wiki/Khan_el-Khalili" target="_blank">Read More</a>
+            </div>
+
+
+            <div class="item">
+                <div class="imgTitle">
+                    <h2 class="blogTitle">Cairo Tower</h2>
+                    <img src="../picture/cairo/Cairo-Tower-1.jpg" alt="" />
+                </div>
+                <p>The Cairo Tower is a free-standing concrete tower located in Cairo, Egypt. At 187 m, it has been the tallest
+                    structure in Egypt and North Africa for about 50 years ...</p>
+                <a href="https://en.wikipedia.org/wiki/Cairo_Tower" target="_blank">Read More</a>
+            </div>
+
+            <div class="item">
+                <div class="imgTitle">
+                    <h2 class="blogTitle">Manial Palace and Museum</h2>
+                    <img src="../picture/cairo/manial_palace_and_museum.jpg" alt="" />
+                </div>
+                <p>have been built for Prince Mohammad Ali between 1899 and 1929. The palace was given to the Egyptian nation
+                    in 1955. Prince Muhammad Ali is the first cousin of King Faruq and the younger...</p>
+                <a href="http://www.egypttoday.com/Article/9/16718/El-Manial-Palace-A-Hidden-Gem" target="_blank">Read More</a>
+            </div>
+
+            <div class="item">
+                <div class="imgTitle">
+                    <h2 class="blogTitle">Cairo Museum</h2>
+                    <img src="../picture/cairo/egyptian-museum.jpg" alt="" />
+                </div>
+                <p>The Museum of Egyptian Antiquities, known commonly as the Egyptian Museum or Museum of Cairo, in Cairo, Egypt,
+                    is home to an extensive collection of ancient Egyptian antiquities ...</p>
+                <a href="https://en.wikipedia.org/wiki/Egyptian_Museum" target="_blank">Read More</a>
+            </div>
+
+            <div class="item">
+                <div class="imgTitle">
+                    <h2 class="blogTitle">Islamic Cairo</h2>
+                    <img src="../picture/cairo/islamicCairo.jpg" alt="" />
+                </div>
+                <p>slamic Cairo is a part of central Cairo around the old walled city and around the Citadel of Cairo which
+                    is characterized by hundreds of mosques, tombs ...</p>
+                <a href="https://en.wikipedia.org/wiki/Islamic_Cairo" target="_blank">Read More</a>
+            </div>
+
+            <div class="item">
+                <div class="imgTitle">
+                    <h2 class="blogTitle">Masjed Muhammad Ali</h2>
+                    <img src="../picture/cairo/mohamed-ali-masjed.jpg" alt="" />
+                </div>
+                <p>The Great Mosque of Muhammad Ali Pasha or Alabaster Mosque is a mosque situated in the Citadel of Cairo in
+                    Egypt and commissioned by Muhammad Ali Pasha between 1830 and 1848 ...</p>
+                <a href="https://en.wikipedia.org/wiki/Mosque_of_Muhammad_Ali" target="_blank">Read More</a>
+            </div>
+            <div class="item">
+                <div class="imgTitle">
+                    <h2 class="blogTitle">Tahrir Square</h2>
+                    <img src="../picture/cairo/Tahrir-Square.jpg" alt="" />
+                </div>
+                <p>Tahrir Square, also known as "Martyr Square", is a major public town square in Downtown Cairo, Egypt ...</p>
+                <a href="https://en.wikipedia.org/wiki/Tahrir_Square" target="_blank">Read More</a>
+            </div>
+
+
+        </div>
+
+        <div class="MS-controls">
+            <button class="MS-left">
+                <i class="fa fa-angle-left" aria-hidden="true"></i>
+            </button>
+            <button class="MS-right">
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+            </button>
+        </div>
+
+        <div>
+            <script src="https://www.airbnb.com/embeddable/airbnb_jssdk" async=""></script>
+            <div class="airbnb-embed-frame" data-view="a4p_event_embeddable" data-id="451433" data-height="750" style="height:750px"></div>
+        </div>
+
+    </div>
+    </div>
+
+
+    <!-- end of Responsive Multislider -->
+
+
+    <!-- Footer -->
+    <footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
+        <a href="#home" class="w3-button w3-light-grey">
+            <i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+        <div class="w3-xlarge w3-section">
+            <i class="fa fa-facebook-official w3-hover-opacity"></i>
+            <i class="fa fa-instagram w3-hover-opacity"></i>
+            <i class="fa fa-snapchat w3-hover-opacity"></i>
+            <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+            <i class="fa fa-twitter w3-hover-opacity"></i>
+            <i class="fa fa-linkedin w3-hover-opacity"></i>
+        </div>
+        <p>Powered by
+            <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a>
+        </p>
+    </footer>
+
+    <script type="text/javascript" src="../script/explore_slide.js"></script>
+    <script type="text/javascript" src="../script/multislider.min.js"></script>
+    <script type="text/javascript" src="../script/multislider.js"></script>
+
+    <script>
+
+        // this code for read more or less --
+        function myFunction() {
+            var dots = document.getElementById("dots");
+            var moreText = document.getElementById("more");
+            var btnText = document.getElementById("myBtn");
+
+            if (dots.style.display === "none") {
+                dots.style.display = "inline";
+                btnText.innerHTML = "Read more";
+                moreText.style.display = "none";
+
+            } else {
+                dots.style.display = "none";
+                btnText.innerHTML = "Read less";
+                moreText.style.display = "inline";
+                console.log("im working")
+            }
+        }
+    </script>
+    <script>
+        // this code for multi slider
+        $('#mixedSlider').multislider({
+            duration: 750,
+            interval: 3000
+        });
+    </script>
+
+    <script>
+        function myMap() {
+            var mapCanvas = document.getElementById("map");
+            var myCenter = new google.maps.LatLng(30.045916, 31.224291);
+            var mapOptions = { center: myCenter, zoom: 13 };
+            var map = new google.maps.Map(mapCanvas, mapOptions);
+
+            var marker = new google.maps.Marker({
+                position: myCenter,
+                animation: google.maps.Animation.BOUNCE
+            });
+            marker.setMap(map);
+        }
+    </script>
+    <!-- google map api key -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOSOp6FFbin27a6eN3EW2ftUxX0qA0buk&callback=myMap"></script>
+</body>
+
+</html>

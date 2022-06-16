@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>tryOut page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+
+    <link href="../style/main.css" rel="stylesheet" />
+    <link href="../style/city.css" rel="stylesheet" />
+    <link href="../style/explore.css" rel="stylesheet" />
+    <link href="../style/multislider.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!---////// 🔨 🔍 ToDoList ❗important  ⚠️//////-->
+    <!--1) add home link  -->
+    <!-- 2) fix the footer paddind color to this #474e5d or clear  -->
+    <!-- ///////////////// -->
+
+    <!-- Container (About Section) -->
+    <div class="custom w3-content w3-container w3-padding " id="home">
+        <div class="w3-row row">
+            <div class="w3-col w3-container m8 l8 ">
+                <h1 class="w3-center intro-narrative__heading what_to_do   header">Hurghada tryOut</h1>
+            </div>
+
+            <div class="w3-col w3-container m4 l4">
+
+                <!-- ------------------------WeartherWid---link----------------- -->
+                <a class="weatherwidget-io" href="https://forecast7.com/en/27d9234d33/sharm-el-sheikh/?unit=us" data-font="Fira Sans" data-mode="Current"
+                    data-days="3"></a>
+            </div>
+        </div>
+
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="../picture/hurghada/hurghada-1.jpg" class="explore" style="width:100%" height="100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="../picture/hurghada/hurghada-2.jpg" class="explore" style="width:100%" height="100%">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="../picture/hurghada/hurghada-3.jpg" class="explore" style="width:100%" height="100%">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="../picture/hurghada/hurghada-4.jpg" class="explore" style="width:100%" height="100%">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="../picture/hurghada/hurghada-5.jpg" class="explore" style="width:100%" height="100%">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="../picture/hurghada/hurghada-6.jpg" class="explore" style="width:100%" height="100%">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="../picture/hurghada/hurghada-7.jpg" class="explore" style="width:100%" height="100%">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="../picture/hurghada/hurghada-8.jpg" class="explore" style="width:100%" height="100%">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="../picture/hurghada/hurghada-9.jpg" class="explore" style="width:100%" height="100%">
+            </div>
+
+
+        </div>
+        <br>
+
+        <div style="text-align:center; display:none;">
+            <span class="dot"></span>
+            <!-- 1 -->
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <!-- 9 -->
+
+        </div>
+        <!-- read more -->
+        <div class="w3-col m12  w3-padding-large">
+
+            <!-- https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_read_more -->
+            <p>
+                <strong>Hurghada</strong>
+
+                is a beach resort town stretching some 40km along Egypt’s Red Sea coast.
+
+                <span id="dots"></span>
+                <span id="more">
+
+                    It’s renowned for scuba diving, and has numerous dive shops and schools in itsmodern Sekalla district. There are many restaurants,
+                    bars and nightclubs, whilethe old town, El Dahar, is home to traditional Egyptian coffee shops and souks.Hurghada’s
+                    long stretch of sandy beach is lined with resort hotels.
+                </span>
+            </p>
+            <button class="lessMorebtn" onclick="myFunction()" id="myBtn">Read more</button>
+        </div>
+
+
+
+    </div>
+    <!-- end of read Container (About Section) -->
+    <!-- end of read Container (About Section) -->
+    <!-- end of read Container (About Section) -->
+    <!-- end of read Container (About Section) -->
+
+    <!-- google map -->
+    <div class="w3-content w3-container w3-padding-64" id="contact">
+        <div id="map" class="w3-round-large w3-greyscale" style="width:100%;height:400px;"></div>
+    </div>
+    <!-- <end of google map -->
+    <hr>
+
+    <h1 class="w3-center intro-narrative__heading what_to_do">Things to do </h1>
+
+
+
+    <!-- here Responsive-Multi-slide-Carousel-Plugin-jQuery-Multislider -->
+
+
+
+    <div id="mixedSlider">
+        <div class="MS-content">
+
+
+            <div class="item ">
+                <div class="imgTitle">
+                    <h2 class="blogTitle"> Grand Aquarium</h2>
+                    <img src="../picture/hurghada/HurghadaGrandAquarium.jpg" alt="" /> </div>
+                <p>Hurghada Aquarium is an aquarium located in Hurghada, Red Sea Governorate, Egypt. It opened in January 2015,
+                    and contains nearly 1 million g </p>
+                <a href=" ##### ">Read More</a>
+            </div>
+
+            <div class="item">
+                <div class="imgTitle">
+                    <h2 class="blogTitle">Sand City</h2>
+                    <img src="../picture/hurghada/sandCity.jpg" alt="" />
+                </div>
+                <p>Open-air museum featuring numerous historical & imaginative sand sculpturesby global artists. ...</p>
+                <a href=" #### ">Read More</a>
+            </div>
+
+            <div class="item">
+                <div class="imgTitle">
+                    <h2 class="blogTitle">Sand City</h2>
+                    <img src="../picture/hurghada/sandCity.jpg" alt="" />
+                </div>
+                <p>Open-air museum featuring numerous historical & imaginative sand sculpturesby global artists. ...</p>
+                <a href=" #### ">Read More</a>
+            </div>
+
+            <div class="item">
+                <div class="imgTitle">
+                    <h2 class="blogTitle">FunFly Watersports</h2>
+                    <img src="../picture/hurghada/FunFly-Watersports.jpg" alt="" />
+                </div>
+                <p>Fun Fly, offering a range of excursions and water-based activit the RedSea. Choose from a varied set of options
+                    to create an offshore adventure ...</p>
+                <a href=" #### ">Read More</a>
+            </div>
+
+            <div class="item">
+                <div class="imgTitle">
+                    <h2 class="blogTitle">Orange Bay</h2>
+                    <img src="../picture/hurghada/Orange-bay.jpg" alt="" /> </div>
+                <p>Orange Bay: Beautiful Secluded Red Sea Island near Hurghada If you're planning a trip to the Red Sea resort
+                    town of Hurghada, </p>
+                <a href=" #### ">Read More</a>
+            </div>
+
+        </div>
+
+        <div class="MS-controls">
+            <button class="MS-left">
+                <i class="fa fa-angle-left" aria-hidden="true"></i>
+            </button>
+            <button class="MS-right">
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+            </button>
+        </div>
+
+    </div>
+
+
+    <!-- end of Responsive Multislider -->
+
+
+    <!-- Footer -->
+    <footer class="w3-center w3-black w3-padding-32 w3-opacity w3-hover-opacity-off">
+        <a href="#home" class="w3-button ">
+            <i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+        <div class="w3-xlarge w3-section">
+            <i class="fa fa-facebook-official w3-hover-opacity"></i>
+            <i class="fa fa-instagram w3-hover-opacity"></i>
+            <i class="fa fa-snapchat w3-hover-opacity"></i>
+            <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+            <i class="fa fa-twitter w3-hover-opacity"></i>
+            <i class="fa fa-linkedin w3-hover-opacity"></i>
+        </div>
+
+    </footer>
+
+
+
+
+
+
+    <script type="text/javascript" src="../script/explore_slide.js"></script>
+    <script type="text/javascript" src="../script/multislider.min.js"></script>
+    <script type="text/javascript" src="../script/multislider.js"></script>
+    <!-- // this link for read more or less -- -->
+    <script type="text/javascript" src="../script/read-more.js"></script>
+    <script>
+        // this code for multi slider
+        $('#mixedSlider').multislider({
+            duration: 750,
+            interval: 3000
+        });
+    </script>
+    <!-- // google map -->
+    <script type="text/javascript" src="../script/google-map.js"></script>
+    <!-- google map api key -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOSOp6FFbin27a6eN3EW2ftUxX0qA0buk&callback=myMap"></script>
+    <!-- ------------------------Wearther--code------------------ -->
+    <script type="text/javascript" src="../script/weather.js"></script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,328 @@
+
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+body, html {
+    height: 100%;
+    color: #777;
+    line-height: 1.8;
+    font-weight: 300;
+}
+
+.logo{
+    height: 75px;
+    font-size:3rem;
+    margin-left: 5rem;
+    display: flex;
+    justify-content: flex-start;
+    letter-spacing: 3px;
+    color:#7f7f7f;
+    /* font-size:3rem; */
+    /* font-size: clamp(16px, 3vw, 32px); */
+}
+.w3-bar .w3-bar-item{
+    float: right;
+    color: #7f7f7f;
+}
+/*  */
+/* video background main */
+ @media (min-width: 900px) {
+
+    .fullscreen-video-wrap {
+        height: 100%; }
+    .bgimg-1 {  
+        overflow:hidden;   }
+    
+    }
+    .fullscreen-video-wrap{
+        background-color: rgb(148, 167, 168);
+        position: relative;
+    }
+    .fullscreen-video-wrap img{
+        position: absolute;
+        bottom: 0;
+    } 
+    /* ----- Nav -----  */
+    @media only screen and (max-width: 600px){
+        .w3-bar-block .w3-bar-item{
+            text-align: center!important}
+            .w3-show{
+                display: none;
+            }
+        }
+/* Create a Parallax Effect */
+.bgimg-2, .bgimg-3 ,.bgimg-4 {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+    .bgimg-1 {
+    background-image: url('../media/hero.jpeg');
+    min-height: 800px;
+    }
+    /* reponsive img */
+.bgimg-1{
+    background-size: cover;
+    background-position: center center;
+    /* background-attachment: fixed; */
+    }
+    
+/* Second image (parallax) */
+.bgimg-2 {  
+    background-image: url("../media/parallax-1.jpg");
+    min-height: 400px;
+}
+
+/* Third image (parallax-Contact) */
+.bgimg-3 {
+    background-image: url("../media/parallax-2.webp");
+    min-height: 400px;
+}
+/* fourth image (parallax-Contact) */
+.bgimg-4 {
+    background-image: url("../media/contact-us.jpeg");
+    min-height: 400px;
+}
+
+.w3-wide {letter-spacing: 10px;}
+.w3-hover-opacity {cursor: pointer;}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1024px) {
+    .bgimg-1 {
+        background-attachment: scroll;
+    }
+}
+/* .hero-span{position: relative;} */
+.span-left{
+    position: relative;
+    display: flex;
+    flex-direction: column
+    
+}
+ .span-left{
+    margin: 20px 20px 20px 50px;
+    position: absolute;
+    top: 360px;
+        }
+.hero-btn {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+@media only screen and (max-width: 600px){
+    .hero-btn{
+        justify-content: flex-start; 
+    }
+    .logo{
+        justify-content: flex-center;
+    }
+    .span-left{
+        top: 432px;
+        margin: 28px;
+    }
+    }
+
+/* --------------------------- */
+
+#service i {
+    font-size: 3.5em;
+    padding: 26px;
+    border-radius: 100px;
+    color: #7f7f7f;
+    width: 100px;
+    height: 100px;
+}
+#service .faicons {
+    width: 120px;
+    margin: 20px auto;
+    text-align: center;
+}
+#service p>i {
+    border-color: #d942a5;
+    border-width: 2px;
+    border-style: solid;
+}
+#service p {
+    /* color: #fff; */
+    text-align: center;
+    font-size: 13px;
+    justify-content: center;
+}
+.editable{
+    text-align: center;  
+}
+#service .list > div{
+    box-shadow: 0 0 10px 2px rgb(0 0 0 / 20%);
+    padding: 10px;
+    height: 326px;
+    margin-bottom: 72px;
+    overflow: hidden;
+    border-radius: 0.25rem;
+}
+
+element.style {
+}
+.w3-bar-block .w3-bar-item {
+    text-align: center!important
+}
+
+ul li {
+    list-style: none;
+}
+/* --------------------------- */
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+
+a.icon{
+    display: inline-block;
+    font-size: 13px;
+    margin: 0 21px;
+    text-align: center;
+    vertical-align: top;
+    position: relative;
+    text-decoration-line: none;
+    color: black;   
+}
+a:hover{
+    color: #1a4e65;
+    text-decoration: none;
+}
+.w3-button:hover {
+    transform: scale(1.3); 
+    transition: .9s;
+}
+
+div.arrow_up{
+    border-radius: 50%;
+}
+h2 {
+    display: block;
+    font-size: 1.5em;
+    -webkit-margin-before: 0.83em;
+    -webkit-margin-after: 0.83em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+}
+
+/* not sure u could try to delete and see the different */
+div{ 
+    display: block;
+}
+.intro-narrative__heading::after {
+    border-bottom: 2px solid #dc221a;
+    bottom: 0;
+    content: "";
+    display: block;
+    left: 50%;
+    margin-left: 47%;
+    /* position: absolute; */
+    width: 5rem;
+    padding-bottom: 15px;
+}
+h2.welcome{
+    font-family:Benton Sans,Helvetica Neue,Helvetica,Arial,sans-serif;
+    /* "Raleway", sans-serif; */
+    font-weight: 300;
+    margin: 30px;
+    font-size: 2.5rem;
+
+}
+/* --------style the card ------ */
+
+.card-body{padding-top: 25px}
+
+.card {
+    /* text-align: center!important; */
+    display: inline-block;
+    width: 336px;
+    height: 357px;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+   /* ------- to make img zoom in ---- */
+    position: relative;
+    overflow: hidden; 
+}
+/* --------  end of img zoom in     ---- */
+.box-hidden{
+    display: none;
+}
+
+img.card-img-top{
+    width: 336px;
+    height: 190px;
+}
+/* ----------—card Animation—---------- */
+.card {
+    transition: 0.5s ease;
+    margin:12px;
+    }
+.card:hover {
+    transform: scale(1.15);
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
+    }
+    
+/* ----------------------------------- */
+
+.card-title {
+    background: linear-gradient(to bottom,rgba(0,0,0,0),rgba(0,0,0,.85));
+    margin: 0px -19px 165px;
+    box-sizing: border-box;
+    letter-spacing: 4px;
+    position: absolute;
+    line-height: 20px;
+    font-weight: 200;
+    font-size: 20px;
+    color: #fff;
+    padding: 16px;
+    width: 100%;
+    bottom: 0;
+}
+p.card-text {
+    font-size: 1.1rem;
+    text-align: left;
+}
+i + div{
+    text-transform: capitalize;
+    font-size: 16px;
+}
+
+.material-icons {
+    transform: rotate(0deg);
+    transition: transform 0.5s linear;
+}
+.material-icons:hover{
+    transform: rotate(90deg)
+}
+/* end of card styling */
+
+
+
+    /* --------------Footer---------------------- */
+
+.img-footer{
+    width: 100%;
+}
+
+.send-msg-btn {
+    background-color: #1a4e65!important;
+    box-shadow: 0 7px 5px 0 rgba(10, 6, 29, 0.28);
+}
+.send-msg-btn:hover{
+    background-color: #1E96BE!important;
+}
+
+.fa-arrow-circle-up{
+    border-radius: 50%;
+    font-size: 3rem;
+    padding: 0.5rem;
+}
+/* Power by */
+a.w3-hover-text-green {
+    text-decoration: none;
+    color: rgba(0, 0, 0, .87);
+    transition: 1.5s;
+}
+/* ---------------end footer------------------------------------- */
