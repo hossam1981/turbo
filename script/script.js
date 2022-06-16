@@ -2,7 +2,7 @@ console.log('script magic is ready')
 // <!-- Add Google Maps -->
 function myMap() {
     var mapCanvas = document.getElementById("map");
-    var myCenter = new google.maps.LatLng(40.802874378787216, -73.94991116259973);
+    var myCenter = new google.maps.LatLng(40.4290, -74.1651);
     var mapOptions = {
         center: myCenter,
         zoom: 9
@@ -15,7 +15,6 @@ function myMap() {
     });
     marker.setMap(map);
 }
-
 
 // Change style of navbar on scroll
 window.onscroll = function () {
