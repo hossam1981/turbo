@@ -519,7 +519,8 @@
           <br>
           <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Phone: +01 3472060083
           <br>
-          <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: hossam.elnaggar.ny@gmail.com
+          <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email:
+          <a href="mailto:sam@turbolimo.gmail.com" target="_blank">sam@turbolimo.gmail.com</a>
           <br>
         </div>
         <p>Swing by for a cup of
@@ -549,28 +550,42 @@
               required>
           </div>
           <div>
-            <input type="text" class="form-control step1-control 
+            <input type="search" class="form-control step1-control 
           typeahead_loc tt-input" name="addrpicker[]" value="" placeholder="drop off address or Airport" id="addrpicker_1"
               required_on="any" autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top; background-color: transparent;margin-bottom:10px;"
               required>
           </div>
 
-          <input size="24" name="date" id="sb-date3" value="Date Desired:" onfocus="if(this.value == 'Date Desired:') {this.value = '';}"
-            onblur="if (this.value == '') {this.value = 'Date Desired:';}" class="is-datepick">
+          <input size="12" type="number" name="count of passenger" id="sb-date3" value="count" onfocus="if(this.value == 'Date Desired:') {this.value = '';}"
+            onblur="" placeholder="How many passenger" required>
 
-          <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
+          <input size="24" type="datetime-local" name="date and time" id="sb-date3" value="Date Desired:" onfocus="" onblur="" required>
+
+          <input size="24" type="tel" name="tel" id="sb-date3" value="phone" onfocus="" onblur="" required>
+
+          <select name="" id="">
+            <option value="">One way</option>
+            <option value="round">round trip</option>
+            <option value="hourly">hourly</option>
+            <option value="oneway">one way</option>
+          </select>
+
+          <input class="w3-input w3-border" type="text" placeholder="Additional instruction" required name="Message">
 
           <input type="hidden" name="_next" value="https://turbolimo.netlify.app/welcome">
 
           <input type="hidden" name="_subject" value="New submission!">
 
+          <!-- --------------submit btn ---------- -->
+          <!-- --------------submit btn ---------- -->
+          <!-- --------------submit btn ---------- -->
           <button class="
           btn 
           btn-color
           btn-block
           bg_slider
           w3-black w3-right w3-section send-msg-btn" type="submit">
-            <!-- <a href="mailto:hossam.elnaggar.ny@gmail.com?subject=hi&body=welcome"> -->
+
             <i class="fa fa-paper-plane"></i> SEND MESSAGE
             <!-- </a> -->
           </button>
