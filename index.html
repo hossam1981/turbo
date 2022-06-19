@@ -501,13 +501,13 @@
 
 
   <!-- Container (Contact Section) -->
-  <div class="w3-content w3-container w3-padding-64" id="contact">
+  <div class=" w3-content w3-container w3-padding-64" id="contact">
     <h3 class="w3-center">BOOKING</h3>
     <p class="w3-center">
       <em>I'd love your feedback!</em>
     </p>
 
-    <div class="w3-row w3-padding-32 w3-section">
+    <div class="booking-container w3-row w3-padding-32 w3-section">
       <div class="w3-col m4 w3-container">
         <!-- Add Google Maps -->
         <div id="map" class="w3-round-large w3-greyscale" style="width:100%;height:400px;"></div>
@@ -520,7 +520,7 @@
           <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Phone: +01 3472060083
           <br>
           <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email:
-          <a href="mailto:sam@turbolimo.gmail.com" target="_blank">sam@turbolimo.gmail.com</a>
+          <a href="mailto:sam@turbolimo.gmail.com" target="_blank">sam@turbolimo.net</a>
           <br>
         </div>
         <p>Swing by for a cup of
@@ -533,18 +533,22 @@
         <!-- ---------------------- form --------------------- -->
 
 
-        <form action="https://formsubmit.co/spiderdash4u@gmail.com" method="POST" target="_blank">
+        <form action="https://formsubmit.co/sam@turbolimo.net" method="POST" target="_blank">
+          <!-- name and emial -->
           <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
             <div class="w3-half">
-              <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+              <input class="w3-input w3-border-bottom" type="text" placeholder="Name" required name="Name">
             </div>
             <div class="w3-half">
-              <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+              <input class="w3-input w3-border-bottom" type="text" placeholder="Email" required name="Email">
             </div>
           </div>
+          <!-- end name and emial  -->
 
+
+          <!-- search address  -->
           <div>
-            <input type="text" class="form-control step1-control 
+            <input type="text" class="form-control step1-control  w3-border-bottom
           typeahead_loc tt-input" name="addrpicker[]" value="" placeholder="Pick up address or Airport" id="addrpicker_1"
               required_on="any" autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top; background-color: transparent; margin-bottom:10px;"
               required>
@@ -555,30 +559,39 @@
               required_on="any" autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top; background-color: transparent;margin-bottom:10px;"
               required>
           </div>
+          <!-- end search address -->
 
+          <!-- count passenger input -->
           <input size="12" type="number" name="count of passenger" id="sb-date3" value="count" onfocus="if(this.value == 'Date Desired:') {this.value = '';}"
             onblur="" placeholder="How many passenger" required>
+          <!-- end count passenger input -->
 
+          <!-- datetime  -->
           <input size="24" type="datetime-local" name="date and time" id="sb-date3" value="Date Desired:" onfocus="" onblur="" required>
+          <!--end  datetime  -->
 
-          <input size="24" type="tel" name="tel" id="sb-date3" value="phone" onfocus="" onblur="" required>
+          <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
 
-          <select name="" id="">
-            <option value="">One way</option>
-            <option value="round">round trip</option>
-            <option value="hourly">hourly</option>
-            <option value="oneway">one way</option>
-          </select>
+            <input size="24" type="tel" name="tel" id="sb-date3" value="phone" onfocus="" onblur="" required>
 
-          <select name="" id="">
-            <option value="">CHOOSE A CAR</option>
-            <option value="round">SUV</option>
-            <option value="hourly">Sedan</option>
-            <option value="oneway">BUS</option>
-          </select>
+            <select class="w3-input w3-border " name="kind" id="">
+              <option value="">ONE WAY ?</option>
+              <option value="round">ROUND TRIP.</option>
+              <option value="hourly">HOURLY.</option>
+              <option value="oneway">ONE WAY.</option>
+            </select>
 
+            <select name="car" id="">
+              <option value="">CHOOSE A CAR</option>
+              <option value="round">SUV</option>
+              <option value="hourly">Sedan</option>
+              <option value="oneway">BUS</option>
+            </select>
+          </div>
 
+          <!-- instruction input txt -->
           <input class="w3-input w3-border" type="text" placeholder="Additional instruction" required name="Message">
+          <!-- end instruction input txt -->
 
           <input type="hidden" name="_next" value="https://turbolimo.netlify.app/welcome">
 
@@ -607,6 +620,13 @@
       </div>
     </div>
   </div>
+
+  <!-- add whatsapp widget for website here -->
+  <!-- add whatsapp widget for website here -->
+  <!-- add whatsapp widget for website here -->
+  <!-- add whatsapp widget for website here -->
+
+
 
   <!-- -------------- Footer--------------- ----- -->
   <!-- -------------- Footer---------------   ----- -->
