@@ -50,3 +50,9 @@
         background-position: -100% 100%;
         box-shadow: 0 0 15px hsl(249, 9%, 54%);
         }
+
+        @media screen and (max-width: 600px){
+.bg_slider{
+    width: 100%
+}
+        }
