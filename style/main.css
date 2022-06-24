@@ -160,8 +160,6 @@ body, html {
     border-radius: 0.25rem;
 }
 
-element.style {
-}
 .w3-bar-block .w3-bar-item {
     text-align: center!important
 }
@@ -212,6 +210,8 @@ h2 {
 div{ 
     display: block;
 }
+
+/* ------- Middle header ---------- */
 .intro-narrative__heading::after {
     border-bottom: 2px solid #dc221a;
     bottom: 0;
@@ -231,6 +231,8 @@ h2.welcome{
     font-size: 2.5rem;
 
 }
+/* ------- end Middle header ---------- */
+
 /* --------style the card ------ */
 
 .card-body{padding-top: 25px}
