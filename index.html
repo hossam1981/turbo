@@ -560,20 +560,17 @@
               required>
           </div>
           <div>
-            <input type="search" class="form-control step1-control 
-          typeahead_loc tt-input" name="addrpicker[]" value="" placeholder="drop off address or Airport" id="addrpicker_1"
-              required_on="any" autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top; background-color: transparent;margin-bottom:10px;"
-              required>
+            <input name="pu" type="text" class="form-control" id="search_input" placeholder="Type address..." required />
           </div>
           <!-- end search address -->
 
           <!-- count passenger input -->
-          <input size="12" type="number" name="count of passenger" id="sb-date3" value="count" onfocus="if(this.value == 'Date Desired:') {this.value = '';}"
-            onblur="" placeholder="Number of passenger" required>
+          <input size="12" type="number" name="count of passenger" id="sb-date3" value="" onfocus="" onblur="" placeholder="Number of passenger"
+            required>
           <!-- end count passenger input -->
 
           <!-- datetime  -->
-          <input size="24" type="datetime-local" name="date and time" id="sb-date3" value="Date Desired:" onfocus="" onblur="" required>
+          <input size="24" type="datetime-local" name="date and time" id="sb-date3" value="" onfocus="" onblur="" required>
           <!--end  datetime  -->
 
           <div class="w3-row-padding " style="margin:10px -16px 8px -16px">
@@ -700,12 +697,11 @@
 
   <script type="text/javascript" src="./script/script.js"></script>
   <script type="text/javascript" src="./script/load-more.js"></script>
+  <script type="text/javascript" src="./script/searchmap.js"></script>
   <script type="text/javascript" src="./script/multislider.js"></script>
-  <script type="text/javascript" src="./script/videoControl.js"></script>
   <script type="text/javascript" src="./script/explore_slide.js"></script>
-  <script type="text/javascript" src="./script/autocompletemap.js"></script>
   <script type="text/javascript" src="./script/multislider.min.js"></script>
-  <script type="text/javascript" src="./script/videoControlMute.js"></script>
+
 
   <script>
     // this code for multi slider going to the left...
@@ -715,7 +711,7 @@
     });
   </script>
 
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOSOp6FFbin27a6eN3EW2ftUxX0qA0buk&callback=myMap"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOSOp6FFbin27a6eN3EW2ftUxX0qA0buk&libraries=places&callback=myMap"></script>
 
 
   <!-- <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6I8N3QaFac6Mtk14whPB3aID3FTLb5PA&libraries=places&callback=initMap">

@@ -1,6 +1,5 @@
-$(document).ready(function () {  // <<--do i actually need this or not 
+$(document).ready(function () {
 
-    // console.log('jquery magic is ready')
 
     $(function () {
         $(".box-hidden").slice(0, 1).show();
