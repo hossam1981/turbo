@@ -304,8 +304,17 @@ i + div{
 .booking-container{
     box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
 }
-
-
+/* ---------------------  Form ----------------- */
+.w3-input{
+    margin-bottom: 10px;
+    box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);
+}
+select{
+    color: #777
+}
+#input-form-count{
+    width: 12em;
+}
     /* --------------Footer---------------------- */
 
 .img-footer{

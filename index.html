@@ -7,10 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content=" Plan your next trip . Read reviews on thousands of hotels. Buy airline tickets easily, and bundle for even more savings. Price Guarantee! ">
   <meta name="google-site-verification" content="T6ctdJLtVIcQYY-p4cSZort44CSd2dh1TdmBO-c9aQ4" />
+  <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+  <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script> -->
+  <!--Get your own code at fontawesome.com-->
 
-
-  <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
-      crossorigin="anonymous"> -->
   <!--for nav icon-->
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -43,12 +43,7 @@
 </head>
 
 <body>
-  <!-- to do list 
-  1-add .htaccess file
-  6-api for travel api for map
-  7- nice logo red and black travel... not yet-->
 
-  <!-- Navbar (sit on top) -->
 
   <div class="w3-top">
     <div class="w3-bar" id="myNavbar">
@@ -560,13 +555,15 @@
               required>
           </div>
           <div>
-            <input name="pu" type="text" class="form-control" id="search_input" placeholder="Type address..." required />
+
+            <input name="pu" type="text" class="form-control" id="search_input" placeholder=" Type Drop off address..." style="position: relative; vertical-align: top; background-color: transparent; margin-bottom:10px;"
+              required />
           </div>
           <!-- end search address -->
 
           <!-- count passenger input -->
-          <input size="12" type="number" name="count of passenger" id="sb-date3" value="" onfocus="" onblur="" placeholder="Number of passenger"
-            required>
+          <input id="input-form-count" type="number" name="count of passenger" id="sb-date3" value="" onfocus="" onblur="" placeholder="Number of passenger"
+            style="margin-bottom:10px;" required>
           <!-- end count passenger input -->
 
           <!-- datetime  -->
