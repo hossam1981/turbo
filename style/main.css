@@ -284,7 +284,7 @@ img.card-img-top{
     bottom: 0;
 }
 p.card-text {
-    font-size: 1.1rem;
+    font-size: 16px;
     text-align: left;
 }
 i + div{
