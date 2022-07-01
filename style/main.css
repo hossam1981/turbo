@@ -5,6 +5,7 @@ body, html {
     color: #777;
     line-height: 1.8;
     font-weight: 300;
+    letter-spacing: 2px;
 }
 
 .logo{
@@ -307,13 +308,12 @@ i + div{
 /* ---------------------  Form ----------------- */
 .w3-input{
     margin-bottom: 10px;
-    box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);
 }
 select{
     color: #777
 }
 #input-form-count{
-    width: 12em;
+    width: 14em;
 }
     /* --------------Footer---------------------- */
 

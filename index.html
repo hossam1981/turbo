@@ -312,7 +312,7 @@
   <div class="w3-content w3-container " id="whyus">
 
 
-    <h2 style="font-size:2.5rem;" class="w3-center intro-narrative__heading what_to_do">Why choose US ?
+    <h2 style="font-size:2.5rem;" class="w3-center intro-narrative__heading what_to_do">Why Choose US ?
     </h2>
     <div class="slideshow-container">
 
@@ -551,23 +551,33 @@
           <div>
             <input type="text" class="form-control step1-control  w3-border-bottom
           typeahead_loc tt-input" name="addrpicker[]" value="" placeholder="Pick up address or Airport" id="addrpicker_1"
-              required_on="any" autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top; background-color: transparent; margin-bottom:10px;"
+              required_on="any" autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top; background-color: transparent; margin-bottom:20px;"
               required>
           </div>
           <div>
 
-            <input name="pu" type="text" class="form-control" id="search_input" placeholder=" Type Drop off address..." style="position: relative; vertical-align: top; background-color: transparent; margin-bottom:10px;"
+            <input name="pu" type="text" class="form-control" id="search_input" placeholder=" Type Drop off address..." style="position: relative; vertical-align: top; background-color: transparent; margin-bottom:20px;"
               required />
           </div>
           <!-- end search address -->
 
           <!-- count passenger input -->
-          <input id="input-form-count" type="number" name="count of passenger" id="sb-date3" value="" onfocus="" onblur="" placeholder="Number of passenger"
-            style="margin-bottom:10px;" required>
-          <!-- end count passenger input -->
+          <div>
+            <input class="w3-border" id="input-form-count" type="number" name="count of passenger" id="sb-date3" value="" onfocus=""
+              onblur="" placeholder="Number of passenger" style="margin-bottom:10px; padding:5px;" required>
+            <!-- end count passenger input -->
 
+            <label style="margin-left:10px;">Child Seat</label>
+            <input type="checkbox" name="childseat" style="margin-right:10px;">
+          </div>
+          <hr>
           <!-- datetime  -->
-          <input size="24" type="datetime-local" name="date and time" id="sb-date3" value="" onfocus="" onblur="" required>
+          <div>
+            <label>Enter Date and Time :</label>
+            <input class="w3-border" size="24" type="datetime-local" name="date and time" id="sb-date3" value="" onfocus="" onblur=""
+              style="padding:5px;" required>
+          </div>
+          <hr>
           <!--end  datetime  -->
 
           <div class="w3-row-padding " style="margin:10px -16px 8px -16px">
@@ -579,7 +589,7 @@
             <!-- end of tel -->
 
             <div class="w3-third">
-              <select class="w3-input w3-border " name="kind" id="">
+              <select class="w3-input w3-border-bottom " name="kind" id="">
                 <option value="">ONE WAY ?</option>
                 <option value="round">ROUND TRIP.</option>
                 <option value="hourly">HOURLY.</option>
@@ -587,7 +597,7 @@
               </select>
             </div>
             <div class="w3-third">
-              <select class="w3-input w3-border" name="car" id="">
+              <select class="w3-input w3-border-bottom" name="car" id="">
                 <option value="">CHOOSE A CAR</option>
                 <option value="SUV">SUV</option>
                 <option value="Sedan">Sedan</option>
@@ -597,7 +607,7 @@
           </div>
 
           <!-- instruction input txt -->
-          <input class="w3-input w3-border" type="text" placeholder="Additional instruction" required name="Message">
+          <input class="w3-input w3-border-bottom" type="text" placeholder="Additional instruction" required name="Message">
           <!-- end instruction input txt -->
 
           <input type="hidden" name="_next" value="https://turbolimo.netlify.app/welcome">
