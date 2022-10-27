@@ -8,6 +8,7 @@ body, html {
     letter-spacing: 2px;
 }
 
+
 .logo{
     height: 75px;
     font-size:3rem;
@@ -23,6 +24,7 @@ body, html {
     float: right;
     color: #7f7f7f;
 }
+
 /*  */
 /* video background main */
  @media (min-width: 900px) {
@@ -340,4 +342,14 @@ a.w3-hover-text-green {
     color: rgba(0, 0, 0, .87);
     transition: 1.5s;
 }
+/* ///fotter review//// */
+.dFwLrb > a{
+    display: none;
+    }
+    .eapps-widget-toolbar .eapps-widget-toolbar-panel-wrapper{
+        display: none;
+    }
+    .bjMDoc:last-child{
+        display: none;
+    }
 /* ---------------end footer------------------------------------- */
