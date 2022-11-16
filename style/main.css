@@ -136,7 +136,11 @@ body, html {
         margin: 28px;
     }
     }
-
+    @media only screen and (max-width: 300px){
+        .span-left{
+            top: 300px;
+    }
+    
 /* --------------------------- */
 
 #service i {
