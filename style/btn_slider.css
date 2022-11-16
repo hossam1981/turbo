@@ -4,7 +4,7 @@
     line-height: 1.5;
     text-align: center;
     border-radius: 4px;
-    padding: 14px 50px;
+    padding: 12px 24px;
     display: inline-block;
     vertical-align: middle;
     font-size: 1.14285714rem;
@@ -22,7 +22,7 @@
     .btn-block {
         /* display: block; */
         width: 336px;
-        margin:0px 0px 100px 0px
+        /* margin:0px 0px 30px 0px */
     }
     .bg_slider {
         --initialTextColor: #ffff;
@@ -52,7 +52,27 @@
         }
 
         @media screen and (max-width: 600px){
-.btn-submit, .btn-book{
+.btn-submit, .btn-book, .btn-call{
     width: 100%;
 }
+        }
+        @media screen and (max-width: 933px){
+            .form-btn{
+                width: 100%;
+            }
+                    }
+   
+
+        
+
+        .btn-call{
+        --initialTextColor: rgb(19, 14, 14);
+        --slideTextColor:rgb(10, 7, 7);
+
+        --initialBgColor:  #fff;
+        --slideBgColor: #3a96be;
+        }
+        .btns{
+            display: block;
+
         }

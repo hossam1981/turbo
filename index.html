@@ -13,6 +13,8 @@
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1"
@@ -51,7 +53,8 @@
       </a>
 
       <a href="#home" class="w3-bar-item w3-button w3-hide-small w3-hide-medium  w3-large">
-        <i class="icon fa fa-home"></i> HOME</a>
+        <i class="icon fa fa-home fa-lg"></i>
+      </a>
 
       <a href="#services" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-large">
         <i class="fa fa-plane"></i> SERVICES</a>
@@ -59,7 +62,7 @@
       <a href="#whyus" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-large">
         <i class="fas fa-swimmer"></i> WHY US?</a>
       <a href="#fleet" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-large">
-        <i class="icon fa fa-pen-alt"></i> OUR FLEET</a>
+        <i class="fa-solid fa-cars"></i> OUR FLEET</a>
       <a href="#contact" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-large">
         <i class="fa fa-envelope"></i> CONTACT</a>
 
@@ -83,7 +86,7 @@
       <a href="#whyus" class="w3-bar-item w3-button" onclick="toggleFunction()">
         <i class="fas fa-swimmer"></i> WHY US?</a>
       <a href="#fleet" class="w3-bar-item w3-button" onclick="toggleFunction()">
-        <i class="icon fas fa-pen-alt"></i> OUR FLEET</a>
+        <i class="fa-solid fa-cars"></i>OUR FLEET</a>
       <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">
         <i class="fa fa-envelope"></i> Contact</a>
     </div>
@@ -109,9 +112,11 @@
                   w3-text-black
                   w3-wide">You will Love The Ride</span>
 
+
       <div class=" hero-btn">
         <a href="#book">
-          <button class="btn
+          <button class="
+                btn
                 btn-book
                 btn-color
                 btn-block
@@ -121,9 +126,20 @@
             <i class="fa fa-lg fa-angle-double-down" aria-hidden="true"></i>
           </button>
         </a>
+
+        <!-- <a href="tel:347-206-0083" class=" call-btn-hero
+                btn 
+                btn-call
+                btn-color
+                btn-block
+                bg_slider
+                w3-section ">
+
+          <i class="fa-sharp fa-solid fa-phone"></i> CALL US
+        </a> -->
+
       </div>
     </div>
-
 
     <img style="position:absolute;  bottom: 0; " src="img1.svg" />
 
@@ -620,17 +636,31 @@
           <!-- --------------submit btn ---------- -->
           <!-- --------------submit btn ---------- -->
           <!-- --------------submit btn ---------- -->
-          <button class="
+          <div class="btns">
+            <button class="
           btn 
+          form-btn
           btn-submit
           btn-color
           btn-block
           bg_slider
           w3-black w3-right w3-section send-msg-btn" type="submit">
 
-            <i class="fa fa-paper-plane"></i> SEND MESSAGE
-            <!-- </a> -->
-          </button>
+              <i class="fa fa-paper-plane"></i> SEND MESSAGE
+              <!-- </a> -->
+            </button>
+            <a href="tel:347-206-0083" class="
+                  btn 
+                  btn-color
+                  form-btn
+                  bg_slider
+                  btn-call
+                  w3-section w3-left ">
+
+              <i class="fa-sharp fa-solid fa-phone"></i> CALL US
+              <!-- </a> -->
+            </a>
+          </div>
         </form>
 
         <!-- -------------------end form ------------------ -->
@@ -726,12 +756,6 @@
   </script>
 
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOSOp6FFbin27a6eN3EW2ftUxX0qA0buk&libraries=places&callback=myMap"></script>
-
-
-  <!-- <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6I8N3QaFac6Mtk14whPB3aID3FTLb5PA&libraries=places&callback=initMap">
-  </script> -->
-
-  <!-- NEW KEY = AIzaSyC6I8N3QaFac6Mtk14whPB3aID3FTLb5PA -->
 
 </body>
 

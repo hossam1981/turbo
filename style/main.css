@@ -73,6 +73,7 @@ body, html {
 .bgimg-2 {  
     background-image: url("../media/parallax-1.jpg");
     min-height: 400px;
+    margin-top: 50px;
 }
 
 /* Third image (parallax-Contact) */
@@ -107,7 +108,19 @@ body, html {
     position: absolute;
     top: 360px;
         }
+
 .hero-btn {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    /* center the two hero btn */
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+    /* width: 330px */
+}
+.call-btn-hero{
     margin-top: 20px;
     display: flex;
     justify-content: center;
@@ -343,13 +356,48 @@ a.w3-hover-text-green {
     transition: 1.5s;
 }
 /* ///fotter review//// */
-.dFwLrb > a{
+
+
+.eapps-widget-toolbar .eapps-widget-toolbar-panel-wrapper{
     display: none;
-    }
-    .eapps-widget-toolbar .eapps-widget-toolbar-panel-wrapper{
+}
+
+
+/* .dFwLrb > a:active{
+    display: none;
+    } */
+    /* .joSrvep:first-of-type > a{
         display: none;
     }
-    .bjMDoc:last-child{
+    .joSrvep div:first-of-type > a{
         display: none;
+    } */
+    /* div.eapps-widget:last-child{
+        display: none
+    } */
+   
+   #review ~ .joSrvep  a{
+    visibility: hidden !important;
+    }
+   .joSrvep:nth-last-of-type(a){
+    visibility: hidden !important;
+    } 
+   #review ~ .joSrvep  a{
+    visibility:hidden !important;
+    }
+    .dFwLrb:nth-child(3){
+        visibility: hidden !important;
+    }
+    .joSrve > a, .joSrve > a {
+        visibility: hidden !important;
+    }
+    .gBQoNy + a{
+        visibility: hidden !important;
+    }
+    .cgetzf:last-child{
+        visibility: hidden !important;
+    }
+    a:contains('Free Google Reviews widget'){
+        visibility: hidden !important;
     }
 /* ---------------end footer------------------------------------- */
