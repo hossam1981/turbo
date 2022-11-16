@@ -96,7 +96,7 @@ body, html {
         background-attachment: scroll;
     }
 }
-/* .hero-span{position: relative;} */
+
 .span-left{
     position: relative;
     display: flex;
@@ -118,7 +118,6 @@ body, html {
     justify-content: center;
     align-items: center;
     gap:10px;
-    /* width: 330px */
 }
 .call-btn-hero{
     margin-top: 20px;
@@ -133,7 +132,7 @@ body, html {
         justify-content: flex-center;
     }
     .span-left{
-        top: 432px;
+        top: 390px;
         margin: 28px;
     }
     }
