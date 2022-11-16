@@ -132,15 +132,11 @@ body, html {
         justify-content: flex-center;
     }
     .span-left{
-        top: 336px;
+        top: 360px;
         margin: 28px;
     }
     }
-    @media only screen and (max-width: 300px){
-        .span-left{
-            top: 300px;
-    }
-    
+
 /* --------------------------- */
 
 #service i {
