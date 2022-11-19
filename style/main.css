@@ -7,10 +7,8 @@ body, html {
     font-weight: 300;
     letter-spacing: 2px;
 }
-
-
 .logo{
-    height: 75px;
+    height: 83px;
     font-size:3rem;
     margin-left: 5rem;
     display: flex;
@@ -23,26 +21,9 @@ body, html {
 .w3-bar .w3-bar-item{
     float: right;
     color: #7f7f7f;
+    margin-top:10px ;
 }
 
-/*  */
-/* video background main */
- @media (min-width: 900px) {
-
-    .fullscreen-video-wrap {
-        height: 100%; }
-    .bgimg-1 {  
-        overflow:hidden;   }
-    
-    }
-    .fullscreen-video-wrap{
-        background-color: rgb(148, 167, 168);
-        position: relative;
-    }
-    .fullscreen-video-wrap img{
-        position: absolute;
-        bottom: 0;
-    } 
     /* ----- Nav -----  */
     @media only screen and (max-width: 600px){
         .w3-bar-block .w3-bar-item{
@@ -87,7 +68,7 @@ body, html {
     min-height: 400px;
 }
 
-/* .w3-wide {letter-spacing: 10px;} */
+.w3-wide {letter-spacing: 10px;}
 .w3-hover-opacity {cursor: pointer;}
 
 /* Turn off parallax scrolling for tablets and phones */
@@ -96,7 +77,11 @@ body, html {
         background-attachment: scroll;
     }
 }
-
+@media screen and (max-width: 300px){
+    span.w3-xxlarge.hero-span.w3-text-black{
+        margin-bottom: 150px;
+    }
+            }
 .span-left{
     position: relative;
     display: flex;
@@ -104,7 +89,7 @@ body, html {
     
 }
  .span-left{
-    margin: 20px 20px 20px 50px;
+    margin: 20px 414px 20px 50px;
     position: absolute;
     top: 360px;
         }
@@ -132,17 +117,11 @@ body, html {
         justify-content: flex-center;
     }
     .span-left{
-        top: 360px;
+        top: 350px;
         margin: 28px;
     }
     }
 
-    @media only screen and (max-width: 300px){
-    
-        .span-left{
-            top: 300px;
-        }
-        }
 /* --------------------------- */
 
 #service i {
