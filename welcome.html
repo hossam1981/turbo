@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Thanks</title>
+
+
 </head>
 <style>
     html {
@@ -27,9 +29,8 @@
     }
 
     @media only screen and (max-width: 320px) {
-
-        body {
-            font-size: 1em;
+        .w3-xxlarge {
+            font-size: 30px !important;
         }
 
     }
@@ -40,6 +41,7 @@
         display: grid;
         justify-content: center;
         align-items: center;
+        text-transform: capitalize;
     }
 
     img {
@@ -51,16 +53,30 @@
     }
 
     .welcome {
-        text-align: center
+        text-align: center;
+        /* padding: 30px' */
+    }
+
+    a {
+        cursor: pointer;
+        outline: none;
+        text-decoration: none;
+        color: #ee6144;
+        /* border: 1px solid #f28c3c; */
+        /* padding: 10px; */
     }
 </style>
 
 <body>
     <header>
         <h1 class="welcome"> 🎉 Thank you 🎉,
-            <br> Your request has been submitted. We will contact you shortly.</h1>
+            <br> Your request has been submitted.
+            <br> We will contact you shortly.</h1>
         <h2 class="welcome">
-            For immediate assistance, please call us at: 347-206-0083</h2>
+            For immediate assistance,
+            <br> please call us at:
+            <a href="tel:347-206-0083">347-206-0083</a>
+        </h2>
     </header>
 </body>
 
