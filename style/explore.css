@@ -1,5 +1,8 @@
 * {box-sizing: border-box;}
-body {font-family: Verdana, sans-serif;}
+body {
+  text-transform: capitalize;
+  font-family: Google Sans Display,Arial,Helvetica,sans-serif;
+}
 .mySlides {display: none;}
 img {vertical-align: middle;}
 
