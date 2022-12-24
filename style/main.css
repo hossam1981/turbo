@@ -98,12 +98,9 @@ h1 {
 .hero-btn {
     margin-top: 20px;
     display: flex;
-    justify-content: center;
-    /* center the two hero btn */
-    /* flex-direction: column; */
-    justify-content: center;
+    justify-content:space-evenly;
     align-items: center;
-    gap:10px;
+
 }
 .call-btn-hero{
     margin-top: 20px;
@@ -112,7 +109,8 @@ h1 {
 }
 @media only screen and (max-width: 600px){
     .hero-btn{
-        justify-content: flex-start; 
+        justify-content: flex-start;
+        display: grid; 
     }
     .logo{
         justify-content: flex-center;
