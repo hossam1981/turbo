@@ -423,8 +423,8 @@
 
   <h2 style="font-size:3rem;" class="w3-center intro-narrative__heading what_to_do" id="fleet">OUR FLEET</h2>
   <p class="articales">Compatible Prices</p>
-
-  <!-- <div class="w3-container ">
+  <!-- 
+  <div class=" w3-container chevy-img w3-animate-left ">
     <img src="https://static.wixstatic.com/media/b9d497_1f96895b403f42e193afbca5d3a51228~mv2.png/v1/fill/w_800,h_528,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/images_edited.png"
       alt="images_edited.png" style="width:800px;height:528px;object-fit:cover" srcset="https://static.wixstatic.com/media/b9d497_1f96895b403f42e193afbca5d3a51228~mv2.png/v1/fill/w_800,h_528,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/images_edited.png 1x, https://static.wixstatic.com/media/b9d497_1f96895b403f42e193afbca5d3a51228~mv2.png/v1/fill/w_1600,h_1056,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/images_edited.png 2x"
       fetchpriority="high">
@@ -572,18 +572,15 @@
 
           <!-- search address  -->
           <div>
-            <input type="text" class="form-control step1-control  w3-border-bottom
-          typeahead_loc tt-input" name="Pick_up_Address" value="" placeholder="Pick up address or Airport" id="addrpicker_1"
-              required_on="any" autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top; background-color: transparent; margin-bottom:20px;"
+            <input name="Pick_up" type="text" class="form-control" id="search_address1" placeholder="Pick up address or Airport" style="position: relative; vertical-align: top; background-color: transparent; margin-bottom:20px;"
               required>
           </div>
-          <div>
 
-            <input name="Drop_off" type="text" class="form-control" id="search_input" placeholder=" Type Drop off address..." style="position: relative; vertical-align: top; background-color: transparent; margin-bottom:20px;"
+          <div>
+            <input name="Drop_off" type="text" class="form-control" id="search_address2" placeholder=" Type Drop off address..." style="position: relative; vertical-align: top; background-color: transparent; margin-bottom:20px;"
               required />
           </div>
           <!-- end search address -->
-
           <!-- count passenger input -->
           <div>
             <input class="w3-border" id="input-form-count" type="number" name="count of passenger" id="sb-date3" value="" onfocus=""
@@ -746,7 +743,7 @@
 
   <script type="text/javascript" src="./script/script.js"></script>
   <script type="text/javascript" src="./script/load-more.js"></script>
-  <script type="text/javascript" src="./script/searchmap.js"></script>
+  <script type="text/javascript" src="./script/searchAddress.js"></script>
   <script type="text/javascript" src="./script/multislider.js"></script>
   <script type="text/javascript" src="./script/explore_slide.js"></script>
   <script type="text/javascript" src="./script/multislider.min.js"></script>
