@@ -40,11 +40,3 @@ function toggleFunction() {
         x.className = x.className.replace(" w3-show", "");
     }
 }
-// set max and min input number
-<script>
-    document.querySelectorAll('input[type="number"]').forEach(input => {
-        input.oninput = () => {
-            if (input.value.length > input.maxLength) input.value = input.value.slice(0, input.maxLength);
-        }
-    })
-</script>
