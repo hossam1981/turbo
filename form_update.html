@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+        crossorigin="anonymous" />
+
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <link href="./style/main.css" rel="stylesheet" />
+    <link href="./style/explore.css" rel="stylesheet" />
+    <link href="./style/btn_slider.css" rel="stylesheet" />
+    <link href="./style/multislider.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <!-- Container (Contact Section) -->
+    <div class=" w3-content w3-container w3-padding-64" id="book">
+        <!-- <h3 class="w3-center">BOOKING</h3> -->
+        <h2 style="font-size:3rem;" class="w3-center intro-narrative__heading what_to_do" id="fleet">BOOKING</h2>
+
+        <div class="booking-container w3-row w3-padding-32 w3-section">
+            <div class="w3-col m4 w3-container">
+                <!-- Add Google Maps -->
+                <div id="map" class="w3-round-large w3-greyscale" style="width:100%;height:400px;"></div>
+            </div>
+
+            <div class="w3-col m8 w3-panel">
+
+                <!-- <p>Swing by for a cup of
+          <i class="fa fa-coffee"></i>, or leave me a note:</p> -->
+
+
+
+                <!-- ---------------------- form --------------------- -->
+                <!-- ---------------------- form --------------------- -->
+                <!-- ---------------------- form --------------------- -->
+
+
+                <form action="https://formsubmit.co/5caa521270d061b91b93bacc16d318e3" method="POST" target="_blank">
+                    <!-- name and email -->
+                    <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+                        <div class="w3-half">
+                            <input class="w3-input w3-border-bottom" type="text" placeholder="Name" required name="Name">
+                        </div>
+                        <div class="w3-half">
+                            <input class="w3-input w3-border-bottom" type="text" placeholder="Email" required name="Email">
+                        </div>
+                    </div>
+                    <!-- end name and email  -->
+
+
+                    <!-- search address  -->
+                    <div>
+                        <input type="text" class="form-control step1-control  w3-border-bottom
+          typeahead_loc tt-input" name="Pick_up_Address" value="" placeholder="Pick up address or Airport" id="addrpicker_1"
+                            required_on="any" autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top; background-color: transparent; margin-bottom:20px;"
+                            required>
+                    </div>
+                    <div>
+
+                        <input name="Drop_off" type="text" class="form-control" id="search_input" placeholder=" Type Drop off address..." style="position: relative; vertical-align: top; background-color: transparent; margin-bottom:20px;"
+                            required />
+                    </div>
+                    <!-- end search address -->
+
+                    <!-- count passenger input -->
+                    <div>
+                        <input class="w3-border" id="input-form-count" type="number" name="count of passenger" id="sb-date3" value="" onfocus=""
+                            onblur="" placeholder="Number of passenger" style="margin-bottom:10px; padding:5px;" required>
+                        <!-- end count passenger input -->
+
+                        <label style="margin-left:10px;">Child Seat</label>
+                        <input type="checkbox" name="childseat" style="margin-right:10px;">
+                    </div>
+                    <hr>
+                    <!-- datetime  -->
+                    <div>
+                        <label>Enter Date and Time :</label>
+                        <input class="w3-border" size="24" type="datetime-local" name="date and time" id="sb-date3" value="" onfocus="" onblur=""
+                            style="padding:5px;" required>
+                    </div>
+                    <hr>
+                    <!--end  datetime  -->
+
+                    <div class="w3-row-padding " style="margin:10px -16px 8px -16px">
+                        <!-- ------------- tel  ----------- -->
+                        <div class="w3-third ">
+                            <input class="w3-input w3-border" size="24" type="tel" inputmode="numeric" name="tel" style="height: 38px;" id="sb-date3"
+                                placeholder="Phone" value="" onfocus="" onblur="" required>
+                        </div>
+                        <!-- end of tel -->
+
+                        <div class="w3-third">
+                            <select class="w3-input w3-border-bottom " name="type_of_ride" id="">
+                                <option value="">ONE WAY ?</option>
+                                <option value="round">ROUND TRIP</option>
+                                <option value="hourly">HOURLY</option>
+                                <option value="oneway">ONE WAY</option>
+                            </select>
+                        </div>
+                        <div class="w3-third">
+                            <select class="w3-input w3-border-bottom" name="car_type" id="">
+                                <option value="">CHOOSE A CAR</option>
+                                <option value="SUV">SUV</option>
+                                <option value="Sedan">Sedan</option>
+                                <option value="BUS">BUS</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- instruction input txt -->
+                    <input class="w3-input w3-border-bottom" type="text" placeholder="Additional instruction" required name="Message">
+                    <!-- end instruction input txt -->
+
+                    <input type="hidden" name="_next" value="https://turbolimo.netlify.app/welcome">
+
+                    <input type="hidden" name="_subject" value="New submission!">
+
+                    <!-- --------------submit btn ---------- -->
+                    <!-- --------------submit btn ---------- -->
+                    <!-- --------------submit btn ---------- -->
+                    <div class="btns">
+                        <button class="
+          btn 
+          form-btn
+          btn-submit
+          btn-color
+          btn-block
+          bg_slider
+          w3-black w3-right w3-section send-msg-btn" type="submit">
+
+                            <i class="fa fa-paper-plane"></i> SEND MESSAGE
+                            <!-- </a> -->
+                        </button>
+                        <a href="tel:347-206-0083" class="
+                  btn 
+                  btn-color
+                  form-btn
+                  bg_slider
+                  btn-call
+                  w3-section w3-left ">
+
+                            <i class="fa-sharp fa-solid fa-phone"></i> CALL US
+                            <!-- </a> -->
+                        </a>
+                    </div>
+                </form>
+
+                <!-- -------------------end form ------------------ -->
+                <!-- -------------------end form ------------------ -->
+                <!-- -------------------end form ------------------ -->
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOSOp6FFbin27a6eN3EW2ftUxX0qA0buk&libraries=places&callback=myMap"></script>
+    <script type="text/javascript" src="./script/searchmap.js"></script>
+</body>
+
+</html>
