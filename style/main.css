@@ -41,7 +41,7 @@ h1 {
     background-size: cover;
 }
     .bgimg-1 {
-    background-image: url('../media/hero.jpeg');
+    background-image: url('../media/hero.png');
     min-height: 800px;
     }
     /* reponsive img */
