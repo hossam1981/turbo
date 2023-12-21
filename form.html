@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>MyForm</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
         crossorigin="anonymous" />
@@ -24,12 +24,12 @@
         crossorigin="anonymous">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <link href="./style/main.css" rel="stylesheet" />
-    <link href="./style/explore.css" rel="stylesheet" />
+    <!-- <link href="./style/explore.css" rel="stylesheet" /> -->
     <link href="./style/btn_slider.css" rel="stylesheet" />
-    <link href="./style/multislider.css" rel="stylesheet" />
+    <!-- <link href="./style/multislider.css" rel="stylesheet" /> -->
 </head>
 
 <body>
@@ -57,6 +57,7 @@
                 <!-- ---------------------- form --------------------- -->
 
 
+
                 <form action="https://formsubmit.co/5caa521270d061b91b93bacc16d318e3" method="POST" target="_blank">
                     <!-- name and email -->
                     <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
@@ -72,32 +73,29 @@
 
                     <!-- search address  -->
                     <div>
-                        <input type="text" class="form-control step1-control  w3-border-bottom
-          typeahead_loc tt-input" name="Pick_up_Address" value="" placeholder="Pick up address or Airport" id="addrpicker_1"
-                            required_on="any" autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top; background-color: transparent; margin-bottom:20px;"
+                        <input name="Pick_Up" type="text" class="form-control" id="search_address1" placeholder="Pick up address or Airport" style="position: relative; vertical-align: top; background-color: transparent; margin-bottom:20px;"
                             required>
                     </div>
-                    <div>
 
-                        <input name="Drop_off" type="text" class="form-control" id="search_input" placeholder=" Type Drop off address..." style="position: relative; vertical-align: top; background-color: transparent; margin-bottom:20px;"
+                    <div>
+                        <input name="Drop_Off" type="text" class="form-control" id="search_address2" placeholder="Drop off address..." style="position: relative; vertical-align: top; background-color: transparent; margin-bottom:20px;"
                             required />
                     </div>
                     <!-- end search address -->
-
                     <!-- count passenger input -->
                     <div>
-                        <input class="w3-border" id="input-form-count" type="number" name="count of passenger" id="sb-date3" value="" onfocus=""
-                            onblur="" placeholder="Number of passenger" style="margin-bottom:10px; padding:5px;" required>
+                        <input class="w3-border" id="input-form-count" type="number" name="No. of Pass" placeholder="Number Of Passengers" style="margin-bottom:10px; padding:5px;"
+                            required>
                         <!-- end count passenger input -->
 
                         <label style="margin-left:10px;">Child Seat</label>
-                        <input type="checkbox" name="childseat" style="margin-right:10px;">
+                        <input type="checkbox" name="Childseat" style="margin-right:10px;">
                     </div>
                     <hr>
                     <!-- datetime  -->
                     <div>
                         <label>Enter Date and Time :</label>
-                        <input class="w3-border" size="24" type="datetime-local" name="date and time" id="sb-date3" value="" onfocus="" onblur=""
+                        <input class="w3-border" size="24" type="datetime-local" name="Date and Time" id="sb-date3" value="" onfocus="" onblur=""
                             style="padding:5px;" required>
                     </div>
                     <hr>
@@ -106,13 +104,13 @@
                     <div class="w3-row-padding " style="margin:10px -16px 8px -16px">
                         <!-- ------------- tel  ----------- -->
                         <div class="w3-third ">
-                            <input class="w3-input w3-border" size="24" type="tel" inputmode="numeric" name="tel" style="height: 38px;" id="sb-date3"
+                            <input class="w3-input w3-border" size="24" type="Tel" inputmode="numeric" name="tel" style="height: 38px;" id="sb-date3"
                                 placeholder="Phone" value="" onfocus="" onblur="" required>
                         </div>
                         <!-- end of tel -->
 
                         <div class="w3-third">
-                            <select class="w3-input w3-border-bottom " name="type_of_ride" id="">
+                            <select class="w3-input w3-border-bottom " name="Service Type" id="">
                                 <option value="">ONE WAY ?</option>
                                 <option value="round">ROUND TRIP</option>
                                 <option value="hourly">HOURLY</option>
@@ -120,17 +118,17 @@
                             </select>
                         </div>
                         <div class="w3-third">
-                            <select class="w3-input w3-border-bottom" name="car_type" id="">
+                            <select class="w3-input w3-border-bottom" name="Vehicle Type" id="">
                                 <option value="">CHOOSE A CAR</option>
-                                <option value="SUV">SUV</option>
-                                <option value="Sedan">Sedan</option>
-                                <option value="BUS">BUS</option>
+                                <option value="SUV">Lux SUV</option>
+                                <option value="Sedan">Lux Sedan</option>
+                                <option value="Stretch">14 passengers Stretch </option>
                             </select>
                         </div>
                     </div>
 
                     <!-- instruction input txt -->
-                    <input class="w3-input w3-border-bottom" type="text" placeholder="Additional instruction" required name="Message">
+                    <input class="w3-input w3-border-bottom" type="text" placeholder="Additional instruction" name="Message">
                     <!-- end instruction input txt -->
 
                     <input type="hidden" name="_next" value="https://turbolimo.netlify.app/welcome">
@@ -142,27 +140,26 @@
                     <!-- --------------submit btn ---------- -->
                     <div class="btns">
                         <button class="
-          btn 
-          form-btn
-          btn-submit
-          btn-color
-          btn-block
-          bg_slider
-          w3-black w3-right w3-section send-msg-btn" type="submit">
+            btn 
+            form-btn
+            btn-submit
+            btn-color
+            btn-block
+            bg_slider
+            w3-black w3-right w3-section send-msg-btn" type="submit" name="submit">
 
-                            <i class="fa fa-paper-plane"></i> SEND MESSAGE
+                            <i class="fa fa-paper-plane"></i> SEND REQUEST
                             <!-- </a> -->
                         </button>
                         <a href="tel:347-206-0083" class="
-                  btn 
-                  btn-color
-                  form-btn
-                  bg_slider
-                  btn-call
-                  w3-section w3-left ">
+                    btn 
+                    btn-color
+                    form-btn
+                    bg_slider
+                    btn-call
+                    w3-section w3-left ">
 
                             <i class="fa-sharp fa-solid fa-phone"></i> CALL US
-                            <!-- </a> -->
                         </a>
                     </div>
                 </form>
@@ -176,16 +173,82 @@
         </div>
     </div>
 
+    <!-- add whatsapp widget for website here -->
+    <!-- add whatsapp widget for website here -->
+    <!-- <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+    <div class="elfsight-app-f8b76d68-78f4-4bf5-a151-7c459e0f8425"></div> -->
+    <!-- add whatsapp widget for website here -->
+    <!-- add whatsapp widget for website here -->
 
-    <!-- AIzaSyBl_E7FVjgKIKt1XWqY-n-Vcoknyb7OL90 -->
 
+
+    <!-- -------------- Footer--------------- ----- -->
+    <!-- -------------- Footer---------------   ----- -->
+    <!-- -------------- Footer----------------     ---- -->
+    <!-- -------------- Footer-----------------      --- -->
+
+
+
+    <img src="./media/footer.png" class="img-footer" alt="footer-image">
+
+    <!-- convert my svg to png faster and easy to modify -->
+
+    <!-- <img src="footer-figma.svg" class="img-footer" alt="" height=100%" width="100%"> -->
+    <!-- <object data="footer-figma.svg" type=""></object> -->
+
+
+
+    <footer class="w3-center w3-black w3-padding-16  w3-hover-opacity-off">
+
+        <!-- w3-opacity -->
+
+
+        <a href="#home">
+            <!-- <i class="fa fa-arrow-up w3-margin-right"></i>To the top</a> -->
+            <span class="fa fa-arrow-circle-up w3-margin-right"></span>
+        </a>
+        <div class="w3-xlarge w3-section">
+            <a href="https://www.facebook.com/profile.php?id=100085007694272" target="_blank">
+                <i class="fa fa-facebook-official w3-hover-opacity"></i>
+            </a>
+
+            <a href="https://www.instagram.com/princerocky4u/" target="_blank">
+                <i class="fa fa-instagram w3-hover-opacity"></i>
+            </a>
+
+            <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+            <a href="https://twitter.com/Hossam_NY" target="_blank">
+                <i class="fa fa-twitter w3-hover-opacity"></i>
+            </a>
+
+            <a href="https://www.linkedin.com/in/helnaggar/" target="_blank">
+                <i class="fa fa-linkedin w3-hover-opacity"></i>
+            </a>
+        </div>
+
+        <!-- --------------review------------- -->
+
+        <!-- <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+      <div id="review" class="elfsight-app-34700ad3-c760-46ea-b366-68e631c7557e"></div> -->
+        <!-- ---------- end review------------- -->
+    </footer>
+    <!-- End Footer -->
+    <!-- End Footer -->
     <!-- End Footer -->
     <script type="text/javascript" src="./script/script.js"></script>
-
+    <script type="text/javascript" src="./script/load-more.js"></script>
     <script type="text/javascript" src="./script/searchAddress.js"></script>
-
+    <script type="text/javascript" src="./script/multislider.js"></script>
+    <script type="text/javascript" src="./script/explore_slide.js"></script>
+    <script type="text/javascript" src="./script/multislider.min.js"></script>
+    <script>
+        // this code for -- multi slider--  going to the left...
+        $('#mixedSlider').multislider({
+            duration: 750,
+            interval: 2500
+        });
+    </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOSOp6FFbin27a6eN3EW2ftUxX0qA0buk&libraries=places&callback=myMap"></script>
-
 </body>
 
 </html>
