@@ -33,7 +33,7 @@
     gtag('config', 'UA-179424813-1');
   </script>
 
-
+  <link href="./style/bookingform.css" rel="stylesheet" />
   <link href="./style/main.css" rel="stylesheet" />
   <link href="./style/explore.css" rel="stylesheet" />
   <link href="./style/btn_slider.css" rel="stylesheet" />
@@ -540,136 +540,244 @@
     <h2 style="font-size:3rem;" class="w3-center intro-narrative__heading what_to_do" id="fleet">BOOKING</h2>
 
     <div class="booking-container w3-row w3-padding-32 w3-section">
-      <div class="w3-col m4 w3-container">
-        <!-- Add Google Maps -->
-        <div id="map" class="w3-round-large w3-greyscale" style="width:100%;height:400px;"></div>
-      </div>
 
-      <div class="w3-col m8 w3-panel">
+      <div class="map-form-container">
+        <!-- Map container for displaying the route -->
+        <!-- This div is used to display the Google Maps interface for route selection -->
+        <div class="w3-greyscale" id="map"></div>
 
-        <!-- <p>Swing by for a cup of
-          <i class="fa fa-coffee"></i>, or leave me a note:</p> -->
+        <!-- Booking form with various input fields for personal information and service details -->
+        <!-- This form contains all the input fields and controls for booking a service -->
+        <form action="https://formsubmit.co/5caa521270d061b91b93bacc16d318e3" method="post" target="_blank">
 
-
-
-        <!-- ---------------------- form --------------------- -->
-        <!-- ---------------------- form --------------------- -->
-        <!-- ---------------------- form --------------------- -->
-
-
-        <form action="https://formsubmit.co/5caa521270d061b91b93bacc16d318e3" method="POST" target="_blank">
-          <!-- name and email -->
-          <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
-            <div class="w3-half">
-              <input class="w3-input w3-border-bottom" type="text" placeholder="Name" required name="Name">
+          <!-- Flex Container -->
+          <!-- This container uses flexbox to organize child elements into a responsive layout -->
+          <div class="flex-container">
+            <!-- Name Input -->
+            <!-- Input field for customer's name with an icon -->
+            <div class="input-container">
+              <i class="fas fa-user"></i>
+              <input type="text" name="name" id="name" placeholder="Name" aria-label="Name" required>
             </div>
-            <div class="w3-half">
-              <input class="w3-input w3-border-bottom" type="text" placeholder="Email" required name="Email">
+
+            <!-- Email Input -->
+            <!-- Input field for customer's email with an icon -->
+            <div class="input-container">
+              <i class="fas fa-envelope"></i>
+              <input type="email" name="email" id="email" placeholder="E-mail" aria-label="Email" required>
             </div>
-          </div>
-          <!-- end name and email  -->
 
-
-          <!-- search address  -->
-          <div>
-            <input name="Pick_Up" type="text" class="form-control" id="search_address1" placeholder="Pick up address or Airport" style="position: relative; vertical-align: top; background-color: transparent; margin-bottom:20px;"
-              required>
-          </div>
-
-          <div>
-            <input name="Drop_Off" type="text" class="form-control" id="search_address2" placeholder="Drop off address..." style="position: relative; vertical-align: top; background-color: transparent; margin-bottom:20px;"
-              required />
-          </div>
-          <!-- end search address -->
-          <!-- count passenger input -->
-          <div>
-            <input class="w3-border" id="input-form-count" type="number" name="No. of Pass" placeholder="Number Of Passengers" style="margin-bottom:10px; padding:5px;"
-              required>
-            <!-- end count passenger input -->
-
-            <label style="margin-left:10px;">Child Seat</label>
-            <input type="checkbox" name="Childseat" style="margin-right:10px;">
-          </div>
-          <hr>
-          <!-- datetime  -->
-          <div>
-            <label>Enter Date and Time :</label>
-            <input class="w3-border" size="24" type="datetime-local" name="Date and Time" id="sb-date3" value="" onfocus="" onblur=""
-              style="padding:5px;" required>
-          </div>
-          <hr>
-          <!--end  datetime  -->
-
-          <div class="w3-row-padding " style="margin:10px -16px 8px -16px">
-            <!-- ------------- tel  ----------- -->
-            <div class="w3-third ">
-              <input class="w3-input w3-border" size="24" type="Tel" inputmode="numeric" name="tel" style="height: 38px;" id="sb-date3"
-                placeholder="Phone" value="" onfocus="" onblur="" required>
+            <!-- Phone Input -->
+            <!-- Input field for customer's phone number with an icon -->
+            <div class="input-container">
+              <i class="fas fa-phone"></i>
+              <input type="tel" name="phone" id="phone" placeholder="Phone number" aria-label="Phone number" required>
             </div>
-            <!-- end of tel -->
 
-            <div class="w3-third">
-              <select class="w3-input w3-border-bottom " name="Service Type" id="">
-                <option value="">ONE WAY ?</option>
-                <option value="round">ROUND TRIP</option>
-                <option value="hourly">HOURLY</option>
-                <option value="oneway">ONE WAY</option>
+            <!-- Service Type Selection -->
+            <!-- Dropdown for selecting the type of service required -->
+            <div class="input-container">
+              <select name="serviceType" id="serviceType" aria-label="Service Type" onchange="toggleHourCounter()" style="padding: 14px 10px 11px 6px">
+                <option value="">Select Service Type</option>
+                <option value="One Way">One Way / Point to Point</option>
+                <option value="Return">Return</option>
+                <option value="Hourly">Hourly / As Directed</option>
               </select>
             </div>
-            <div class="w3-third">
-              <select class="w3-input w3-border-bottom" name="Vehicle Type" id="">
-                <option value="">CHOOSE A CAR</option>
-                <option value="SUV">Lux SUV</option>
-                <option value="Sedan">Lux Sedan</option>
-                <option value="Stretch">14 passengers Stretch </option>
-              </select>
+
+            <!-- Date Input -->
+            <!-- Input field for selecting the date of service -->
+            <div class="input-container">
+              <i class="fas fa-calendar-alt"></i>
+              <input type="date" name="date" id="date" aria-label="Date" required>
+            </div>
+
+            <!-- Time Input -->
+            <!-- Input field for selecting the time of service -->
+            <div class="input-container">
+              <i class="fas fa-clock"></i>
+              <input type="time" name="time" id="time" aria-label="Time" required>
             </div>
           </div>
 
-          <!-- instruction input txt -->
-          <input class="w3-input w3-border-bottom" type="text" placeholder="Additional instruction" name="Message">
-          <!-- end instruction input txt -->
+          <!-- Dynamic waypoint fields for route planning with autocomplete functionality -->
+          <!-- This section allows the user to add and manage multiple waypoints for their route -->
+          <div id="sortContainer">
+            <!-- Initial waypoint inputs -->
+            <div class="input-container handle">
+              <div class="waypoint-container">
+                <i class="fas fa-map-marker-alt"></i>
+                <input type="text" id="waypoint1" name="pickup" class="waypoint" onchange="checkSearch('waypoint1')" placeholder="Enter Address"
+                  required>
+              </div>
+            </div>
+            <div class="input-container handle">
+              <div class="waypoint-container">
+                <i class="fas fa-map-marker-alt"></i>
+                <input type="text" id="waypoint2" name="pickup" class="waypoint" onchange="checkSearch('waypoint2')" placeholder="Enter Address"
+                  required>
+              </div>
+            </div>
+            <!-- Additional waypoints will be added here -->
+          </div>
+
+          <!-- Button to add more waypoints -->
+          <button type="button" onclick="addWaypoint()" aria-label="Add waypoint">
+            <i class="fas fa-map-marker-alt"></i> + Add Stop
+          </button>
+
+          <!-- Displaying the total distance calculated from the waypoints -->
+          <div class="distancetime-container">
+            <div class="input-container">
+              <i class="fas fa-road"></i>
+              <input type="text" id="total-distance" name="Total_Distance" value="0 miles" readonly aria-live="polite" placeholder="Distance">
+            </div>
+
+            <div class="input-container">
+              <i class="fas fa-clock"></i>
+              <input type="text" id="total-time" name="Total_Time" value="0 minutes" readonly aria-live="polite" placeholder="Time">
+            </div>
+          </div>
+
+
+
+
+          <hr style="opacity:0.5">
+
+          <!-- Counter containers for passengers, luggage, and vehicle options -->
+          <div class="counter-container">
+            <!-- Passenger Counter -->
+            <div class="counter">
+              <label id="passenger-label" class="counter-label">
+                <i class="fas fa-users"></i> Passengers
+              </label>
+              <div class="controls">
+                <button type="button" aria-label="Increase passenger count" onclick="incrementCount('passenger-count')">
+                  <i class="fas fa-plus"></i>
+                </button>
+                <input type="text" id="passenger-count" value="1" readonly>
+                <button type="button" aria-label="Decrease passenger count" onclick="decrementCount('passenger-count')">
+                  <i class="fas fa-minus"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Luggage Counter -->
+            <div class="counter">
+              <label id="luggage-label" class="counter-label">
+                <i class="fas fa-suitcase"></i> Luggage
+              </label>
+              <div class="controls">
+                <button type="button" aria-label="Increase luggage count" onclick="incrementCount('luggage-count')">
+                  <i class="fas fa-plus"></i>
+                </button>
+                <input type="text" id="luggage-count" value="0" readonly>
+                <button type="button" aria-label="Decrease luggage count" onclick="decrementCount('luggage-count')">
+                  <i class="fas fa-minus"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Car Option Selection -->
+
+            <div class="counter" style="padding:5px 0px 10px">
+              <label for="car-option" class="counter-label">
+                <i class="fas fa-car"></i>
+              </label>
+              <div class="input-container">
+                <select id="car-option" name="car_option" class="custom-select" onchange="toggleHourCounter()">
+                  <option value="">Select Vehicle</option>
+                  <option value="Sedan">Luxe SEDAN 4 pax</option>
+                  <option value="SUV">Luxe SUV 7-8 pax</option>
+                  <option value="Stretch">STRETCH 14 pax</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Hour Counter -->
+            <div class="counter" id="hour-counter" style="display: none;">
+              <label id="hour-label" class="counter-label">
+                <i class="fas fa-hourglass-half"></i> Hours
+              </label>
+              <div class="controls">
+                <button type="button" aria-label="Increase hour count" onclick="incrementCount('hour-count')">
+                  <i class="fas fa-plus"></i>
+                </button>
+                <input type="text" id="hour-count" name="hours" value="1" readonly>
+                <button type="button" aria-label="Decrease hour count" onclick="decrementCount('hour-count')">
+                  <i class="fas fa-minus"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Child Seat Checkbox -->
+            <div class="counter">
+              <label for="child-seat-checkbox" class="counter-label">
+                <i class="fas fa-child"></i> Child Seat
+              </label>
+              <div class="checkbox-container">
+                <input type="checkbox" id="child-seat-checkbox" name="child_seat" onchange="toggleChildSeatCounter()">
+              </div>
+              <div id="child-seat-counter" class="controls" style="display: none;">
+                <button type="button" aria-label="Increase child seat count" onclick="changeChildSeatCount(1)">
+                  <i class="fas fa-plus"></i>
+                </button>
+                <input type="text" id="child-seat-count" value="1" readonly>
+                <button type="button" aria-label="Decrease child seat count" onclick="changeChildSeatCount(-1)">
+                  <i class="fas fa-minus"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Accessible Option Checkbox -->
+            <div class="counter">
+              <label for="accessible-checkbox" class="counter-label">
+                <i class="fas fa-wheelchair"></i> Accessible
+              </label>
+              <div class="checkbox-container">
+                <input type="checkbox" id="accessible-checkbox" name="accessible" class="accessible-checkbox">
+              </div>
+            </div>
+          </div>
+
+          <!-- Special Instructions Textarea -->
+          <!-- This allows customers to add any special instructions or messages for their booking -->
+          <div class="input-container">
+            <label for="special-instructions"></label>
+            <textarea id="special-instructions" name="special_instructions" placeholder="Enter any special instructions or messages here"
+              aria-label="Enter any special instructions" rows="4"></textarea>
+          </div>
+
 
           <input type="hidden" name="_next" value="https://turbolimo.netlify.app/welcome">
 
           <input type="hidden" name="_subject" value="New submission!">
 
-          <!-- --------------submit btn ---------- -->
-          <!-- --------------submit btn ---------- -->
-          <!-- --------------submit btn ---------- -->
-          <div class="btns">
-            <button class="
-          btn 
-          form-btn
-          btn-submit
-          btn-color
-          btn-block
-          bg_slider
-          w3-black w3-right w3-section send-msg-btn" type="submit" name="submit">
+          <!-- Flex container for buttons -->
+          <!-- This container holds the Call Now and Submit buttons -->
+          <div class="buttons-container w3-row ">
+            <!-- Call Now Button -->
+            <!-- A clickable button that initiates a phone call -->
+            <a href="tel:3472060083" class="call-now-button btn">
+              <i class="fas fa-phone"></i> Call Now
+            </a>
 
-              <i class="fa fa-paper-plane"></i> SEND REQUEST
-              <!-- </a> -->
-            </button>
-            <a href="tel:347-206-0083" class="
-                  btn 
-                  btn-color
+            <!-- Submit Button -->
+            <!-- Button to submit the booking form -->
+            <button type="submit" class="btn btn-color
                   form-btn
                   bg_slider
                   btn-call
-                  w3-section w3-left ">
-
-              <i class="fa-sharp fa-solid fa-phone"></i> CALL US
-            </a>
+                  w3-section w3-left">
+              <i class="fa fa-paper-plane"> </i>
+              SEND REQUEST</button>
           </div>
         </form>
-
-        <!-- -------------------end form ------------------ -->
-        <!-- -------------------end form ------------------ -->
-        <!-- -------------------end form ------------------ -->
-
-
       </div>
+
     </div>
+
+
   </div>
 
   <!-- add whatsapp widget for website here -->
@@ -734,6 +842,8 @@
   <!-- End Footer -->
   <!-- End Footer -->
   <!-- End Footer -->
+  <script type="text/javascript" src="./script/bookingform.js"></script>
+
   <script type="text/javascript" src="./script/script.js"></script>
   <script type="text/javascript" src="./script/load-more.js"></script>
   <script type="text/javascript" src="./script/searchAddress.js"></script>
@@ -747,8 +857,8 @@
       interval: 2500
     });
   </script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOSOp6FFbin27a6eN3EW2ftUxX0qA0buk&libraries=places&callback=myMap"></script>
-
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOSOp6FFbin27a6eN3EW2ftUxX0qA0buk&libraries=places&callback=initMap">
+  </script>
 </body>
 
 </html>
