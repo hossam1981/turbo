@@ -99,7 +99,7 @@ h1 {
     margin-top: 20px;
     display: flex;
     justify-content:start;
-    align-items: center;
+    align-items: flex-end;
 
 }
 .call-btn-hero{
