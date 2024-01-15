@@ -1,0 +1,18 @@
+
+.w3-bar .w3-bar-item{
+    float: right;
+    color: #7f7f7f;
+    margin-top:10px ;
+}
+.w3-bar-block .w3-bar-item {
+    text-align: center!important
+}
+
+    /* ----- Nav -----  */
+    @media only screen and (max-width: 600px){
+        .w3-bar-block .w3-bar-item{
+            text-align: center!important}
+            .w3-show{
+                display: none;
+            }
+        }

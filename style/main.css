@@ -19,20 +19,6 @@ h1 {
     letter-spacing: 3px;
     color:#7f7f7f;
 }
-.w3-bar .w3-bar-item{
-    float: right;
-    color: #7f7f7f;
-    margin-top:10px ;
-}
-
-    /* ----- Nav -----  */
-    @media only screen and (max-width: 600px){
-        .w3-bar-block .w3-bar-item{
-            text-align: center!important}
-            .w3-show{
-                display: none;
-            }
-        }
 /* Create a Parallax Effect */
 .bgimg-2, .bgimg-3 ,.bgimg-4 {
     background-attachment: fixed;
@@ -159,9 +145,7 @@ h1 {
     border-radius: 0.25rem;
 }
 
-.w3-bar-block .w3-bar-item {
-    text-align: center!important
-}
+
 
 ul li {
     list-style: none;

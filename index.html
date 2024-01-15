@@ -35,6 +35,7 @@
 
   <link href="./style/bookingform.css" rel="stylesheet" />
   <link href="./style/main.css" rel="stylesheet" />
+  <link href="./style/navbar.css" rel="stylesheet" />
   <link href="./style/explore.css" rel="stylesheet" />
   <link href="./style/btn_slider.css" rel="stylesheet" />
   <link href="./style/multislider.css" rel="stylesheet" />
@@ -59,55 +60,56 @@
 
 <body>
 
-
   <div class="w3-top">
     <div class="w3-bar" id="myNavbar">
-      <a class="w3-bar-item w3-button w3-hover-black w3-hide-large w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()"
+      <!-- Hamburger Menu for Small Screens -->
+      <a class="w3-bar-item w3-button w3-hover-black w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()"
         title="Toggle Navigation Menu">
-        <i class="fa fa-bars"></i>
+        <i class="fa fa-bars menu-icon"></i>
       </a>
 
-      <a href="#home" class="w3-bar-item w3-button w3-hide-small w3-hide-medium  w3-large">
-        <i class="icon fa fa-home fa-lg"></i>
+      <!-- Navigation Links for Large Screens -->
+      <a href="#home" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-large">
+        <i class="fa fa-home home-icon"></i> HOME
       </a>
-
       <a href="#services" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-large">
-        <i class="fas fa-cog"></i> SERVICES</a>
-
+        <i class="fas fa-cog services-icon"></i> SERVICES
+      </a>
       <a href="#whyus" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-large">
-        <i class="fas fa-check-circle"></i> WHY US?</a>
-
-
+        <i class="fas fa-check-circle whyus-icon"></i> WHY US?
+      </a>
       <a href="#fleet" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-large">
-        <i class="fas fa-car"></i> OUR FLEET</a>
-
+        <i class="fas fa-car fleet-icon"></i> OUR FLEET
+      </a>
       <a href="#contact" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-large">
-        <i class="fa fa-envelope"></i> CONTACT</a>
+        <i class="fa fa-envelope contact-icon"></i> CONTACT
+      </a>
 
-
+      <!-- Logo -->
       <span class="underline-logo logo">
         <a href="#home">
-          <img src="./media/logo2.png" style="width: 200px; margin-top:5px" alt="logo picture shaped as car with title" />
+          <img src="./media/logo2.png" style="width: 200px; margin-top:5px" alt="logo" />
         </a>
       </span>
-
-
     </div>
 
-    <!-- Navbar on small screens (hamburger menu icon)-->
-    <div id="NavSmall" class="w3-bar-block w3-white w3-hide w3-hide-large ">
-
+    <!-- Navbar for Small Screens -->
+    <div id="NavSmall" class="w3-bar-block w3-white w3-hide w3-hide-large">
       <a href="#services" class="w3-bar-item w3-button" onclick="toggleFunction()">
-        <i class="fa fa-plane"></i> SERVICES</a>
-
+        <i class="fas fa-cog services-icon"></i> SERVICES
+      </a>
       <a href="#whyus" class="w3-bar-item w3-button" onclick="toggleFunction()">
-        <i class="fas fa-swimmer"></i> WHY US?</a>
+        <i class="fas fa-check-circle whyus-icon"></i> WHY US?
+      </a>
       <a href="#fleet" class="w3-bar-item w3-button" onclick="toggleFunction()">
-        <i class="fa-solid fa-cars"></i>OUR FLEET</a>
+        <i class="fas fa-car fleet-icon"></i> OUR FLEET
+      </a>
       <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">
-        <i class="fa fa-envelope"></i> Contact</a>
+        <i class="fa fa-envelope contact-icon"></i> CONTACT
+      </a>
     </div>
   </div>
+
 
   <!--  ( background Hero img) without Logo Text -->
   <!-- w3-opacity-min -->
@@ -541,7 +543,7 @@
     <!-- <h3 class="w3-center">BOOKING</h3> -->
     <h2 style="font-size:3rem;" class="w3-center intro-narrative__heading what_to_do" id="fleet">BOOKING</h2>
 
-    <div class="booking-container w3-row w3-padding-32 w3-section">
+    <div class="booking-container w3-row w3-section">
 
       <div class="map-form-container">
         <!-- Map container for displaying the route -->
