@@ -58,12 +58,35 @@
     }
 
     a {
-        cursor: pointer;
+        /* cursor: pointer;
         outline: none;
         text-decoration: none;
-        color: #ee6144;
+        color: #ee6144; */
         /* border: 1px solid #f28c3c; */
         /* padding: 10px; */
+    }
+
+    .phone-button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #f28c3c;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 25px;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        transition: background-color 0.3s;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    }
+
+    .phone-button:hover {
+        background-color: #45a049;
+        /* Darker green background on hover */
+    }
+
+    .phone-icon {
+        margin-right: 10px;
     }
 </style>
 
@@ -74,8 +97,11 @@
             <br> We will contact you shortly.</h1>
         <h2 class="welcome">
             For immediate assistance,
-            <br> please call us at:
-            <a href="tel:347-206-0083">347-206-0083</a>
+            <br> please call us:
+            <a href="tel:347-206-0083" class="phone-button">
+                <span class="phone-icon">&#128222;</span>
+                347-206-0083
+            </a>
         </h2>
     </header>
 </body>
