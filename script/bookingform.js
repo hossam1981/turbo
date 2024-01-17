@@ -71,12 +71,11 @@ function createInputTag(waypointId) {
 }
 
 function checkSearch(waypointId) {
-    let searchInput = document.getElementById(waypointId).value.trim().toLowerCase();
-    let specificWords = ["airport", "ewr", "jfk", "lga", "e.w.r.", "(ewr)", "laguardia", "e.w.r. (ewr)"];
-    let wordPattern = new RegExp("\\b(" + specificWords.join("|") + ")\\b", "i");
+    let searchInput = document.getElementById(waypointId).value.toLowerCase();
+    let specificWords = ["airport", "ewr", "jfk", "lga", "E.W.R.", "(EWR)", "LaGuardia", "E.W.R. (EWR)"];
 
-    // Check if the search contains specific words as whole words
-    if (wordPattern.test(searchInput) && !document.getElementById(`${waypointId}-flight`)) {
+    // Check if the search contains specific words
+    if (specificWords.some(word => searchInput.includes(word)) && !document.getElementById(`${waypointId}-flight`)) {
         createInputTag(waypointId); // Create the input tag if specific words are found and it doesn't already exist
     }
 }
