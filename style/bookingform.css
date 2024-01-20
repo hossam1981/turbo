@@ -15,7 +15,7 @@
             flex-direction: column; /* Stack map and form vertically on smaller screens */
             align-items: flex-start;
             width: 100%; /* Full width of the container */
-            
+            /* animation: slideIn 1s ease-in-out; */
         }
 
         #map {
