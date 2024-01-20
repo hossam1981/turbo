@@ -85,7 +85,7 @@ form {
      width: -webkit-fill-available;
 }
 .input-container select{
-   padding: 8px 10px 8px 6px; 
+    padding: 0px 25px 0px 10px; 
 }
 
 .input-container i {
