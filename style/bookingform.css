@@ -348,7 +348,7 @@ button[type="button"]:hover {
 
 /* Textarea Style */
 textarea {
-    width: 90%; /* Full width */
+    width: 94%; /* Full width */
     padding: 8px; /* Consistent padding with other inputs */
     border-radius: 5px; /* Rounded borders */
     border: 1px solid #ccc; /* Border color */
