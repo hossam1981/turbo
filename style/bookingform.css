@@ -15,7 +15,7 @@
             flex-direction: column; /* Stack map and form vertically on smaller screens */
             align-items: flex-start;
             width: 100%; /* Full width of the container */
-            /* animation: slideIn 1s ease-in-out; */
+            animation: slideIn 1s ease-in-out;
         }
 
         #map {
@@ -83,9 +83,10 @@ form {
     font-size: 16px;
      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
      width: -webkit-fill-available;
+     border: none;
 }
 .input-container select{
-    padding: 0px 25px 0px 10px; 
+   padding: 0px 25px 0px 10px; 
 }
 
 .input-container i {
@@ -348,7 +349,7 @@ button[type="button"]:hover {
 
 /* Textarea Style */
 textarea {
-    width: 94%; /* Full width */
+    width: 90%; /* Full width */
     padding: 8px; /* Consistent padding with other inputs */
     border-radius: 5px; /* Rounded borders */
     border: 1px solid #ccc; /* Border color */
@@ -357,6 +358,7 @@ textarea {
     background-color: #f5f5f5;
     margin-top: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: none;
 }
 
 /* ... Any additional CSS needed for your form ... */
@@ -384,4 +386,73 @@ top: 79px;
 }
 .flightinput input {
   width: 50%;
+}
+
+/* the remove icon next to search address input */
+.remove-waypoint {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+.remove-waypoint i {
+    color: #aaa;
+     left: 97%;
+   
+}
+
+.remove-waypoint {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+.remove-waypoint i {
+    color: #aaa;
+    left: 97%;
+  
+}
+.input-container input.waypoint {
+  border: none;
+}
+
+
+
+.search-input{
+position: relative;  /* parent */
+}
+.input-container i {
+  color: #aaa;
+  position: absolute; /* child */
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+}
+
+.input-container .fa-map-marker-alt {
+  left: 10px; /* Adjust as necessary */
+}
+
+.input-container .fa-sort {
+  right: 50px; /* Adjust as necessary, accounting for the delete icon if present */
+  float: right;
+}
+
+.input-container .remove-waypoint i {
+  right: 10px;
+}
+
+.input-container input.waypoint {
+  width: 100%;
+  padding-left: 40px; /* Space for map-marker-alt icon */
+  padding-right: 70px; /* Space for sort and delete icons */
+  /* Other styles */
+}
+
+.flight-input-container{
+position: relative; /* parent */
+width: 50%;
+}
+
+.input-container  i.fas.fa-plane{
+position: absolute;/* child */
+  left: 10px;
 }

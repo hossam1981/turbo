@@ -41,6 +41,7 @@
     gtag('config', 'UA-179424813-1');
   </script>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.13.0/Sortable.min.js"></script>
   <link href="./style/bookingform.css" rel="stylesheet" />
   <link href="./style/main.css" rel="stylesheet" />
   <link href="./style/navbar.css" rel="stylesheet" />
@@ -621,20 +622,7 @@
           <!-- This section allows the user to add and manage multiple waypoints for their route -->
           <div id="sortContainer">
             <!-- Initial waypoint inputs -->
-            <div class="input-container handle">
-              <div class="waypoint-container">
-                <i class="fas fa-map-marker-alt"></i>
-                <input type="text" id="waypoint1" name="pickup" class="waypoint" onchange="checkSearch('waypoint1')" placeholder="Enter Address"
-                  required>
-              </div>
-            </div>
-            <div class="input-container handle">
-              <div class="waypoint-container">
-                <i class="fas fa-map-marker-alt"></i>
-                <input type="text" id="waypoint2" name="address" class="waypoint" onchange="checkSearch('waypoint2')" placeholder="Enter Address"
-                  required>
-              </div>
-            </div>
+
             <!-- Additional waypoints will be added here -->
           </div>
 

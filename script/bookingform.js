@@ -1,119 +1,98 @@
-// Global declaration of the map object
 let map;
-// Array to store autocomplete objects for each input
-const autocompleteInputs = [];
+let autocompleteInputs = []; // Array to store Google Places autocomplete objects
+let waypointCounter = 1; // Counter to keep track of waypoints
+let waypoints = []; // Array to track waypoints
 
-// Function to initialize the map with Google Maps API
+// Initializes the Google Map
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
         center: { lat: 40.7128, lng: -74.0060 },
         zoom: 8
     });
 
-    // Initialize autocomplete for the first two waypoints
-    initializeAutocomplete('waypoint1');
-    initializeAutocomplete('waypoint2');
+    // Add the first two waypoints
+    addWaypoint();
+    addWaypoint();
 }
 
-// Function to initialize autocomplete functionality for a given input field
+
+
+// Function to initialize Google Places Autocomplete
 function initializeAutocomplete(id) {
-    const inputElement = document.getElementById(id);
-    const autocomplete = new google.maps.places.Autocomplete(inputElement);
-    autocomplete.addListener('place_changed', calculateRoute);
-    // Store the autocomplete object for later use
-    autocompleteInputs.push({ id, autocomplete });
+    var inputElement = document.getElementById(id);
+    var autocomplete = new google.maps.places.Autocomplete(inputElement);
+    autocomplete.addListener('place_changed', function () {
+        calculateRoute(); // Recalculate route when a place is changed
+    });
+    autocompleteInputs.push({ id: id, autocomplete: autocomplete });
 }
 
-// Counter to keep track of how many waypoints have been added
-let waypointCounter = 3;
 
-// Function to dynamically add new waypoint inputs
+// Function to dynamically add a new waypoint
+// Function to dynamically add a new waypoint
 function addWaypoint() {
-    const waypointId = `waypoint${waypointCounter}`;
-    const waypointInput = document.createElement('div');
-    waypointInput.innerHTML = `
-            <div class="input-container handle">
-                <i class="fas fa-list-ul"></i>
-                <input type="text" id="${waypointId}" onchange="checkSearch('waypoint${waypointCounter}')"  name="address ${waypointCounter}" class="waypoint" placeholder="Add, sort address">
+    var waypointId = 'waypoint' + waypointCounter;
+    var waypointContainer = document.createElement('div');
+    waypointContainer.className = 'input-container handle';
+    waypointContainer.id = 'container' + waypointId;
+
+    // HTML for the waypoint input and the remove button 
+    waypointContainer.innerHTML = `
+            <div class="search-input">
+                <i class="fas fa-map-marker-alt"></i>
+                <input type="text" id="${waypointId}" class="waypoint" name="${waypointId}" placeholder="Enter address">
+                <i class="fas fa-sort" style=left:90%></i>
+                ${waypointCounter >= 3 ? `<a onclick="removeWaypoint('${waypointId}')" class="remove-waypoint"><i class="fas fa-times"></i></a>` : ''}
             </div>
         `;
-    document.getElementById('sortContainer').appendChild(waypointInput);
-
-    // Initialize autocomplete for the new waypoint
+    document.getElementById('sortContainer').appendChild(waypointContainer);
     initializeAutocomplete(waypointId);
-    waypointCounter++;
 
-    // Refresh the sortable container
-    $('#sortContainer').sortable('refresh');
-}
-
-function createInputTag(waypointId) {
-    if (!document.getElementById(`${waypointId}-flight-container`)) {
-        let flightContainer = document.createElement("div");
-        flightContainer.setAttribute("class", "waypoint-container flightinput");
-
-        let icon = document.createElement("i");
-        icon.setAttribute("class", "fas fa-plane");
-
-        let newInput = document.createElement("input");
-        newInput.setAttribute("type", "text");
-        newInput.setAttribute("id", `${waypointId}-flight`);
-        newInput.setAttribute("name", `${waypointId}-FlightNumber`);
-        newInput.setAttribute("placeholder", "Enter Flight Number");
-        newInput.setAttribute("class", "waypoint");
-
-        flightContainer.appendChild(icon);
-        flightContainer.appendChild(newInput);
-
-        let waypointContainer = document.getElementById(waypointId).parentNode;
-        waypointContainer.parentNode.insertBefore(flightContainer, waypointContainer.nextSibling);
-    }
-}
-
-function checkSearch(waypointId) {
-    let searchInput = document.getElementById(waypointId).value.toLowerCase();
-    let specificWords = ["airport", "ewr", "jfk", "lga", "E.W.R.", "(EWR)", "LaGuardia", "E.W.R. (EWR)"];
-
-    // Check if the search contains specific words
-    if (specificWords.some(word => searchInput.includes(word)) && !document.getElementById(`${waypointId}-flight`)) {
-        createInputTag(waypointId); // Create the input tag if specific words are found and it doesn't already exist
-    }
-}
-
-// jQuery ready function to make waypoints sortable
-$(document).ready(() => {
-    $('#sortContainer').sortable({
-        handle: '.handle',
-        cursor: 'move',
-        axis: 'y',
-        opacity: 0.6,
-        update: calculateRoute
+    // Add event listener for onchange
+    var inputElement = document.getElementById(waypointId);
+    inputElement.addEventListener('change', function () {
+        checkSearch(waypointId);
     });
-});
 
-// Function to calculate the route between waypoints
-// Function to calculate the route between waypoints
-// Function to calculate the route between waypoints
-const calculateRoute = () => {
-    // Extract waypoints from the input fields
-    const waypoints = $('#sortContainer .waypoint').map(function () {
-        const autocompleteObject = autocompleteInputs.find(item => item.id === this.id);
-        if (autocompleteObject && autocompleteObject.autocomplete) {
-            const place = autocompleteObject.autocomplete.getPlace();
-            return place && place.geometry ? { location: place.geometry.location } : null;
-        }
-        return null;
-    }).get().filter(Boolean);
+    waypointCounter++;
+}
 
-    // If there are less than 2 waypoints, no route calculation is needed
-    if (waypoints.length < 2) { return; }
 
-    // Directions service and renderer for displaying the route
-    const directionsService = new google.maps.DirectionsService();
-    const directionsDisplay = new google.maps.DirectionsRenderer({ map });
+// Function to remove a waypoint
+function removeWaypoint(waypointId) {
+    var waypointContainer = document.getElementById('container' + waypointId);
+    if (waypointContainer) {
+        waypointContainer.remove();
+        autocompleteInputs = autocompleteInputs.filter(item => item.id !== waypointId);
+        calculateRoute(); // Recalculate route after removal
+        // Update the waypoint IDs to reflect the current state of the DOM
+        updateWaypointIDs();
+        calculateRoute(); // other calculate route after removal
+    }
+}
 
-    // Request object for the directions service
-    const request = {
+
+
+// Function to calculate and display the route on the map
+function calculateRoute() {
+
+    var waypoints = Array.from(document.querySelectorAll('#sortContainer .waypoint')).map(input => {
+        var autocompleteObject = autocompleteInputs.find(item => item.id === input.id);
+        var place = autocompleteObject ? autocompleteObject.autocomplete.getPlace() : null;
+        return place && place.geometry ? { location: place.geometry.location } : null;
+    }).filter(Boolean);// Filter out any null entries
+
+    // Log each waypoint's location
+    waypoints.forEach(wp => {
+        console.dir("Latitude:", wp.location.lat(), "Longitude:", wp.location.lng()); // Check the console for the output
+    });
+
+    if (waypoints.length < 2) { return; }  // Not enough waypoints to calculate a route
+
+    var directionsService = new google.maps.DirectionsService();
+    var directionsDisplay = new google.maps.DirectionsRenderer({ map: map, });
+
+    var request = {
         origin: waypoints[0].location,
         destination: waypoints[waypoints.length - 1].location,
         waypoints: waypoints.slice(1, -1),
@@ -142,7 +121,107 @@ const calculateRoute = () => {
             window.alert('Directions request failed due to ' + status);
         }
     });
-};
+    console.log("calculating route");
+}
+
+
+
+// insure every time i sort, the waypoint id gets updated also based on the its order
+// i'll use it later to do more dynamic functions
+
+function updateWaypointIDs() {
+    var waypointElements = document.querySelectorAll('#sortContainer .input-container');
+
+    // Update the global waypointCounter to reflect the total number of waypoints
+    waypointCounter = waypointElements.length;
+
+    // Iterate over each waypoint container
+    waypointElements.forEach((element, index) => {
+        var oldId = element.id.replace('container', '');
+        var newId = 'waypoint' + (index + 1);
+
+        // Update the container ID
+        element.id = 'container' + newId;
+
+        // Update the input field ID and name
+        var input = element.querySelector('.waypoint');
+        input.id = newId;
+        input.name = `Address ${newId}`; // Update the name attribute to match the new ID
+
+        // Update the remove button's onclick attribute
+        var removeBtn = element.querySelector('.remove-waypoint');
+        if (removeBtn) {
+            removeBtn.setAttribute('onclick', `removeWaypoint('${newId}')`);
+        }
+
+        // Update the autocompleteInputs array with the new ID
+        var autocompleteEntry = autocompleteInputs.find(item => item.id === oldId);
+        if (autocompleteEntry) {
+            autocompleteEntry.id = newId;
+        }
+    });
+
+    // Recalculate the route with updated waypoint IDs
+    calculateRoute();
+}
+
+
+
+
+
+// Initialize SortableJS for sortable waypoint list
+new Sortable(document.getElementById('sortContainer'), {
+    handle: '.handle', // Class used for dragging
+    animation: 150,
+    onEnd: function () {
+        // calculateRoute() has to be before updateWaypointIDs()
+        calculateRoute(); // Update the map route when sorting ends
+        updateWaypointIDs() // Update the waypoint IDs
+
+        console.log("Sorting ended");
+    }
+});
+
+
+// adding flight input after search for specific character 
+
+function createInputTag(waypointId) {
+    // Check if flight input already exists
+    if (!document.getElementById(`${waypointId}-flight-container`)) {
+        let flightContainer = document.createElement("div");
+        flightContainer.setAttribute("id", `${waypointId}-flight-container`);
+        flightContainer.setAttribute("class", "flight-input-container");
+
+        let icon = document.createElement("i");
+        icon.setAttribute("class", "fas fa-plane");
+
+        let newInput = document.createElement("input");
+        newInput.setAttribute("type", "text");
+        newInput.setAttribute("id", `${waypointId}-flight`);
+        newInput.setAttribute("name", `${waypointId}-FlightNumber`);
+        newInput.setAttribute("placeholder", "Enter Flight Number");
+        newInput.setAttribute("class", "flight-input");
+
+        flightContainer.appendChild(icon);
+        flightContainer.appendChild(newInput);
+
+        // Get the waypoint container and append the flight container inside it
+        let waypointContainer = document.getElementById('container' + waypointId);
+        waypointContainer.appendChild(flightContainer);
+    }
+}
+
+function checkSearch(waypointId) {
+    let searchInput = document.getElementById(waypointId).value.toLowerCase();
+    let specificWords = ["airport", "ewr", "jfk", "lga", "E.W.R.", "(EWR)", "LaGuardia", "E.W.R. (EWR)"];
+
+    // Check if the search contains specific words
+    if (specificWords.some(word => searchInput.includes(word)) && !document.getElementById(`${waypointId}-flight`)) {
+        createInputTag(waypointId); // Create the input tag if specific words are found and it doesn't already exist
+    }
+}
+
+
 
 function incrementCount(id) {
     let input = document.getElementById(id);
