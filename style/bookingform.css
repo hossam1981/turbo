@@ -444,7 +444,8 @@ position: relative;  /* parent */
   width: 100%;
   padding-left: 40px; /* Space for map-marker-alt icon */
   padding-right: 70px; /* Space for sort and delete icons */
-  /* Other styles */
+  height: 70px;
+  margin-bottom: 5px;
 }
 
 .flight-input-container{
