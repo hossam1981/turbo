@@ -457,3 +457,8 @@ width: 50%;
 position: absolute;/* child */
   left: 10px;
 }
+
+/* Hide sort icon on touch devices */
+.touch-device .fa-sort {
+    display: none;
+}

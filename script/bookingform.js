@@ -171,18 +171,28 @@ function updateWaypointIDs() {
 
 
 
-// Initialize SortableJS for sortable waypoint list
-new Sortable(document.getElementById('sortContainer'), {
-    handle: '.handle', // Class used for dragging
-    animation: 150,
-    onEnd: function () {
-        // calculateRoute() has to be before updateWaypointIDs()
-        calculateRoute(); // Update the map route when sorting ends
-        updateWaypointIDs() // Update the waypoint IDs
-
-        console.log("Sorting ended");
+// Function to initialize SortableJS
+function initializeSortable() {
+    if (!('ontouchstart' in window) || window.innerWidth > 600) {
+        // Non-touch device or wider screens
+        new Sortable(document.getElementById('sortContainer'), {
+            handle: '.handle',
+            animation: 150,
+            onEnd: function () {
+                calculateRoute();
+                updateWaypointIDs();
+                console.log("Sorting ended");
+            }
+        });
+    } else {
+        // Touch device detected
+        document.body.classList.add('touch-device');
     }
-});
+}
+
+initializeSortable();
+window.addEventListener('resize', initializeSortable);
+
 
 
 // adding flight input after search for specific character 
