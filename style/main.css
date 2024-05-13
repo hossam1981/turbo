@@ -55,7 +55,7 @@ h1 {
     min-height: 400px;
 }
 
-.w3-wide {letter-spacing: 10px;}
+.w3-wide {letter-spacing: 6px;}
 .w3-hover-opacity {cursor: pointer;}
 
 /* Turn off parallax scrolling for tablets and phones */
@@ -105,6 +105,9 @@ h1 {
         top: 350px;
         margin: 28px;
     }
+
+    .w3-wide {letter-spacing: 1px;} 
+    
     }
 
 /* --------------------------- */
