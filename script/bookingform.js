@@ -66,10 +66,7 @@ function removeWaypoint(waypointId) {
     if (waypointContainer) {
         waypointContainer.remove();
         autocompleteInputs = autocompleteInputs.filter(item => item.id !== waypointId);
-        calculateRoute(); // Recalculate route after removal
-        // Update the waypoint IDs to reflect the current state of the DOM
         updateWaypointIDs();
-        calculateRoute(); // other calculate route after removal
     }
 }
 
