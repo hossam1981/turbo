@@ -3,70 +3,83 @@
         opacity: 0;
         transform: translateY(-50px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
+
 /* Flex container for map and form */
-        .map-form-container {
-            /* gap: 10px; */
-            display: flex;
-            flex-direction: column; /* Stack map and form vertically on smaller screens */
-            align-items: flex-start;
-            width: 100%; /* Full width of the container */
-            animation: slideIn 1s ease-in-out;
-        }
+.map-form-container {
+    /* gap: 10px; */
+    display: flex;
+    flex-direction: column;
+    /* Stack map and form vertically on smaller screens */
+    align-items: flex-start;
+    width: 100%;
+    /* Full width of the container */
+    animation: slideIn 1s ease-in-out;
+}
 
-        #map {
-           border-radius: 1%;
-            height: 200px; /* Set a fixed height for the map */
-            width: 100%; /* Full width on smaller screens */
-            margin: 10px 0; /* Margin for spacing */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-        }
+#map {
+    border-radius: 1%;
+    height: 200px;
+    /* Set a fixed height for the map */
+    width: 100%;
+    /* Full width on smaller screens */
+    margin: 10px 0;
+    /* Margin for spacing */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
 
-        form {
-            width: 100%; /* Full width for the form on smaller screens */
-            /* Other form styles */
-        }
+form {
+    width: 100%;
+    /* Full width for the form on smaller screens */
+    /* Other form styles */
+}
 
-        /* Media query for larger screens */
-        @media screen and (min-width: 840px) {
-            .map-form-container {
-                gap: 10px;
-                flex-direction: row; /* Side by side layout for larger screens */
-            }
+/* Media query for larger screens */
+@media screen and (min-width: 840px) {
+    .map-form-container {
+        gap: 10px;
+        flex-direction: row;
+        /* Side by side layout for larger screens */
+    }
 
-            #map {
-              
-                height:400px;
-                width: 30%; /* Half width for the map on larger screens */
-                align-items: baseline;
-                 margin-left: 30px;
-            }
+    #map {
 
-            form {
-                width: 70%; /* Half width for the form on larger screens */
-            }
-        }
+        height: 400px;
+        width: 30%;
+        /* Half width for the map on larger screens */
+        align-items: baseline;
+        margin-left: 30px;
+    }
+
+    form {
+        width: 70%;
+        /* Half width for the form on larger screens */
+    }
+}
 
 
 
 /* Style for input fields */
 label {
     display: block;
-    margin-top: 10px; /* Add margin between labels */
+    margin-top: 10px;
+    /* Add margin between labels */
 }
 
 .input-container {
     position: relative;
     margin-top: 5px;
-   
+
 }
+
 form {
-  font-family:  'Proxima Nova',sans-serif;
-  padding: 10px;
+    font-family: 'Proxima Nova', sans-serif;
+    padding: 10px;
 }
 
 .input-container input[type="text"],
@@ -76,32 +89,72 @@ form {
 .input-container input[type="date"],
 .input-container input[type="time"] {
     width: calc(100% - 30px);
-    padding: 8px 10px 8px 40px; /* Adjust padding for the icon */
+    padding: 8px 10px 8px 40px;
+    /* Adjust padding for the icon */
     border-radius: 5px;
     border: .5px solid #ccc;
     box-sizing: border-box;
     font-size: 16px;
-     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-     width: -webkit-fill-available;
-     border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: -webkit-fill-available;
+    border: none;
 }
-.input-container select{
-   padding: 0px 25px 0px 10px; 
+
+.input-container select {
+    padding: 0px 25px 0px 10px;
 }
 
 .input-container i {
     position: absolute;
     top: 55%;
-    left: 10px; /* Adjust left position for the icon */
+    left: 10px;
+    /* Adjust left position for the icon */
     transform: translateY(-50%);
     color: #aaa;
-    
+
 }
-.distancetime-container{
-  display: flex;
-  justify-content:space-evenly;
-  flex-flow: wrap;
-  
+
+.opt-in-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.opt-in-container input[type="checkbox"] {
+    margin-top: 5px;
+    flex-shrink: 0;
+}
+
+.opt-in-text {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.opt-in-text label {
+    line-height: 1.5;
+    margin: 0;
+}
+
+.privacy-link {
+    color: #4285f4;
+    text-decoration: underline;
+    font-size: 0.9rem;
+}
+
+.privacy-link:hover,
+.privacy-link:focus {
+    text-decoration: none;
+}
+
+.distancetime-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-flow: wrap;
+
 }
 
 
@@ -116,30 +169,35 @@ form {
 .flex-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px; /* Adjust gap as needed */
+    gap: 10px;
+    /* Adjust gap as needed */
     margin-bottom: 20px
 }
 
 .flex-container .input-container {
     flex-grow: 1;
-    flex-basis: 100%; /* Full width on smaller screens */
+    flex-basis: 100%;
+    /* Full width on smaller screens */
     /* Additional styling for input-container if needed */
 }
 
 /* Media query for screens wider than 840px */
 @media screen and (min-width: 840px) {
     .flex-container .input-container {
-        flex-basis: calc(33.33% - 10px); /* Adjust for three items per row, accounting for the gap */
+        flex-basis: calc(33.33% - 10px);
+        /* Adjust for three items per row, accounting for the gap */
         /* Adjust padding or margins as necessary */
     }
 
 }
+
 @media screen and (max-width: 840px) {
     .flex-container .input-container {
-        flex-basis: calc(50% - 10px); /* Subtract the gap from 50% */
+        flex-basis: calc(50% - 10px);
+        /* Subtract the gap from 50% */
         /* Adjust padding or margins as necessary */
     }
-    
+
 }
 
 /* Media query for smaller screens */
@@ -149,24 +207,27 @@ form {
     }
 
     .flex-container .input-container {
-        width: 100%; /* Full width on smaller screens */
+        width: 100%;
+        /* Full width on smaller screens */
     }
-   
-    .buttons-container button[type="submit"]{
+
+    .buttons-container button[type="submit"] {
         width: 100%;
     }
-    .call-now-button{
+
+    .call-now-button {
         margin: auto;
         width: 100%;
         margin-left: auto;
         margin-bottom: 10px
     }
 }
+
 /* Additional responsiveness and other styles */
-@media screen and (max-width: 650px){
-    .buttons-container{
+@media screen and (max-width: 650px) {
+    .buttons-container {
         flex-direction: column;
-      
+
     }
 }
 
@@ -183,7 +244,7 @@ button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 button:hover {
@@ -199,14 +260,17 @@ button[type="submit"] {
     /* margin: 0 30px 30px 0; */
     width: 50%;
 }
+
 button[type="button"] {
     background-color: #f5f5f5;
     color: #ecae66;
-    box-shadow:none
+    box-shadow: none
 }
+
 button[type="button"]:hover {
-     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
 /* Styles for the flex container */
 .buttons-container {
     display: flex;
@@ -219,9 +283,12 @@ button[type="button"]:hover {
 
 /* Styles for the Call Now button */
 .call-now-button {
-    background-color: #f5f5f5; /* Light background */
-    color: #4285f4; /* Button text color */
-    border: 1px solid #4285f4; /* Border color */
+    background-color: #f5f5f5;
+    /* Light background */
+    color: #4285f4;
+    /* Button text color */
+    border: 1px solid #4285f4;
+    /* Border color */
     border-radius: 5px;
     padding: 10px 20px;
     font-size: 16px;
@@ -229,7 +296,8 @@ button[type="button"]:hover {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    text-decoration: none; /* Remove underline from link */
+    text-decoration: none;
+    /* Remove underline from link */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
     /* margin-left: 30px; */
 }
@@ -239,7 +307,8 @@ button[type="button"]:hover {
 }
 
 .call-now-button:hover {
-    background-color: #e0e0e0; /* Slightly darker on hover */
+    background-color: #e0e0e0;
+    /* Slightly darker on hover */
 }
 
 /* Additional styles for counters, checkboxes, etc. */
@@ -249,71 +318,96 @@ button[type="button"]:hover {
 .counter-container {
     display: flex;
     justify-content: start;
-    align-items: center; /* Align the counters with the labels */
-    gap: 20px; /* Space between counter and label */
+    align-items: center;
+    /* Align the counters with the labels */
+    gap: 20px;
+    /* Space between counter and label */
     /* margin: 30px; */
     flex-wrap: wrap;
 }
 
 .counter {
     display: flex;
-    align-items: center; /* Align the buttons and input vertically */
-    background: #f5f5f5; /* Light grey background */
+    align-items: center;
+    /* Align the buttons and input vertically */
+    background: #f5f5f5;
+    /* Light grey background */
     padding-right: 10px;
-    border-radius: 5px; /* Rounded corners */
-     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
- .counter {
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
 
-        /* Styles for floating effect */
-        .counter:hover {
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-        }
+.counter {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Styles for floating effect */
+.counter:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
 
 .counter-label {
-    font-size: 18px; /* Adjust font size for the label */
-    color: #333; /* Dark grey color for better readability */
+    font-size: 18px;
+    /* Adjust font size for the label */
+    color: #333;
+    /* Dark grey color for better readability */
     display: flex;
     flex-direction: column;
-    align-items: center; /* Align the icon with the text */
-    margin: 10px; /* Space between label and controls */
+    align-items: center;
+    /* Align the icon with the text */
+    margin: 10px;
+    /* Space between label and controls */
 }
 
 .controls {
     display: flex;
-    flex-direction: row-reverse; /* Stack the buttons vertically */
+    flex-direction: row-reverse;
+    /* Stack the buttons vertically */
     align-items: center;
-    margin-left: 5px; /* Space between label and controls */
+    margin-left: 5px;
+    /* Space between label and controls */
 }
 
 .controls button,
 .controls input {
-    border: 1px solid #d4d4d4; /* Light grey border */
-    background-color: #fff; /* White background */
-    color: #333; /* Text color */
-    margin: 2px 0; /* Margin between buttons and input */
-    border-radius: 5px; 
+    border: 1px solid #d4d4d4;
+    /* Light grey border */
+    background-color: #fff;
+    /* White background */
+    color: #333;
+    /* Text color */
+    margin: 2px 0;
+    /* Margin between buttons and input */
+    border-radius: 5px;
 }
 
 .controls input {
     background-color: transparent;
     border: none;
-    width: 40px; /* Fixed width for the input */
-    height: 20px; /* Fixed height for the input */
+    width: 40px;
+    /* Fixed width for the input */
+    height: 20px;
+    /* Fixed height for the input */
     text-align: center;
-    line-height: normal; /* Default line height */
-    margin: 0; /* No margin to keep alignment */
+    line-height: normal;
+    /* Default line height */
+    margin: 0;
+    /* No margin to keep alignment */
 }
 
 .controls button {
-    padding: 10px; /* No padding inside buttons */
+    padding: 10px;
+    /* No padding inside buttons */
     cursor: pointer;
-    line-height: 20px; /* Align the text/icon vertically */
-    display: flex; /* Use flexbox for centering icon */
-    align-items: center; /* Center icon vertically */
-    justify-content: center; /* Center icon horizontally */
+    line-height: 20px;
+    /* Align the text/icon vertically */
+    display: flex;
+    /* Use flexbox for centering icon */
+    align-items: center;
+    /* Center icon vertically */
+    justify-content: center;
+    /* Center icon horizontally */
 }
 
 /* Styles for checkboxes */
@@ -324,37 +418,53 @@ button[type="button"]:hover {
 }
 
 .checkbox-container input[type="checkbox"] {
-    width: 20px; /* Width of the checkbox */
-    height: 20px; /* Height of the checkbox */
-    margin-left: 5px; /* Space between label and checkbox */
+    width: 20px;
+    /* Width of the checkbox */
+    height: 20px;
+    /* Height of the checkbox */
+    margin-left: 5px;
+    /* Space between label and checkbox */
     cursor: pointer;
 }
 
 .accessible-checkbox {
-    appearance: none; /* Hide the default checkbox appearance */
-    width: 20px; /* Width of the custom checkbox */
-    height: 20px; /* Height of the custom checkbox */
-    border: 2px solid #ccc; /* Border for the checkbox */
-    border-radius: 4px; /* Optional: for rounded corners */
+    appearance: none;
+    /* Hide the default checkbox appearance */
+    width: 20px;
+    /* Width of the custom checkbox */
+    height: 20px;
+    /* Height of the custom checkbox */
+    border: 2px solid #ccc;
+    /* Border for the checkbox */
+    border-radius: 4px;
+    /* Optional: for rounded corners */
 }
 
 .accessible-checkbox:checked {
-    background-color: green; /* Background color when checked */
+    background-color: green;
+    /* Background color when checked */
 }
 
-.accessible-checkbox:checked + label .fas {
-    color: green; /* Change icon color when checkbox is checked */
+.accessible-checkbox:checked+label .fas {
+    color: green;
+    /* Change icon color when checkbox is checked */
 }
 
 
 /* Textarea Style */
 textarea {
-    width: 90%; /* Full width */
-    padding: 8px; /* Consistent padding with other inputs */
-    border-radius: 5px; /* Rounded borders */
-    border: 1px solid #ccc; /* Border color */
-    box-sizing: border-box; /* Box-sizing */
-    font-size: 16px; /* Font size */
+    width: 90%;
+    /* Full width */
+    padding: 8px;
+    /* Consistent padding with other inputs */
+    border-radius: 5px;
+    /* Rounded borders */
+    border: 1px solid #ccc;
+    /* Border color */
+    box-sizing: border-box;
+    /* Box-sizing */
+    font-size: 16px;
+    /* Font size */
     background-color: #f5f5f5;
     margin-top: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -365,27 +475,34 @@ textarea {
 .waypoint-container {
     width: 100%;
     display: flex;
-    align-items: center; /* Align items vertically in the center */
-    margin-bottom: 10px; /* Optional: Add some space below each waypoint container */
+    align-items: center;
+    /* Align items vertically in the center */
+    margin-bottom: 10px;
+    /* Optional: Add some space below each waypoint container */
 }
 
 
 .waypoint-container i.fas.fa-map-marker-alt {
-    margin-right: 5px; /* Add some space between the icon and the input field */
-    color: rgb(223, 146, 146); /* Optional: Change icon color to red */
+    margin-right: 5px;
+    /* Add some space between the icon and the input field */
+    color: rgb(223, 146, 146);
+    /* Optional: Change icon color to red */
     top: 21px;
 }
-.waypoint-container i.fas.fa-plane{
-color: #ecae66;
-top: 79px;
+
+.waypoint-container i.fas.fa-plane {
+    color: #ecae66;
+    top: 79px;
 }
 
 .waypoint-container input {
-    flex-grow: 1; /* Let the input field take up the remaining space */
+    flex-grow: 1;
+    /* Let the input field take up the remaining space */
     /* Add any additional styling for the input field here */
 }
+
 .flightinput input {
-  width: 50%;
+    width: 50%;
 }
 
 /* the remove icon next to search address input */
@@ -394,10 +511,11 @@ top: 79px;
     background-color: transparent;
     cursor: pointer;
 }
+
 .remove-waypoint i {
     color: #aaa;
-     left: 97%;
-   
+    left: 97%;
+
 }
 
 .remove-waypoint {
@@ -405,57 +523,68 @@ top: 79px;
     background-color: transparent;
     cursor: pointer;
 }
+
 .remove-waypoint i {
     color: #aaa;
     left: 97%;
-  
+
 }
+
 .input-container input.waypoint {
-  border: none;
+    border: none;
 }
 
 
 
-.search-input{
-position: relative;  /* parent */
+.search-input {
+    position: relative;
+    /* parent */
 }
+
 .input-container i {
-  color: #aaa;
-  position: absolute; /* child */
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 20px;
+    color: #aaa;
+    position: absolute;
+    /* child */
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
 }
 
 .input-container .fa-map-marker-alt {
-  left: 10px; /* Adjust as necessary */
+    left: 10px;
+    /* Adjust as necessary */
 }
 
 .input-container .fa-sort {
-  right: 50px; /* Adjust as necessary, accounting for the delete icon if present */
-  float: right;
+    right: 50px;
+    /* Adjust as necessary, accounting for the delete icon if present */
+    float: right;
 }
 
 .input-container .remove-waypoint i {
-  right: 10px;
+    right: 10px;
 }
 
 .input-container input.waypoint {
-  width: 100%;
-  padding-left: 40px; /* Space for map-marker-alt icon */
-  padding-right: 70px; /* Space for sort and delete icons */
-  height: 70px;
-  margin-bottom: 5px;
+    width: 100%;
+    padding-left: 40px;
+    /* Space for map-marker-alt icon */
+    padding-right: 70px;
+    /* Space for sort and delete icons */
+    height: 70px;
+    margin-bottom: 5px;
 }
 
-.flight-input-container{
-position: relative; /* parent */
-width: 50%;
+.flight-input-container {
+    position: relative;
+    /* parent */
+    width: 50%;
 }
 
-.input-container  i.fas.fa-plane{
-position: absolute;/* child */
-  left: 10px;
+.input-container i.fas.fa-plane {
+    position: absolute;
+    /* child */
+    left: 10px;
 }
 
 /* Hide sort icon on touch devices */
