@@ -223,11 +223,24 @@ form {
     }
 }
 
+/* Send Request wrapper: same size as button, inline with Call Now */
+.buttons-container .btn-book-wrapper {
+    width: 50%;
+    display: inline-flex;
+    position: relative;
+}
+.buttons-container .btn-book-wrapper button[type="submit"] {
+    width: 100%;
+    float: none;
+}
+
 /* Additional responsiveness and other styles */
 @media screen and (max-width: 650px) {
     .buttons-container {
         flex-direction: column;
-
+    }
+    .buttons-container .btn-book-wrapper {
+        width: 100%;
     }
 }
 

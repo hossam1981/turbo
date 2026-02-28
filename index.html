@@ -91,15 +91,15 @@
       <!-- Hamburger Menu for Small Screens -->
       <a class="w3-bar-item w3-button w3-hover-black w3-hide-large w3-right" href="javascript:void(0);"
         onclick="toggleFunction()" title="Toggle Navigation Menu">
-        <i class="fa fa-bars menu-icon"></i>
+        <i class="fas fa-bars menu-icon"></i>
       </a>
 
       <!-- Navigation Links for Large Screens -->
       <a href="#home" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-large">
-        <i class="fa fa-home home-icon"></i> HOME
+        <i class="fas fa-house home-icon"></i> HOME
       </a>
       <a href="#services" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-large">
-        <i class="fas fa-cog services-icon"></i> SERVICES
+        <i class="fas fa-gear services-icon"></i> SERVICES
       </a>
       <a href="#whyus" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-large">
         <i class="fas fa-check-circle whyus-icon"></i> WHY US?
@@ -108,7 +108,7 @@
         <i class="fas fa-car fleet-icon"></i> OUR FLEET
       </a>
       <a href="#contact" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-large">
-        <i class="fa fa-envelope contact-icon"></i> CONTACT
+        <i class="fas fa-envelope contact-icon"></i> CONTACT
       </a>
 
       <!-- Logo -->
@@ -122,7 +122,7 @@
     <!-- Navbar for Small Screens -->
     <div id="NavSmall" class="w3-bar-block w3-white w3-hide w3-hide-large">
       <a href="#services" class="w3-bar-item w3-button" onclick="toggleFunction()">
-        <i class="fas fa-cog services-icon"></i> SERVICES
+        <i class="fas fa-gear services-icon"></i> SERVICES
       </a>
       <a href="#whyus" class="w3-bar-item w3-button" onclick="toggleFunction()">
         <i class="fas fa-check-circle whyus-icon"></i> WHY US?
@@ -131,7 +131,7 @@
         <i class="fas fa-car fleet-icon"></i> OUR FLEET
       </a>
       <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">
-        <i class="fa fa-envelope contact-icon"></i> CONTACT
+        <i class="fas fa-envelope contact-icon"></i> CONTACT
       </a>
     </div>
   </div>
@@ -159,21 +159,23 @@
 
 
       <div class=" hero-btn">
-        <a href="#book" style="margin:15px">
+        <a href="#book" style="margin:15px" class="btn-book-wrapper">
+          <span class="btn-book-ping" aria-hidden="true"></span>
+          <span class="btn-book-ping btn-book-ping-teal" aria-hidden="true"></span>
           <button class="
                 btn
                 btn-book
                 btn-color
                 btn-block
                 bg_slider
-                w3-padding-large " name="book-now">
+                w3-padding-large
+                btn-book-animate " name="book-now">
             Book Now
-            <i class="fa fa-lg fa-angle-double-down" aria-hidden="true"></i>
+            <i class="fas fa-lg fa-angles-down" aria-hidden="true"></i>
           </button>
         </a>
-        <a href="tel:347-206-0083" style="margin:15px" class="btn">
-
-          <i class="fa-sharp fa-solid fa-phone"></i> CALL US
+        <a href="tel:347-206-0083" style="margin:15px" class="btn btn-call-us">
+          <i class="fas fa-phone"></i> CALL US
         </a>
 
 
@@ -328,7 +330,7 @@
               bg_slider
               w3-padding-large " id="loadMore" name="submit">
       MORE SERVICES
-      <i class="fa fa-lg fa-angle-double-down" aria-hidden="true"></i>
+      <i class="fas fa-lg fa-angles-down" aria-hidden="true"></i>
     </button>
   </div>
   <!-- -----------------------------End Of LOAD MORE button -------------------- -->
@@ -517,10 +519,10 @@
 
     <div class="MS-controls">
       <button class="MS-left" name="left-picture">
-        <i class="fa fa-angle-left" aria-hidden="true"></i>
+        <i class="fas fa-angle-left" aria-hidden="true"></i>
       </button>
       <button class="MS-right" name="right-picture">
-        <i class="fa fa-angle-right" aria-hidden="true"></i>
+        <i class="fas fa-angle-right" aria-hidden="true"></i>
       </button>
     </div>
 
@@ -545,14 +547,14 @@
     <div class="w3-display-middle" style="width: max-content;">
       <span class="w3-xxlarge  w3-wide">CONTACT US</span>
       <div class="w3-large w3-margin-bottom">
-        <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> NEW JERSEY, US
+        <i class="fas fa-location-dot fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> NEW JERSEY, US
         <br>
-        <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i>
+        <i class="fas fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i>
         Phone:
 
         <a href="tel:347-206-0083">347-206-0083</a>
         <br>
-        <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email:
+        <i class="fas fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email:
         <a href="mailto:admin@turbolimo.gmail.com" target="_blank">admin@turbolimo.net</a>
         <br>
       </div>
@@ -805,14 +807,15 @@
               <i class="fas fa-phone"></i> Call Now
             </a>
 
-            <!-- Submit Button -->
-            <!-- Button to submit the booking form -->
-            <button type="submit" class="btn btn-color
-                  form-btn
-                  bg_slider
-                  w3-section w3-left">
-              <i class="fa fa-paper-plane"> </i>
-              SEND REQUEST</button>
+            <!-- Submit Button (outer ring animation only) -->
+            <div class="btn-book-wrapper">
+              <span class="btn-book-ping" aria-hidden="true"></span>
+              <span class="btn-book-ping btn-book-ping-teal" aria-hidden="true"></span>
+              <button type="submit" class="btn btn-color form-btn bg_slider">
+                <i class="fas fa-paper-plane"></i>
+                SEND REQUEST
+              </button>
+            </div>
           </div>
         </form>
       </div>
@@ -854,24 +857,24 @@
 
     <a href="#home">
       <!-- <i class="fa fa-arrow-up w3-margin-right"></i>To the top</a> -->
-      <span class="fa fa-arrow-circle-up w3-margin-right"></span>
+      <span class="fas fa-circle-up w3-margin-right w3-xlarge" style="font-size: clamp(1.5rem, 5vw, 2.25rem);"></span>
     </a>
     <div class="w3-xlarge w3-section">
       <a href="https://www.facebook.com/profile.php?id=100085007694272" target="_blank">
-        <i class="fa fa-facebook-official w3-hover-opacity"></i>
+        <i class="fab fa-facebook w3-hover-opacity"></i>
       </a>
 
       <a href="https://www.instagram.com/princerocky4u/" target="_blank">
-        <i class="fa fa-instagram w3-hover-opacity"></i>
+        <i class="fab fa-instagram w3-hover-opacity"></i>
       </a>
 
-      <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+      <i class="fab fa-pinterest w3-hover-opacity"></i>
       <a href="https://twitter.com/Hossam_NY" target="_blank">
-        <i class="fa fa-twitter w3-hover-opacity"></i>
+        <i class="fab fa-twitter w3-hover-opacity"></i>
       </a>
 
       <a href="https://www.linkedin.com/in/helnaggar/" target="_blank">
-        <i class="fa fa-linkedin w3-hover-opacity"></i>
+        <i class="fab fa-linkedin w3-hover-opacity"></i>
       </a>
     </div>
     <p>Powered by Hossam E
