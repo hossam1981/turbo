@@ -1,0 +1,11 @@
+{
+  "name": "limo-proj",
+  "private": true,
+  "scripts": {
+    "optimize-media": "node scripts/optimize-media.js"
+  },
+  "devDependencies": {
+    "sharp": "^0.33.5",
+    "svgo": "^3.3.2"
+  }
+}

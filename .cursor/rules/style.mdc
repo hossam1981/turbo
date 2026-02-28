@@ -1,0 +1,27 @@
+---
+description: Reduce .md files; explain briefly in plain English; use ASCII for diagrams
+alwaysApply: true
+---
+
+# Markdown files
+
+- **Reduce the amount of .md files.** Do not create extra markdown (e.g. READMEs, docs) unless the user explicitly asks for one or it is clearly needed for the project.
+- Prefer doing the work and explaining in your reply; avoid writing a separate .md file when a short answer is enough.
+
+# Explanations
+
+- When explaining, keep it **short** and in **plain English**. Avoid jargon unless necessary; if you use a technical term, briefly say what it means.
+
+- If a diagram would help (flow, architecture, data flow), use an **ASCII diagram** in a code block. Do not use Mermaid or other diagram syntax unless the user asks for it.
+
+# Media and assets
+
+Don’t delete originals before verifying – either 
+overwrite after a good run or back up media/ once; no 
+removing files until the site is checked by me.
+
+- **Do not delete or remove original files in `media/` or anywhere before the user has verified the site.** manualy, When optimizing or changing images: either overwrite in place after a good run, or back up `media/` once first. No removing originals until the site is checked by the user. 
+
+- When proposing a plan, state risk (low / medium / high) for the changes.
+
+- **Keep all changes reversible.** For any change (media, code, config, etc.): back up affected files or folders before modifying or overwriting, so the user can restore if needed. Tell the user where the backup is and how to reverse (e.g. "To reverse: copy `media-backup/` back over `media/`" or "To reverse: restore `index.html` from `index.html.bak`").
