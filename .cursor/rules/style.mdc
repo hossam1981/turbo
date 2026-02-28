@@ -22,6 +22,9 @@ removing files until the site is checked by me.
 
 - **Do not delete or remove original files in `media/` or anywhere before the user has verified the site.** manualy, When optimizing or changing images: either overwrite in place after a good run, or back up `media/` once first. No removing originals until the site is checked by the user. 
 
-- When proposing a plan, state risk (low / medium / high) for the changes.
+# Plans and risk
+
+- **Always state risk (low / medium / high)** for any plan or set of proposed changes. Call it out clearly (e.g. "Risk: low" at the top or per step).
+- When the plan involves **SEO, visibility, or content**, include **Generative Engine Optimization (GEO) / LLM SEO** where relevant: structured data (JSON-LD), semantic headings (H1–H4), concise summarizable answers (40–80 words), E-E-A-T signals, and formats like llms.txt or sitemap so AI crawlers and LLM answers can cite the site.
 
 - **Keep all changes reversible.** For any change (media, code, config, etc.): back up affected files or folders before modifying or overwriting, so the user can restore if needed. Tell the user where the backup is and how to reverse (e.g. "To reverse: copy `media-backup/` back over `media/`" or "To reverse: restore `index.html` from `index.html.bak`").

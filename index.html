@@ -7,30 +7,41 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description"
-    content="luxury Airport transfer service, wedding limo service, for Proms, suv chauffeur service.">
+    content="Turbolimo: luxury limousine and car service in NJ and NYC. Airport transfers, wedding and prom limos, corporate chauffeur service. Affordable luxury for every occasion.">
   <meta name="keywords"
     content="limousine service New Jersey, limousine service NYC, car service Newark airport, VIP limo service, wedding limo service NJ, Monmouth County limo, luxury car service NJ, prom limo rental, corporate limo services, airport limo NJ, NYC limo service, stretch limousines, private chauffeur, executive car service, special event limo, turbo limo service, limo rental for birthdays, bachelor/bachelorette party limo, concert limo rental, black car service, airport transportation NJ, night out limo service, chauffeur-driven limousines, luxury transportation, corporate transportation, NYC limo rental, VIP wedding limo, VIP chauffeur, Atlantic City limo service, Hazlet Township limo service, Middletown limo service, monmouth county limo service, affordable limousine service New Jersey, affordable limousine service NYC, affordable limousine service brooklyn, brooklyn limo service ">
   <meta name="google-site-verification" content="T6ctdJLtVIcQYY-p4cSZort44CSd2dh1TdmBO-c9aQ4" />
 
-  <!--for nav icon-->
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <!-- LCP: preload hero image -->
+  <link rel="preload" as="image" href="media/hero.png">
 
-  <!-- Font Awesome -->
+  <!--for nav icon-->
+  <!-- Google Fonts (display=swap to avoid blocking text) -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&display=swap">
+
+  <!-- Font Awesome (single version) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
-    integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
-  <!-- Bootstrap Icons and CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <!-- Non-critical CSS: load async so they don't block first paint -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" media="print" onload="this.media='all'">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"></noscript>
+  <noscript><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous"></noscript>
+  <noscript><link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"></noscript>
 
-  <!-- W3.CSS -->
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <!-- Critical CSS: above-the-fold -->
+  <link href="./style/main.css" rel="stylesheet" />
+  <link href="./style/navbar.css" rel="stylesheet" />
+  <link href="./style/bookingform.css" rel="stylesheet" />
+  <link href="./style/explore.css" rel="stylesheet" />
+  <link href="./style/btn_slider.css" rel="stylesheet" />
+  <link href="./style/multislider.css" rel="stylesheet" />
+  <link rel="shortcut icon" type="image/png" href="media/favicon1.png">
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-179424813-1"></script>
@@ -41,16 +52,6 @@
 
     gtag('config', 'UA-179424813-1');
   </script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.13.0/Sortable.min.js"></script>
-
-  <link href="./style/bookingform.css" rel="stylesheet" />
-  <link href="./style/main.css" rel="stylesheet" />
-  <link href="./style/navbar.css" rel="stylesheet" />
-  <link href="./style/explore.css" rel="stylesheet" />
-  <link href="./style/btn_slider.css" rel="stylesheet" />
-  <link href="./style/multislider.css" rel="stylesheet" />
-  <link rel="shortcut icon" type="image/png" href="media/favicon1.png">
 
   <!-- Google tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-2K3N5MN5YP">
@@ -65,6 +66,21 @@
 
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1599674958950614"
     crossorigin="anonymous"></script>
+
+  <!-- GEO / LLM SEO: structured data for AI citation -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Turbolimo Limousine",
+    "description": "Luxury limousine and car service in NJ and NYC. Airport transfers, wedding limo, prom, corporate chauffeur, and special events. Affordable luxury limousine service.",
+    "url": "https://www.turbolimo.net",
+    "telephone": "+1-347-206-0083",
+    "areaServed": ["New Jersey", "New York City", "NYC", "Brooklyn", "Newark"],
+    "priceRange": "$$",
+    "serviceType": ["Limousine service", "Airport transfer", "Wedding limo", "Corporate car service", "Chauffeur service"]
+  }
+  </script>
 
 </head>
 
@@ -98,7 +114,7 @@
       <!-- Logo -->
       <span class="underline-logo logo">
         <a href="#home">
-          <img src="./media/logo2.png" width="200" height="83" style="width: 200px; margin-top:5px" alt="logo" />
+          <img src="./media/logo2.png" width="200" height="83" style="width: 200px; margin-top:5px" alt="logo" fetchpriority="high" />
         </a>
       </span>
     </div>
@@ -169,6 +185,8 @@
   </div>
 
   <div class="w3-content w3-container ">
+
+    <p class="w3-center" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;margin:0;font-size:1px;">Turbolimo offers luxury limousine and car service in New Jersey and NYC. We provide airport transfers, wedding and prom limos, corporate chauffeur service, and transportation for special events. Affordable, reliable luxury for every occasion.</p>
 
     <h2 style="font-size:3rem;" class="w3-center intro-narrative__heading welcome" id="services">OUR SERVICES</h2>
 
@@ -874,9 +892,10 @@
   <!-- End Footer -->
   <!-- End Footer -->
 
-  <!-- First: jQuery and dependencies -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+  <!-- First: jQuery and dependencies (defer to avoid blocking) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.13.0/Sortable.min.js" defer></script>
 
   <!-- Second: Google Maps with your API key -->
   <script async defer
@@ -884,13 +903,13 @@
     </script>
 
 
-  <!-- Third: Your custom scripts -->
-  <script src="./script/bookingform.js"></script>
-  <script src="./script/script.js"></script>
-  <script src="./script/load-more.js"></script>
-  <script src="./script/multislider.js"></script>
-  <script src="./script/explore_slide.js"></script>
-  <script src="./script/multislider.min.js"></script>
+  <!-- Third: Your custom scripts (defer, same order) -->
+  <script src="./script/bookingform.js" defer></script>
+  <script src="./script/script.js" defer></script>
+  <script src="./script/load-more.js" defer></script>
+  <script src="./script/multislider.js" defer></script>
+  <script src="./script/explore_slide.js" defer></script>
+  <script src="./script/multislider.min.js" defer></script>
   <script>
     // this code for -- multi slider--  going to the left...
     $('#mixedSlider').multislider({

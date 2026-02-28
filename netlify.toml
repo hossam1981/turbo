@@ -1,3 +1,17 @@
 [build.environment]
 GOOGLE_MAPS_API_KEY = "AIzaSyC6I8N3QaFac6Mtk14whPB3aID3FTLb5PA" 
 NODE_VERSION = "18"
+
+# Cache static assets for repeat visits (Lighthouse)
+[[headers]]
+  for = "/media/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+[[headers]]
+  for = "/style/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+[[headers]]
+  for = "/script/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
