@@ -1,3 +1,7 @@
+:root {
+    --primary-accent: #1a5f7a;
+}
+
 @keyframes slideIn {
     from {
         opacity: 0;
@@ -442,25 +446,65 @@ button[type="button"]:hover {
 
 .accessible-checkbox {
     appearance: none;
-    /* Hide the default checkbox appearance */
+    -webkit-appearance: none;
+    position: relative;
     width: 20px;
-    /* Width of the custom checkbox */
     height: 20px;
-    /* Height of the custom checkbox */
+    min-width: 20px;
+    min-height: 20px;
     border: 2px solid #ccc;
-    /* Border for the checkbox */
     border-radius: 4px;
-    /* Optional: for rounded corners */
+    cursor: pointer;
+    vertical-align: middle;
+    flex-shrink: 0;
 }
 
 .accessible-checkbox:checked {
-    background-color: green;
-    /* Background color when checked */
+    background-color: var(--primary-accent);
+    border-color: var(--primary-accent);
+}
+.accessible-checkbox:checked::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 5px;
+    height: 9px;
+    margin: -6px 0 0 -4px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
 }
 
-.accessible-checkbox:checked+label .fas {
+.counter-label-accessible {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+.counter-label-accessible .checkbox-container {
+    margin-left: 0;
+}
+/* Icon color when checked: use :has() because label wraps the input */
+.counter-label-accessible:has(.accessible-checkbox:checked) .fa-wheelchair {
     color: green;
-    /* Change icon color when checkbox is checked */
+}
+[data-theme="dark"] .counter-label-accessible:has(.accessible-checkbox:checked) .fa-wheelchair {
+    color: var(--primary-dark-toned);
+}
+
+/* Icon color when counter has value or option is selected (Passengers, Luggage, Car, Child Seat) */
+.counter-passengers.counter-active .counter-label .fa-users,
+.counter-luggage.counter-active .counter-label .fa-suitcase,
+.counter-car.counter-active .counter-label .fa-car,
+.counter-child-seat:has(#child-seat-checkbox:checked) .counter-label .fa-child {
+    color: green;
+}
+[data-theme="dark"] .counter-passengers.counter-active .counter-label .fa-users,
+[data-theme="dark"] .counter-luggage.counter-active .counter-label .fa-suitcase,
+[data-theme="dark"] .counter-car.counter-active .counter-label .fa-car,
+[data-theme="dark"] .counter-child-seat:has(#child-seat-checkbox:checked) .counter-label .fa-child {
+    color: var(--primary-dark-toned);
 }
 
 

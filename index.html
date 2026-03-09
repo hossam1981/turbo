@@ -783,32 +783,32 @@
           <!-- Counter containers for passengers, luggage, and vehicle options -->
           <div class="counter-container">
             <!-- Passenger Counter -->
-            <div class="counter">
+            <div class="counter counter-passengers" id="passenger-counter">
               <label id="passenger-label" class="counter-label">
                 <i class="fas fa-users"></i> Passengers
               </label>
               <div class="controls">
-                <button type="button" aria-label="Increase passenger count" onclick="incrementCount('passenger-count')">
+                <button type="button" aria-label="Increase passenger count" onclick="incrementCount('passenger-count'); enablePassengerIconActive(); updateCounterIconStates();">
                   <i class="fas fa-plus"></i>
                 </button>
                 <input name="Passenger No." type="text" id="passenger-count" value="1" readonly>
-                <button type="button" aria-label="Decrease passenger count" onclick="decrementCount('passenger-count')">
+                <button type="button" aria-label="Decrease passenger count" onclick="decrementCount('passenger-count'); enablePassengerIconActive(); updateCounterIconStates();">
                   <i class="fas fa-minus"></i>
                 </button>
               </div>
             </div>
 
             <!-- Luggage Counter -->
-            <div class="counter">
+            <div class="counter counter-luggage" id="luggage-counter">
               <label id="luggage-label" class="counter-label">
                 <i class="fas fa-suitcase"></i> Luggage
               </label>
               <div class="controls">
-                <button type="button" aria-label="Increase luggage count" onclick="incrementCount('luggage-count')">
+                <button type="button" aria-label="Increase luggage count" onclick="incrementCount('luggage-count'); enableLuggageIconActive(); updateCounterIconStates();">
                   <i class="fas fa-plus"></i>
                 </button>
                 <input name="luggage No." type="text" id="luggage-count" value="0" readonly>
-                <button type="button" aria-label="Decrease luggage count" onclick="decrementCount('luggage-count')">
+                <button type="button" aria-label="Decrease luggage count" onclick="decrementCount('luggage-count'); enableLuggageIconActive(); updateCounterIconStates();">
                   <i class="fas fa-minus"></i>
                 </button>
               </div>
@@ -816,12 +816,12 @@
 
             <!-- Car Option Selection -->
 
-            <div class="counter" style="padding:13px">
+            <div class="counter counter-car" id="car-option-counter" style="padding:13px">
               <label for="car-option" class="counter-label">
                 <i class="fas fa-car"></i>
               </label>
               <div class="input-container">
-                <select id="car-option" name="car_option" class="custom-select" onchange="toggleHourCounter()">
+                <select id="car-option" name="car_option" class="custom-select" onchange="toggleHourCounter(); updateCounterIconStates();">
                   <option value="">Select Vehicle</option>
                   <option value="Sedan">Luxe SEDAN 4 pax</option>
                   <option value="SUV">Luxe SUV 7-8 pax</option>
@@ -847,7 +847,7 @@
             </div>
 
             <!-- Child Seat Checkbox -->
-            <div class="counter">
+            <div class="counter counter-child-seat">
               <label for="child-seat-checkbox" class="counter-label">
                 <i class="fas fa-child"></i> Child Seat
               </label>
@@ -866,13 +866,13 @@
             </div>
 
             <!-- Accessible Option Checkbox -->
-            <div class="counter">
-              <label for="accessible-checkbox" class="counter-label">
+            <div class="counter counter-accessible">
+              <label for="accessible-checkbox" class="counter-label counter-label-accessible">
                 <i class="fas fa-wheelchair"></i> Accessible
+                <span class="checkbox-container">
+                  <input type="checkbox" id="accessible-checkbox" name="accessible" class="accessible-checkbox" aria-label="Accessible vehicle option">
+                </span>
               </label>
-              <div class="checkbox-container">
-                <input type="checkbox" id="accessible-checkbox" name="accessible" class="accessible-checkbox">
-              </div>
             </div>
           </div>
 

@@ -273,6 +273,45 @@ function toggleHourCounter() {
     }
 }
 
+// Passengers icon: only show active after user has interacted (not accent by default)
+var passengerIconActiveEnabled = false;
+function enablePassengerIconActive() {
+    passengerIconActiveEnabled = true;
+}
+
+// Luggage icon: only show active after user has interacted
+var luggageIconActiveEnabled = false;
+function enableLuggageIconActive() {
+    luggageIconActiveEnabled = true;
+}
+
+// Update counter icon color (primary accent when has value / selected)
+function updateCounterIconStates() {
+    var passengerCount = document.getElementById('passenger-count');
+    var luggageCount = document.getElementById('luggage-count');
+    var carOption = document.getElementById('car-option');
+    var passengerCounter = document.getElementById('passenger-counter');
+    var luggageCounter = document.getElementById('luggage-counter');
+    var carCounter = document.getElementById('car-option-counter');
+
+    if (passengerCounter) {
+        var passengerActive = passengerIconActiveEnabled && passengerCount && parseInt(passengerCount.value, 10) > 0;
+        passengerCounter.classList.toggle('counter-active', passengerActive);
+    }
+    if (luggageCounter) {
+        var luggageActive = luggageIconActiveEnabled && luggageCount && parseInt(luggageCount.value, 10) > 0;
+        luggageCounter.classList.toggle('counter-active', luggageActive);
+    }
+    if (carCounter && carOption) {
+        carCounter.classList.toggle('counter-active', carOption.value !== '');
+    }
+}
+
+// Set initial icon states (Passengers not active until user interacts)
+if (document.getElementById('passenger-counter')) {
+    updateCounterIconStates();
+}
+
 // Prevent Form Submission on Enter
 function preventEnterSubmit(event) {
     if (event.which === 13) { // 13 is the keycode for Enter
