@@ -27,15 +27,69 @@ h1 {
     background-size: cover;
 }
     .bgimg-1 {
-    background-image: url('../media/hero.png');
+    background-image: url('../media/hero-bg.png');
     min-height: 800px;
     }
-    /* reponsive img */
+    /* responsive hero background + separated car layer animation */
 .bgimg-1{
     background-size: cover;
     background-position: center center;
     /* background-attachment: fixed; */
+    overflow: hidden;
+    position: relative;
     }
+.hero-car-layer{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    pointer-events: none;
+    z-index: 1;
+    will-change: transform, opacity;
+    animation: hero-car-slide-in 2s cubic-bezier(0.22, 0.61, 0.36, 1) 0.4s both;
+}
+.hero-car-dark{
+    display: none;
+}
+
+.hero-curve-overlay{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+.hero-curve-overlay-dark{
+    display: none;
+}
+.section-curve-overlay{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+.section-curve-overlay-dark{
+    display: none;
+}
+/* Car starts off-screen right, then slides left into place */
+@keyframes hero-car-slide-in {
+    from { transform: translateX(30%); opacity: 0.92; }
+    to   { transform: translateX(0); opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .hero-car-layer {
+        animation: none;
+        transform: none;
+        opacity: 1;
+    }
+}
     
 /* Second image (parallax) */
 .bgimg-2 {  
@@ -53,6 +107,33 @@ h1 {
 .bgimg-4 {
     background-image: url("../media/contact-us.jpeg");
     min-height: 400px;
+}
+
+/* Contact block: left-aligned, responsive */
+#contact .w3-display-middle {
+  left: 0;
+  right: auto;
+  transform: translateY(-50%);
+  margin-left: 5%;
+  max-width: 90%;
+}
+@media (min-width: 601px) {
+  #contact .w3-display-middle {
+    margin-left: 8%;
+    max-width: 85%;
+  }
+}
+@media (min-width: 993px) {
+  #contact .w3-display-middle {
+    margin-left: 10%;
+    max-width: 42rem;
+  }
+}
+@media (max-width: 600px) {
+  #contact .w3-display-middle {
+    margin-left: 4%;
+    max-width: 92%;
+  }
 }
 
 .w3-wide {letter-spacing: 6px;}
@@ -79,6 +160,7 @@ h1 {
     margin: 20px 414px 20px 50px;
     position: absolute;
     top: 360px;
+    z-index: 3;
         }
 
 .hero-btn {

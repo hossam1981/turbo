@@ -16,19 +16,38 @@ console.log('script magic is ready')
 //     marker.setMap(map);
 // }
 
-// Change style of navbar on scroll
-window.onscroll = function () {
-    myFunction()
-};
+// Smooth navbar state transition on scroll
+const navbar = document.getElementById("myNavbar");
+let navbarScrolled = false;
+let navbarTicking = false;
+const NAV_ENTER_SCROLL_Y = 90;
+const NAV_EXIT_SCROLL_Y = 60;
 
-function myFunction() {
-    var navbar = document.getElementById("myNavbar");
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
-    } else {
-        navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+function applyNavbarState() {
+    if (!navbar) return;
+
+    const y = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    const shouldBeScrolled = navbarScrolled ? y > NAV_EXIT_SCROLL_Y : y > NAV_ENTER_SCROLL_Y;
+
+    if (shouldBeScrolled !== navbarScrolled) {
+        navbarScrolled = shouldBeScrolled;
+        navbar.classList.toggle("w3-white", shouldBeScrolled);
+        navbar.classList.toggle("w3-card", shouldBeScrolled);
     }
 }
+
+function onScrollNavbar() {
+    if (!navbarTicking) {
+        window.requestAnimationFrame(function () {
+            applyNavbarState();
+            navbarTicking = false;
+        });
+        navbarTicking = true;
+    }
+}
+
+window.addEventListener("scroll", onScrollNavbar, { passive: true });
+window.addEventListener("load", applyNavbarState);
 
 // Used to toggle the menu on small screens when clicking on the menu button
 

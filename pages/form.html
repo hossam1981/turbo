@@ -32,6 +32,15 @@
     <link href="../style/main.css" rel="stylesheet" />
     <link href="../style/bookingform.css" rel="stylesheet" />
     <link href="../style/btn_slider.css" rel="stylesheet" />
+    <link href="../style/theme-dark.css" rel="stylesheet" />
+    <script>
+      (function () {
+        var stored = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var theme = stored === 'dark' || stored === 'light' ? stored : (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

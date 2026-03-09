@@ -38,6 +38,7 @@ p.articales{
 }
 #mixedSlider .MS-content .item .imgTitle {
   position: relative;
+  min-height: 180px;
   /* box-shadow: 0 45px 100px rgba(14,21,47,0.4), 0 16px 40px rgba(14,21,47,0.4); */
 }
 #mixedSlider .MS-content .item .imgTitle .blogTitle {
@@ -54,8 +55,13 @@ p.articales{
   background-color: rgba(255, 255, 255,0);
 }
 #mixedSlider .MS-content .item .imgTitle img {
-  height: 1;
+  height: auto;
   width: 100%;
+  display: block;
+}
+/* Theme: show light car img by default; dark variant hidden until dark mode */
+#mixedSlider .MS-content .item .imgTitle .slider-car-dark {
+  display: none !important;
 }
 #mixedSlider .MS-content .item p {
   font-size: 16px;

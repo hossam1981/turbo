@@ -1,0 +1,15 @@
+---
+description: Dark/light theme and neumorphic toggle button — use the theme-toggle skill for implementation
+globs: "**/theme*.{css,js},**/navbar.css,**/index.html,**/pages/*.html"
+alwaysApply: false
+---
+
+# Theme toggle and dark mode
+
+When adding or changing **dark/light mode** or the **theme toggle button** in this project (or when the user asks to carry this to another project):
+
+1. **Use the project skill** `.cursor/skills/style/theme-toggle/SKILL.md` for the full pattern: `data-theme` on `<html>`, localStorage, early script, dark stylesheet, pill markup (wrapper + label + button), neumorphic CSS (recessed track, raised circle, slide animation), and JS (getTheme, setTheme, updateToggleUI).
+2. **Keep** reversible backups before changing theme/toggle behavior or styles.
+3. **Policy/secondary pages:** Toggle pill inline with Home button (same markup, `theme-toggle-policy` class, no float). Include `navbar.css` (or the same toggle CSS) and `theme.js` on those pages.
+
+To reuse in another project: copy the skill folder and the relevant CSS/JS patterns from this codebase; adjust paths and class names to match the new project.

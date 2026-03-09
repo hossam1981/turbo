@@ -92,11 +92,30 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="../style/navbar.css" rel="stylesheet" />
+    <link href="../style/theme-dark.css" rel="stylesheet" />
+    <script>
+      (function () {
+        var stored = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var theme = stored === 'dark' || stored === 'light' ? stored : (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
 </head>
 
 <body>
     <div class="policy-container">
-        <a class="home-button" href="../index.html">Home</a>
+        <div class="policy-nav-row" style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap;">
+            <a class="home-button" href="../index.html">Home</a>
+            <span class="theme-toggle-wrap theme-toggle-policy">
+                <span class="theme-toggle-label" aria-hidden="true">LIGHT</span>
+                <button type="button" class="theme-toggle" aria-label="Switch to dark mode" title="Switch to dark mode">
+                    <i class="fas fa-moon theme-toggle-icon" aria-hidden="true"></i>
+                </button>
+            </span>
+        </div>
         <h1>TurboLimo – SMS Terms &amp; Conditions</h1>
         <p><strong>Last updated:</strong> October 16, 2025</p>
 
@@ -169,6 +188,7 @@
             <p><a href="mailto:admin@turbolimo.net">admin@turbolimo.net</a></p>
         </div>
     </div>
+    <script src="../script/theme.js"></script>
 </body>
 
 </html>

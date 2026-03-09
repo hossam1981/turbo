@@ -12,8 +12,8 @@
     content="limousine service New Jersey, limousine service NYC, car service Newark airport, VIP limo service, wedding limo service NJ, Monmouth County limo, luxury car service NJ, prom limo rental, corporate limo services, airport limo NJ, NYC limo service, stretch limousines, private chauffeur, executive car service, special event limo, turbo limo service, limo rental for birthdays, bachelor/bachelorette party limo, concert limo rental, black car service, airport transportation NJ, night out limo service, chauffeur-driven limousines, luxury transportation, corporate transportation, NYC limo rental, VIP wedding limo, VIP chauffeur, Atlantic City limo service, Hazlet Township limo service, Middletown limo service, monmouth county limo service, affordable limousine service New Jersey, affordable limousine service NYC, affordable limousine service brooklyn, brooklyn limo service ">
   <meta name="google-site-verification" content="T6ctdJLtVIcQYY-p4cSZort44CSd2dh1TdmBO-c9aQ4" />
 
-  <!-- LCP: preload hero image -->
-  <link rel="preload" as="image" href="media/hero.png">
+  <!-- LCP: preload hero background layer -->
+  <link rel="preload" as="image" href="media/hero-bg.png">
 
   <!--for nav icon-->
   <!-- Google Fonts (display=swap to avoid blocking text) -->
@@ -26,13 +26,22 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Non-critical CSS: load async so they don't block first paint -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    media="print" onload="this.media='all'">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" media="print" onload="this.media='all'">
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"
+    media="print" onload="this.media='all'">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"></noscript>
-  <noscript><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous"></noscript>
-  <noscript><link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"></noscript>
+  <noscript>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  </noscript>
+  <noscript>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      crossorigin="anonymous">
+  </noscript>
+  <noscript>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  </noscript>
 
   <!-- Critical CSS: above-the-fold -->
   <link href="./style/main.css" rel="stylesheet" />
@@ -41,6 +50,7 @@
   <link href="./style/explore.css" rel="stylesheet" />
   <link href="./style/btn_slider.css" rel="stylesheet" />
   <link href="./style/multislider.css" rel="stylesheet" />
+  <link href="./style/theme-dark.css" rel="stylesheet" />
   <link rel="shortcut icon" type="image/png" href="media/favicon1.png">
 
   <!-- Google Analytics -->
@@ -82,6 +92,16 @@
   }
   </script>
 
+  <!-- Theme: set data-theme early to avoid flash -->
+  <script>
+    (function () {
+      var stored = localStorage.getItem('theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var theme = stored === 'dark' || stored === 'light' ? stored : (prefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+
 </head>
 
 <body>
@@ -93,6 +113,14 @@
         onclick="toggleFunction()" title="Toggle Navigation Menu">
         <i class="fas fa-bars menu-icon"></i>
       </a>
+
+      <!-- Theme toggle on mobile: next to hamburger, always visible without opening menu -->
+      <span class="theme-toggle-wrap theme-toggle-mobile-bar w3-bar-item w3-hide-large w3-right">
+        <span class="theme-toggle-label" aria-hidden="true">LIGHT</span>
+        <button type="button" class="theme-toggle" aria-label="Switch to dark mode" title="Switch to dark mode">
+          <i class="fas fa-moon theme-toggle-icon" aria-hidden="true"></i>
+        </button>
+      </span>
 
       <!-- Navigation Links for Large Screens -->
       <a href="#home" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-large">
@@ -111,15 +139,26 @@
         <i class="fas fa-envelope contact-icon"></i> CONTACT
       </a>
 
-      <!-- Logo -->
+      <!-- Theme toggle (neumorphic pill) -->
+      <span class="theme-toggle-wrap w3-bar-item w3-hide-small w3-hide-medium w3-large">
+        <span class="theme-toggle-label" aria-hidden="true">LIGHT</span>
+        <button type="button" class="theme-toggle" aria-label="Switch to dark mode" title="Switch to dark mode">
+          <i class="fas fa-moon theme-toggle-icon" aria-hidden="true"></i>
+        </button>
+      </span>
+
+      <!-- Logo (light + dark theme variants) -->
       <span class="underline-logo logo">
         <a href="#home">
-          <img src="./media/logo2.png" width="200" height="83" style="width: 200px; margin-top:5px" alt="logo" fetchpriority="high" />
+          <img class="logo-img logo-img-light" src="./media/logo2.png" width="200" height="83"
+            style="width: 200px; margin-top:5px" alt="Turbo Limousine" fetchpriority="high" />
+          <img class="logo-img logo-img-dark" src="./media/logo-turbo-limousine-3d-dark.png" width="200" height="83"
+            style="width: 200px; margin-top:5px" alt="Turbo Limousine" />
         </a>
       </span>
     </div>
 
-    <!-- Navbar for Small Screens -->
+    <!-- Navbar for Small Screens (dropdown menu; toggle is in main bar next to hamburger) -->
     <div id="NavSmall" class="w3-bar-block w3-white w3-hide w3-hide-large">
       <a href="#services" class="w3-bar-item w3-button" onclick="toggleFunction()">
         <i class="fas fa-gear services-icon"></i> SERVICES
@@ -142,6 +181,9 @@
 
   <div class="bgimg-1
               w3-display-container" id="home" style="position: relative;">
+
+    <img src="./media/hero-car.png" class="hero-car-layer hero-car-light" alt="" aria-hidden="true" />
+    <img src="./media/hero-car-dark.png" class="hero-car-layer hero-car-dark" alt="" aria-hidden="true" />
 
     <div class="w3-display-left  
                 span-left
@@ -182,13 +224,18 @@
       </div>
     </div>
 
-    <embed style="position:absolute;  bottom: 0; " src="media/img1.svg" alt="" />
+    <embed class="hero-curve-overlay hero-curve-overlay-light" src="media/img1.svg" alt="" />
+    <embed class="hero-curve-overlay hero-curve-overlay-dark" src="media/img1-dark.svg" alt="" />
 
   </div>
 
   <div class="w3-content w3-container ">
 
-    <p class="w3-center" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;margin:0;font-size:1px;">Turbolimo offers luxury limousine and car service in New Jersey and NYC. We provide airport transfers, wedding and prom limos, corporate chauffeur service, and transportation for special events. Affordable, reliable luxury for every occasion.</p>
+    <p class="w3-center" aria-hidden="true"
+      style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;margin:0;font-size:1px;">Turbolimo
+      offers luxury limousine and car service in New Jersey and NYC. We provide airport transfers, wedding and prom
+      limos, corporate chauffeur service, and transportation for special events. Affordable, reliable luxury for every
+      occasion.</p>
 
     <h2 style="font-size:3rem;" class="w3-center intro-narrative__heading welcome" id="services">OUR SERVICES</h2>
 
@@ -214,7 +261,8 @@
     <!-- start of first card    -->
 
     <div class="card">
-      <img class="card-img-top" src="./media/airport-trans.jpeg" width="400" height="300" alt="Card image cap" loading="lazy">
+      <img class="card-img-top" src="./media/airport-trans.jpeg" width="400" height="300" alt="Card image cap"
+        loading="lazy">
       <div class="card-body">
         <h5 class="card-title">Airport Transfers</h5>
         <p class="card-text">Turbolimo offers a reliable, luxurious chauffeur service right within your budget.
@@ -232,7 +280,8 @@
     <!-- start of 2nd card  -->
 
     <div class="card">
-      <img class="card-img-top" src="./media/corporate-1.jpeg" width="400" height="300" alt="Card image cap" loading="lazy">
+      <img class="card-img-top" src="./media/corporate-1.jpeg" width="400" height="300" alt="Card image cap"
+        loading="lazy">
       <div class="card-body">
         <h5 class="card-title">Corporate Limo Service</h5>
         <p class="card-text">Specializing in corporate luxury transfers, we are dedicated to providing for hard-working
@@ -248,7 +297,8 @@
     <!-- start of 3d card    -->
     <!-- start of 3d card    -->
     <div class="card">
-      <img class="card-img-top" src="./media/Private_transport-1.jpeg" width="400" height="300" alt="Card image cap" loading="lazy">
+      <img class="card-img-top" src="./media/Private_transport-1.jpeg" width="400" height="300" alt="Card image cap"
+        loading="lazy">
       <div class="card-body">
         <h5 class="card-title">FBO Airport Transportation</h5>
         <p class="card-text">Delivers reliable private limousine and chauffeured transportation serving all Aviation FBO
@@ -271,7 +321,8 @@
   <div class="w3-row-padding w3-center box-hidden">
     <!-- start of card    -->
     <div class="card">
-      <img class="card-img-top" src="./media/weddings-1.jpeg" width="400" height="300" alt="Card image cap" loading="lazy">
+      <img class="card-img-top" src="./media/weddings-1.jpeg" width="400" height="300" alt="Card image cap"
+        loading="lazy">
       <div class="card-body">
         <h5 class="card-title">Wedding</h5>
         <p class="card-text"> We team up with your event planner so you can simply enjoy the big day.</p>
@@ -280,7 +331,8 @@
     <!-- end of  card -->
     <!-- start of card    -->
     <div class="card">
-      <img class="card-img-top" src="./media/night-in-town.jpeg" width="400" height="300" alt="Card image cap" loading="lazy">
+      <img class="card-img-top" src="./media/night-in-town.jpeg" width="400" height="300" alt="Card image cap"
+        loading="lazy">
       <div class="card-body">
         <h5 class="card-title">Night in Town</h5>
         <p class="card-text">To make your Night in Town Special, Turbolimo has the right vehicle for you!</p>
@@ -290,7 +342,8 @@
     <!-- end of  card -->
     <!-- start of card    -->
     <div class="card">
-      <img class="card-img-top" src="./media/Limo-proms.jpeg" width="400" height="300" alt="Card image cap" loading="lazy">
+      <img class="card-img-top" src="./media/Limo-proms.jpeg" width="400" height="300" alt="Card image cap"
+        loading="lazy">
       <div class="card-body">
         <h5 class="card-title">Prom</h5>
         <p class="card-text">We offer an unforgettable prom day experience you won't find anywhere else.</p>
@@ -349,7 +402,8 @@
     <div class="w3-display-middle">
       <span class="w3-xxlarge w3-text-white w3-wide"> &quot Chauffeurs at your fingertips &quot </span>
     </div>
-    <embed style="position:absolute;  bottom: 0; " src="media/img1.svg" alt="svg curvy shape" />
+    <embed class="section-curve-overlay section-curve-overlay-light" src="media/img1.svg" alt="svg curvy shape" />
+    <embed class="section-curve-overlay section-curve-overlay-dark" src="media/img1-dark.svg" alt="svg curvy shape" />
 
   </div>
 
@@ -446,7 +500,8 @@
     <div class="w3-display-middle">
       <span class="w3-xxlarge w3-text-white w3-wide"> Affordable & luxury</span>
     </div>
-    <embed style="position:absolute;  bottom: 0; " src="media/img1.svg" alt="svg curvy shape" />
+    <embed class="section-curve-overlay section-curve-overlay-light" src="media/img1.svg" alt="svg curvy shape" />
+    <embed class="section-curve-overlay section-curve-overlay-dark" src="media/img1-dark.svg" alt="svg curvy shape" />
   </div>
 
   <!-- End Third Parallax Image with Text -->
@@ -474,7 +529,10 @@
       <div class="item ">
         <div class="imgTitle">
           <h2 class="blogTitle">Mkt</h2>
-          <img src="./media/car-1.jpeg" width="300" height="200" alt="car-img" loading="lazy" />
+          <img class="slider-car-img slider-car-light" src="./media/car-1.jpeg" width="300" height="200" alt="car-img"
+            loading="lazy" />
+          <img class="slider-car-img slider-car-dark" src="./media/car-1-dark.png" width="300" height="200"
+            alt="car-img" loading="lazy" />
         </div>
       </div>
 
@@ -482,30 +540,60 @@
       <div class="item">
         <div class="imgTitle">
           <h2 class="blogTitle">Suv</h2>
-          <img src="./media/car-5.jpeg" width="300" height="200" alt="car-img" loading="lazy" />
+          <img class="slider-car-img slider-car-light" src="./media/car-5.jpeg" width="300" height="200" alt="car-img"
+            loading="lazy" />
+          <img class="slider-car-img slider-car-dark" src="./media/car-5-dark.png" width="300" height="200"
+            alt="car-img" loading="lazy" />
         </div>
 
       </div>
       <div class="item">
         <div class="imgTitle">
           <h2 class="blogTitle">Tesla</h2>
-          <img src="./media/tesla.png" width="300" height="200" alt="tesla-img" loading="lazy" />
+          <img class="slider-car-img slider-car-light" src="./media/tesla.png" width="300" height="200" alt="tesla-img"
+            loading="lazy" />
+          <img class="slider-car-img slider-car-dark" src="./media/tesla-dark.png" width="300" height="200"
+            alt="tesla-img" loading="lazy" />
         </div>
       </div>
 
       <div class="item">
         <div class="imgTitle">
           <h2 class="blogTitle">Sedan</h2>
-          <img src="./media/car-4.jpeg" width="300" height="200" alt="car-img" loading="lazy" />
+          <img class="slider-car-img slider-car-light" src="./media/car-4.jpeg" width="300" height="200" alt="car-img"
+            loading="lazy" />
+          <img class="slider-car-img slider-car-dark" src="./media/car-4-dark.png" width="300" height="200"
+            alt="car-img" loading="lazy" />
         </div>
 
       </div>
       <div class="item">
         <div class="imgTitle">
           <h2 class="blogTitle">Stretch</h2>
-          <img src="./media/white-escalade.png" width="300" height="200" alt="car-img" loading="lazy" />
+          <img class="slider-car-img slider-car-light" src="./media/white-escalade.png" width="300" height="200"
+            alt="car-img" loading="lazy" />
+          <img class="slider-car-img slider-car-dark" src="./media/white-escalade.png" width="300" height="200"
+            alt="car-img" loading="lazy" />
         </div>
 
+      </div>
+      <div class="item">
+        <div class="imgTitle">
+          <h2 class="blogTitle">Luxury SUV</h2>
+          <img class="slider-car-img slider-car-light" src="./media/car_new_1.png" width="300" height="200"
+            alt="car-img" loading="lazy" />
+          <img class="slider-car-img slider-car-dark" src="./media/car_new_1-dark.png" width="300" height="200"
+            alt="car-img" loading="lazy" />
+        </div>
+      </div>
+      <div class="item">
+        <div class="imgTitle">
+          <h2 class="blogTitle">Escalade</h2>
+          <img class="slider-car-img slider-car-light" src="./media/escalade_new-light.png?v=4" width="300" height="200"
+            alt="car-img" loading="lazy" />
+          <img class="slider-car-img slider-car-dark" src="./media/escalade_new-dark.png" width="300" height="200"
+            alt="car-img" loading="lazy" />
+        </div>
       </div>
 
       <!-- <div class="item">
@@ -560,7 +648,8 @@
       </div>
     </div>
 
-    <embed style="position:absolute;  bottom: 0; " src="media/img1.svg" alt="svg curvy shape" />
+    <embed class="section-curve-overlay section-curve-overlay-light" src="media/img1.svg" alt="svg curvy shape" />
+    <embed class="section-curve-overlay section-curve-overlay-dark" src="media/img1-dark.svg" alt="svg curvy shape" />
 
   </div>
 
@@ -622,8 +711,11 @@
             <div class="opt-in-container">
               <input type="checkbox" id="sms-opt-in" name="sms_opt_in" value="yes" aria-describedby="sms-opt-in-text">
               <div class="opt-in-text">
-                <label id="sms-opt-in-text" for="sms-opt-in">I agree to receive booking-related text messages from TurboLimo, including confirmations, reminders, and ride updates. Msg &amp; data rates may apply. Reply STOP to opt out, HELP for help.
-                  <a class="privacy-link" href="pages/privacy.html">Privacy Policy</a> – <a class="privacy-link" href="pages/terms.html">Terms</a>
+                <label id="sms-opt-in-text" for="sms-opt-in">I agree to receive booking-related text messages from
+                  TurboLimo, including confirmations, reminders, and ride updates. Msg &amp; data rates may apply. Reply
+                  STOP to opt out, HELP for help.
+                  <a class="privacy-link" href="pages/privacy.html">Privacy Policy</a> – <a class="privacy-link"
+                    href="pages/terms.html">Terms</a>
                 </label>
               </div>
             </div>
@@ -907,18 +999,25 @@
 
 
   <!-- Third: Your custom scripts (defer, same order) -->
+  <script src="./script/theme.js" defer></script>
   <script src="./script/bookingform.js" defer></script>
   <script src="./script/script.js" defer></script>
   <script src="./script/load-more.js" defer></script>
   <script src="./script/multislider.js" defer></script>
   <script src="./script/explore_slide.js" defer></script>
-  <script src="./script/multislider.min.js" defer></script>
-  <script>
-    // this code for -- multi slider--  going to the left...
-    $('#mixedSlider').multislider({
-      duration: 750,
-      interval: 2500
-    });
+  <script defer>
+    // Multislider init: run after DOM and deferred scripts (jQuery, multislider) are ready
+    (function runMultislider() {
+      if (window.jQuery && jQuery.fn.multislider) {
+        jQuery('#mixedSlider').multislider({ duration: 750, interval: 2500, hoverPause: false });
+        return;
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', runMultislider);
+      } else {
+        setTimeout(runMultislider, 50);
+      }
+    })();
   </script>
 </body>
 

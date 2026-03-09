@@ -1,0 +1,10 @@
+---
+description: Use AI (rembg) for transparent hero/slider/logo assets; backup before overwriting; prefer over threshold/flood-fill when subject is dark on dark or edges are poor.
+globs: media/**/*.png, media/**/*.jpg, media/**/*.jpeg, scripts/remove_bg*.py, scripts/make_transparent*.py
+---
+
+When creating or updating images with transparent backgrounds (hero car, slider cars, logos):
+
+- Prefer the **ai-background-removal** skill: use rembg for clean, sharp edges. Run `scripts/remove_bg_ai.py` (or equivalent); back up existing assets before overwriting.
+- Do not delete or remove original files in `media/` before the user has verified the site.
+- If rembg is unavailable, use flood-fill from edges (only remove pixels connected to the image border) to avoid cutting into the subject.

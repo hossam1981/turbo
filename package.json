@@ -1,5 +1,7 @@
 {
   "name": "limo-proj",
   "private": true,
-  "devDependencies": {}
+  "devDependencies": {
+    "sharp": "^0.34.5"
+  }
 }
