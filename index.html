@@ -50,6 +50,8 @@
   <link href="./style/explore.css" rel="stylesheet" />
   <link href="./style/btn_slider.css" rel="stylesheet" />
   <link href="./style/multislider.css" rel="stylesheet" />
+  <link href="./style/slider-3d.css" rel="stylesheet" />
+  <link href="./style/peek-carousel.css" rel="stylesheet" />
   <link href="./style/theme-dark.css" rel="stylesheet" />
   <link rel="shortcut icon" type="image/png" href="media/favicon1.png">
 
@@ -248,151 +250,262 @@
 
   </div>
 
-  <!-- -------------------------------start of frist card raw---------------------- -->
-  <!-- -------------------------------start of frist card raw---------------------- -->
-  <!-- -------------------------------start of frist card raw---------------------- -->
-
-  <!-- -------------------------------start of frist card raw---------------------- -->
-  <!-- -------------------------------start of frist card raw---------------------- -->
-
-  <div class="w3-row-padding w3-center box-hidden">
-    <!-- start of first card    -->
-    <!-- start of first card    -->
-    <!-- start of first card    -->
-
-    <div class="card">
-      <img class="card-img-top" src="./media/airport-trans.jpeg" width="400" height="300" alt="Card image cap"
-        loading="lazy">
-      <div class="card-body">
-        <h5 class="card-title">Airport Transfers</h5>
-        <p class="card-text">Turbolimo offers a reliable, luxurious chauffeur service right within your budget.
-        </p>
+  <div id="services-display" data-view="3d">
+    <div class="services-view-toggle w3-center w3-margin-bottom" role="group" aria-label="Services display">
+      <button type="button" class="services-view-btn active" data-view="3d" aria-pressed="true">3D carousel</button>
+      <button type="button" class="services-view-btn" data-view="grid" aria-pressed="false">Card grid</button>
+      <button type="button" class="services-view-btn" data-view="peek" aria-pressed="false">Peek carousel</button>
+    </div>
+    <div class="services-view services-view-3d">
+      <!-- 3D Carousel: reference structure (drag-container > spin-container > items); drag rotates view, spin auto-rotates -->
+      <section class="slider-3d-banner" id="slider-3d-banner" aria-label="Services showcase">
+        <div class="slider-3d-scene">
+          <div id="drag-container">
+            <div id="spin-container">
+              <div class="slider-3d-item slider-3d-card">
+                <img src="./media/airport-trans.jpeg" alt="Airport Transfers" loading="lazy" />
+                <div class="slider-3d-card-body">
+                  <h5 class="slider-3d-card-title">Airport Transfers</h5>
+                  <p class="slider-3d-card-text">Reliable, luxurious chauffeur service within your budget.</p>
+                </div>
+              </div>
+              <div class="slider-3d-item slider-3d-card">
+                <img src="./media/corporate-1.jpeg" alt="Corporate Limo Service" loading="lazy" />
+                <div class="slider-3d-card-body">
+                  <h5 class="slider-3d-card-title">Corporate Limo Service</h5>
+                  <p class="slider-3d-card-text">Corporate luxury transfers for hard-working clients.</p>
+                </div>
+              </div>
+              <div class="slider-3d-item slider-3d-card">
+                <img src="./media/Private_transport-1.jpeg" alt="FBO Airport Transportation" loading="lazy" />
+                <div class="slider-3d-card-body">
+                  <h5 class="slider-3d-card-title">FBO Airport Transportation</h5>
+                  <p class="slider-3d-card-text">Private limousine serving all Aviation FBO Flight Centers.</p>
+                </div>
+              </div>
+              <div class="slider-3d-item slider-3d-card">
+                <img src="./media/weddings-1.jpeg" alt="Wedding" loading="lazy" />
+                <div class="slider-3d-card-body">
+                  <h5 class="slider-3d-card-title">Wedding</h5>
+                  <p class="slider-3d-card-text">We team up with your event planner for the big day.</p>
+                </div>
+              </div>
+              <div class="slider-3d-item slider-3d-card">
+                <img src="./media/night-in-town.jpeg" alt="Night in Town" loading="lazy" />
+                <div class="slider-3d-card-body">
+                  <h5 class="slider-3d-card-title">Night in Town</h5>
+                  <p class="slider-3d-card-text">The right vehicle for your night out.</p>
+                </div>
+              </div>
+              <div class="slider-3d-item slider-3d-card">
+                <img src="./media/Limo-proms.jpeg" alt="Prom" loading="lazy" />
+                <div class="slider-3d-card-body">
+                  <h5 class="slider-3d-card-title">Prom</h5>
+                  <p class="slider-3d-card-text">An unforgettable prom day experience.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="slider-3d-hint">Drag or swipe to rotate</p>
+      </section>
+    </div>
+    <div class="services-view services-view-peek" aria-label="Services peek carousel">
+      <div class="peek-carousel" id="peek-carousel">
+        <div class="peek-slide">
+          <div class="card">
+            <img class="card-img-top" src="./media/airport-trans.jpeg" width="400" height="300" alt="Airport Transfers" loading="lazy">
+            <div class="card-body">
+              <h5 class="card-title">Airport Transfers</h5>
+              <p class="card-text">Turbolimo offers a reliable, luxurious chauffeur service right within your budget.</p>
+            </div>
+          </div>
+        </div>
+        <div class="peek-slide">
+          <div class="card">
+            <img class="card-img-top" src="./media/corporate-1.jpeg" width="400" height="300" alt="Corporate Limo Service" loading="lazy">
+            <div class="card-body">
+              <h5 class="card-title">Corporate Limo Service</h5>
+              <p class="card-text">Specializing in corporate luxury transfers, we are dedicated to providing for hard-working clients.</p>
+            </div>
+          </div>
+        </div>
+        <div class="peek-slide">
+          <div class="card">
+            <img class="card-img-top" src="./media/Private_transport-1.jpeg" width="400" height="300" alt="FBO Airport Transportation" loading="lazy">
+            <div class="card-body">
+              <h5 class="card-title">FBO Airport Transportation</h5>
+              <p class="card-text">Delivers reliable private limousine and chauffeured transportation serving all Aviation FBO Flight Centers.</p>
+            </div>
+          </div>
+        </div>
+        <div class="peek-slide">
+          <div class="card">
+            <img class="card-img-top" src="./media/weddings-1.jpeg" width="400" height="300" alt="Wedding" loading="lazy">
+            <div class="card-body">
+              <h5 class="card-title">Wedding</h5>
+              <p class="card-text">We team up with your event planner so you can simply enjoy the big day.</p>
+            </div>
+          </div>
+        </div>
+        <div class="peek-slide">
+          <div class="card">
+            <img class="card-img-top" src="./media/night-in-town.jpeg" width="400" height="300" alt="Night in Town" loading="lazy">
+            <div class="card-body">
+              <h5 class="card-title">Night in Town</h5>
+              <p class="card-text">To make your Night in Town Special, Turbolimo has the right vehicle for you!</p>
+            </div>
+          </div>
+        </div>
+        <div class="peek-slide">
+          <div class="card">
+            <img class="card-img-top" src="./media/Limo-proms.jpeg" width="400" height="300" alt="Prom" loading="lazy">
+            <div class="card-body">
+              <h5 class="card-title">Prom</h5>
+              <p class="card-text">We offer an unforgettable prom day experience you won't find anywhere else.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <!-- end of  first card -->
-    <!-- end of  first card -->
-    <!-- end of  first card -->
+    <div class="services-view services-view-grid">
+      <div class="w3-row-padding w3-center box-hidden">
+        <!-- start of first card    -->
+        <!-- start of first card    -->
+        <!-- start of first card    -->
+
+        <div class="card">
+          <img class="card-img-top" src="./media/airport-trans.jpeg" width="400" height="300" alt="Card image cap"
+            loading="lazy">
+          <div class="card-body">
+            <h5 class="card-title">Airport Transfers</h5>
+            <p class="card-text">Turbolimo offers a reliable, luxurious chauffeur service right within your budget.
+            </p>
+          </div>
+        </div>
+        <!-- end of  first card -->
+        <!-- end of  first card -->
+        <!-- end of  first card -->
 
 
 
-    <!-- start of 2nd card  -->
-    <!-- start of 2nd card  -->
-    <!-- start of 2nd card  -->
+        <!-- start of 2nd card  -->
+        <!-- start of 2nd card  -->
+        <!-- start of 2nd card  -->
 
-    <div class="card">
-      <img class="card-img-top" src="./media/corporate-1.jpeg" width="400" height="300" alt="Card image cap"
-        loading="lazy">
-      <div class="card-body">
-        <h5 class="card-title">Corporate Limo Service</h5>
-        <p class="card-text">Specializing in corporate luxury transfers, we are dedicated to providing for hard-working
-          clients </p>
+        <div class="card">
+          <img class="card-img-top" src="./media/corporate-1.jpeg" width="400" height="300" alt="Card image cap"
+            loading="lazy">
+          <div class="card-body">
+            <h5 class="card-title">Corporate Limo Service</h5>
+            <p class="card-text">Specializing in corporate luxury transfers, we are dedicated to providing for
+              hard-working
+              clients </p>
 
+          </div>
+        </div>
+        <!-- end of 2nd card -->
+        <!-- end of 2nd card -->
+        <!-- end of 2nd card -->
+
+        <!-- start of 3d card    -->
+        <!-- start of 3d card    -->
+        <!-- start of 3d card    -->
+        <div class="card">
+          <img class="card-img-top" src="./media/Private_transport-1.jpeg" width="400" height="300" alt="Card image cap"
+            loading="lazy">
+          <div class="card-body">
+            <h5 class="card-title">FBO Airport Transportation</h5>
+            <p class="card-text">Delivers reliable private limousine and chauffeured transportation serving all Aviation
+              FBO
+              Flight Centers.
+            </p>
+
+          </div>
+        </div>
+        <!-- end of  card -->
       </div>
-    </div>
-    <!-- end of 2nd card -->
-    <!-- end of 2nd card -->
-    <!-- end of 2nd card -->
+      <!-- end of raw -->
+      <!-- end of raw -->
+      <!-- end of raw -->
+      <!-- end of raw -->
+      <!-- end of raw -->
+      <!-- end of raw -->
+      <!-- end of raw -->
 
-    <!-- start of 3d card    -->
-    <!-- start of 3d card    -->
-    <!-- start of 3d card    -->
-    <div class="card">
-      <img class="card-img-top" src="./media/Private_transport-1.jpeg" width="400" height="300" alt="Card image cap"
-        loading="lazy">
-      <div class="card-body">
-        <h5 class="card-title">FBO Airport Transportation</h5>
-        <p class="card-text">Delivers reliable private limousine and chauffeured transportation serving all Aviation FBO
-          Flight Centers.
-        </p>
+      <!-- start of raw -->
+      <div class="w3-row-padding w3-center box-hidden">
+        <!-- start of card    -->
+        <div class="card">
+          <img class="card-img-top" src="./media/weddings-1.jpeg" width="400" height="300" alt="Card image cap"
+            loading="lazy">
+          <div class="card-body">
+            <h5 class="card-title">Wedding</h5>
+            <p class="card-text"> We team up with your event planner so you can simply enjoy the big day.</p>
+          </div>
+        </div>
+        <!-- end of  card -->
+        <!-- start of card    -->
+        <div class="card">
+          <img class="card-img-top" src="./media/night-in-town.jpeg" width="400" height="300" alt="Card image cap"
+            loading="lazy">
+          <div class="card-body">
+            <h5 class="card-title">Night in Town</h5>
+            <p class="card-text">To make your Night in Town Special, Turbolimo has the right vehicle for you!</p>
 
+          </div>
+        </div>
+        <!-- end of  card -->
+        <!-- start of card    -->
+        <div class="card">
+          <img class="card-img-top" src="./media/Limo-proms.jpeg" width="400" height="300" alt="Card image cap"
+            loading="lazy">
+          <div class="card-body">
+            <h5 class="card-title">Prom</h5>
+            <p class="card-text">We offer an unforgettable prom day experience you won't find anywhere else.</p>
+
+          </div>
+        </div>
+        <!-- end of  card -->
       </div>
-    </div>
-    <!-- end of  card -->
-  </div>
-  <!-- end of raw -->
-  <!-- end of raw -->
-  <!-- end of raw -->
-  <!-- end of raw -->
-  <!-- end of raw -->
-  <!-- end of raw -->
-  <!-- end of raw -->
-
-  <!-- start of raw -->
-  <div class="w3-row-padding w3-center box-hidden">
-    <!-- start of card    -->
-    <div class="card">
-      <img class="card-img-top" src="./media/weddings-1.jpeg" width="400" height="300" alt="Card image cap"
-        loading="lazy">
-      <div class="card-body">
-        <h5 class="card-title">Wedding</h5>
-        <p class="card-text"> We team up with your event planner so you can simply enjoy the big day.</p>
-      </div>
-    </div>
-    <!-- end of  card -->
-    <!-- start of card    -->
-    <div class="card">
-      <img class="card-img-top" src="./media/night-in-town.jpeg" width="400" height="300" alt="Card image cap"
-        loading="lazy">
-      <div class="card-body">
-        <h5 class="card-title">Night in Town</h5>
-        <p class="card-text">To make your Night in Town Special, Turbolimo has the right vehicle for you!</p>
-
-      </div>
-    </div>
-    <!-- end of  card -->
-    <!-- start of card    -->
-    <div class="card">
-      <img class="card-img-top" src="./media/Limo-proms.jpeg" width="400" height="300" alt="Card image cap"
-        loading="lazy">
-      <div class="card-body">
-        <h5 class="card-title">Prom</h5>
-        <p class="card-text">We offer an unforgettable prom day experience you won't find anywhere else.</p>
-
-      </div>
-    </div>
-    <!-- end of  card -->
-  </div>
-  <!-- end of raw -->
-  <!-- end of raw -->
-  <!-- end of raw -->
-  <!-- end of raw -->
-  <!-- end of raw -->
-  <!-- end of raw -->
+      <!-- end of raw -->
+      <!-- end of raw -->
+      <!-- end of raw -->
+      <!-- end of raw -->
+      <!-- end of raw -->
+      <!-- end of raw -->
 
 
 
 
-  <!-- ---------------------------end of last raw  ------------------- -->
-  <!-- ---------------------------end of last raw  ------------------- -->
-  <!-- ---------------------------end of last raw  ------------------- -->
-  <!-- ---------------------------end of last raw  ------------------- -->
-  <!-- ---------------------------end of last raw  ------------------- -->
+      <!-- ---------------------------end of last raw  ------------------- -->
+      <!-- ---------------------------end of last raw  ------------------- -->
+      <!-- ---------------------------end of last raw  ------------------- -->
+      <!-- ---------------------------end of last raw  ------------------- -->
+      <!-- ---------------------------end of last raw  ------------------- -->
 
 
 
-  <!-- -------------------------LOAD MORE button------------------------ -->
-  <!-- -------------------------LOAD MORE button------------------------ -->
-  <!-- -------------------------LOAD MORE button------------------------ -->
-  <!-- -------------------------LOAD MORE button------------------------ -->
-  <!-- -------------------------LOAD MORE button------------------------ -->
+      <!-- -------------------------LOAD MORE button------------------------ -->
+      <!-- -------------------------LOAD MORE button------------------------ -->
+      <!-- -------------------------LOAD MORE button------------------------ -->
+      <!-- -------------------------LOAD MORE button------------------------ -->
+      <!-- -------------------------LOAD MORE button------------------------ -->
 
-  <div class=" w3-center">
-    <button class="btn 
+      <div class=" w3-center">
+        <button class="btn 
               btn-color
               btn-block
               bg_slider
               w3-padding-large " id="loadMore" name="submit">
-      MORE SERVICES
-      <i class="fas fa-lg fa-angles-down" aria-hidden="true"></i>
-    </button>
+          MORE SERVICES
+          <i class="fas fa-lg fa-angles-down" aria-hidden="true"></i>
+        </button>
+      </div>
+      <!-- -----------------------------End Of LOAD MORE button -------------------- -->
+      <!-- -----------------------------End Of LOAD MORE button -------------------- -->
+    </div>
   </div>
-  <!-- -----------------------------End Of LOAD MORE button -------------------- -->
-  <!-- -----------------------------End Of LOAD MORE 
-  <!-- -----------------------------End Of LOAD MORE button -------------------- -->
-  <!-- -----------------------------End Of LOAD MORE button -------------------- -->
-
-
-
 
 
 
@@ -705,18 +818,13 @@
             <!-- Input field for customer's phone number with an icon -->
             <div class="input-container">
               <i class="fas fa-phone"></i>
-              <input type="tel" name="phone" id="phone" placeholder="Phone number" aria-label="Phone number" required>
+              <input type="tel" name="phone" id="phone" placeholder="Phone number" aria-label="Phone number">
             </div>
 
             <div class="opt-in-container">
               <input type="checkbox" id="sms-opt-in" name="sms_opt_in" value="yes" aria-describedby="sms-opt-in-text">
               <div class="opt-in-text">
-                <label id="sms-opt-in-text" for="sms-opt-in">I agree to receive booking-related text messages from
-                  TurboLimo, including confirmations, reminders, and ride updates. Msg &amp; data rates may apply. Reply
-                  STOP to opt out, HELP for help.
-                  <a class="privacy-link" href="pages/privacy.html">Privacy Policy</a> – <a class="privacy-link"
-                    href="pages/terms.html">Terms</a>
-                </label>
+                <label id="sms-opt-in-text" for="sms-opt-in">I agree to receive booking-related text messages from TurboLimo, including confirmations, reminders, and ride updates. Msg &amp; data rates may apply. Reply STOP to opt out, HELP for help. <a class="privacy-link" href="pages/privacy.html">Privacy Policy</a> – <a class="privacy-link" href="pages/terms.html">Terms</a></label>
               </div>
             </div>
 
@@ -788,11 +896,13 @@
                 <i class="fas fa-users"></i> Passengers
               </label>
               <div class="controls">
-                <button type="button" aria-label="Increase passenger count" onclick="incrementCount('passenger-count'); enablePassengerIconActive(); updateCounterIconStates();">
+                <button type="button" aria-label="Increase passenger count"
+                  onclick="incrementCount('passenger-count'); enablePassengerIconActive(); updateCounterIconStates();">
                   <i class="fas fa-plus"></i>
                 </button>
                 <input name="Passenger No." type="text" id="passenger-count" value="1" readonly>
-                <button type="button" aria-label="Decrease passenger count" onclick="decrementCount('passenger-count'); enablePassengerIconActive(); updateCounterIconStates();">
+                <button type="button" aria-label="Decrease passenger count"
+                  onclick="decrementCount('passenger-count'); enablePassengerIconActive(); updateCounterIconStates();">
                   <i class="fas fa-minus"></i>
                 </button>
               </div>
@@ -804,11 +914,13 @@
                 <i class="fas fa-suitcase"></i> Luggage
               </label>
               <div class="controls">
-                <button type="button" aria-label="Increase luggage count" onclick="incrementCount('luggage-count'); enableLuggageIconActive(); updateCounterIconStates();">
+                <button type="button" aria-label="Increase luggage count"
+                  onclick="incrementCount('luggage-count'); enableLuggageIconActive(); updateCounterIconStates();">
                   <i class="fas fa-plus"></i>
                 </button>
                 <input name="luggage No." type="text" id="luggage-count" value="0" readonly>
-                <button type="button" aria-label="Decrease luggage count" onclick="decrementCount('luggage-count'); enableLuggageIconActive(); updateCounterIconStates();">
+                <button type="button" aria-label="Decrease luggage count"
+                  onclick="decrementCount('luggage-count'); enableLuggageIconActive(); updateCounterIconStates();">
                   <i class="fas fa-minus"></i>
                 </button>
               </div>
@@ -821,7 +933,8 @@
                 <i class="fas fa-car"></i>
               </label>
               <div class="input-container">
-                <select id="car-option" name="car_option" class="custom-select" onchange="toggleHourCounter(); updateCounterIconStates();">
+                <select id="car-option" name="car_option" class="custom-select"
+                  onchange="toggleHourCounter(); updateCounterIconStates();">
                   <option value="">Select Vehicle</option>
                   <option value="Sedan">Luxe SEDAN 4 pax</option>
                   <option value="SUV">Luxe SUV 7-8 pax</option>
@@ -870,7 +983,8 @@
               <label for="accessible-checkbox" class="counter-label counter-label-accessible">
                 <i class="fas fa-wheelchair"></i> Accessible
                 <span class="checkbox-container">
-                  <input type="checkbox" id="accessible-checkbox" name="accessible" class="accessible-checkbox" aria-label="Accessible vehicle option">
+                  <input type="checkbox" id="accessible-checkbox" name="accessible" class="accessible-checkbox"
+                    aria-label="Accessible vehicle option">
                 </span>
               </label>
             </div>
@@ -1003,6 +1117,8 @@
   <script src="./script/bookingform.js" defer></script>
   <script src="./script/script.js" defer></script>
   <script src="./script/load-more.js" defer></script>
+  <script src="./script/slider-3d.js" defer></script>
+  <script src="./script/peek-carousel.js" defer></script>
   <script src="./script/multislider.js" defer></script>
   <script src="./script/explore_slide.js" defer></script>
   <script defer>

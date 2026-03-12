@@ -1,0 +1,32 @@
+================================================================================
+TWILIO A2P – CTA DESCRIPTION
+Copy into "How do end-users consent to receive messages?" (40-2048 characters)
+================================================================================
+
+Privacy Policy URL (in Twilio form):  https://www.turbolimo.net/pages/privacy.html
+Terms and Conditions URL (in Twilio form):  https://www.turbolimo.net/pages/terms.html
+Booking page (opt-in) URL:  https://www.turbolimo.net/#book
+
+--------------------------------------------------------------------------------
+COPY FROM HERE (paste into Twilio "How do end-users consent..." field):
+--------------------------------------------------------------------------------
+
+End users opt in by visiting the TurboLimo booking page on our website and entering their mobile phone number in the booking form. Directly below the phone number field, users must manually check an unchecked consent checkbox before submitting the form.
+
+The exact text displayed next to the checkbox is:
+
+"I agree to receive booking-related text messages from TurboLimo, including confirmations, reminders, and ride updates. Msg & data rates may apply. Reply STOP to opt out, HELP for help."
+
+The checkbox is not pre-selected. Users must check it to proceed. By submitting the booking form with the checkbox selected, users provide explicit consent to receive transactional SMS messages related to their bookings. Privacy Policy and Terms links appear directly below the consent language on the same form.
+
+The booking page is publicly accessible at: https://www.turbolimo.net/#book
+
+--------------------------------------------------------------------------------
+END OF COPY
+--------------------------------------------------------------------------------
+
+Checklist before resubmitting:
+- Consent sentence on site matches the quoted sentence above exactly.
+- Privacy Policy URL in Twilio: https://www.turbolimo.net/pages/privacy.html
+- Terms URL in Twilio: https://www.turbolimo.net/pages/terms.html
+- Optional: attach a screenshot of the booking form (phone field, checkbox, consent text, Privacy/Terms links).

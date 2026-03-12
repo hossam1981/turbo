@@ -31,10 +31,24 @@
     background-color: rgba(255, 255, 255, 0.18) !important;
 }
 
-.w3-bar .w3-bar-item{
-    float: right;
+/* Bar: flex so toggle and nav links align vertically */
+.w3-top .w3-bar {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    flex-wrap: wrap;
+}
+/* Logo stays left, all buttons (toggle + nav) on the right */
+.w3-bar .logo {
+    margin-right: auto;
+}
+.w3-bar .w3-bar-item {
+    float: none;
     color: #7f7f7f;
-    margin-top:10px ;
+    margin-top: 0;
+}
+.w3-bar .w3-button {
+    margin-top: 0;
 }
 
 /* Theme toggle: neumorphic pill, high-contrast 3D depth */
@@ -51,7 +65,6 @@
     border: none;
     border-radius: 999px;
     box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.14), inset -4px -4px 10px rgba(255, 255, 255, 0.92);
-    float: right;
     position: relative;
     overflow: hidden;
 }

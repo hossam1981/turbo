@@ -1,0 +1,301 @@
+/* 3D Image Slider - whole cards revolve (see .cursor/skills/style/3d-image-slider/SKILL.md) */
+
+/* Services view toggle: 3D carousel, card grid, peek carousel */
+#services-display[data-view="3d"] .services-view-grid,
+#services-display[data-view="3d"] .services-view-peek {
+  display: none !important;
+}
+#services-display[data-view="3d"] .services-view-3d {
+  display: block;
+}
+
+#services-display[data-view="grid"] .services-view-3d,
+#services-display[data-view="grid"] .services-view-peek {
+  display: none !important;
+}
+#services-display[data-view="grid"] .services-view-grid {
+  display: block;
+}
+
+#services-display[data-view="peek"] .services-view-3d,
+#services-display[data-view="peek"] .services-view-grid {
+  display: none !important;
+}
+#services-display[data-view="peek"] .services-view-peek {
+  display: block;
+}
+
+.services-view-toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.services-view-btn {
+  padding: 0.4rem 0.9rem;
+  font-size: 0.95rem;
+  border: 1px solid #ccc;
+  background: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.services-view-btn:hover {
+  background: #f5f5f5;
+  border-color: #999;
+}
+
+.services-view-btn.active {
+  background: var(--primary-dark-toned, #1a5f7a);
+  border-color: var(--primary-dark-toned, #1a5f7a);
+  color: #fff;
+}
+
+/* Bigger screens: hide Peek carousel option (only 3D and Card grid) */
+@media (min-width: 769px) {
+  .services-view-btn[data-view="peek"] {
+    display: none;
+  }
+}
+
+/* Mobile: Peek carousel is the main slider; hide 3D and Card grid options and toggle */
+@media (max-width: 768px) {
+  .services-view-toggle {
+    display: none;
+  }
+  #services-display .services-view-3d,
+  #services-display .services-view-grid {
+    display: none !important;
+  }
+  #services-display .services-view-peek {
+    display: block !important;
+  }
+}
+
+/* Avoid overflow:hidden on banner – it flattens 3D (transform-style: flat). Use visible so 3D carousel works. */
+.slider-3d-banner {
+  position: relative;
+  width: 100%;
+  height: 560px;
+  overflow: visible;
+  background: linear-gradient(to bottom, #f5f5f5 0%, #e8e8e8 100%);
+}
+
+/* Scene: perspective + flex center (reference: body has perspective and flex). No overflow:hidden. */
+.slider-3d-scene {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+  -webkit-perspective: 1000px;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.slider-3d-scene:active {
+  cursor: grabbing;
+}
+
+/* Reference: #drag-container – transform applied by JS (rotateX, rotateY from drag) */
+#drag-container {
+  position: relative;
+  display: flex;
+  margin: auto;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform: rotateX(-10deg);
+  transform: rotateX(-10deg);
+}
+
+/* Reference: #spin-container – one-card size; spin animation; item positions set by JS init() */
+#spin-container {
+  position: relative;
+  display: flex;
+  margin: auto;
+  width: 336px;
+  height: 357px;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform: rotateX(-10deg);
+  transform: rotateX(-10deg);
+}
+
+/* Reference: items – position absolute, full size of spin-container; transform set in JS (rotateY translateZ) */
+#drag-container .slider-3d-item {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+/* Card styling (image + body inside each item) + glowing border/shadow */
+/* Light mode: soft dark halo so glow is visible on light background */
+.slider-3d-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.18), 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+  box-sizing: border-box;
+  transition: box-shadow 0.2s ease;
+}
+
+#drag-container .slider-3d-item:hover .slider-3d-card {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.28), 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+
+  to {
+    -webkit-transform: rotateY(360deg);
+    transform: rotateY(360deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+
+  to {
+    -webkit-transform: rotateY(360deg);
+    transform: rotateY(360deg);
+  }
+}
+
+@-webkit-keyframes spinRevert {
+  from {
+    -webkit-transform: rotateY(360deg);
+    transform: rotateY(360deg);
+  }
+
+  to {
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+}
+
+@keyframes spinRevert {
+  from {
+    -webkit-transform: rotateY(360deg);
+    transform: rotateY(360deg);
+  }
+
+  to {
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+}
+
+.slider-3d-card img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  display: block;
+}
+
+.slider-3d-card-body {
+  width: 100%;
+  height: 167px;
+  box-sizing: border-box;
+  padding-top: 25px;
+  padding-left: 19px;
+  padding-right: 19px;
+  padding-bottom: 16px;
+  box-sizing: border-box;
+  background: #fff;
+}
+
+/* Match original .card-title: overlay at bottom with gradient, white text; negative horizontal margin kept, nudge right to fix offset */
+.slider-3d-card-title {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.85));
+  margin: 0 0 165px;
+  box-sizing: border-box;
+  letter-spacing: 4px;
+  position: absolute;
+  line-height: 20px;
+  font-weight: 200;
+  font-size: 20px;
+  color: #fff;
+  padding: 16px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+
+/* Match original p.card-text */
+.slider-3d-card-text {
+  margin: 0;
+  font-size: 18px;
+  text-align: left;
+  line-height: 1.4;
+  color: inherit;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.slider-3d-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem 1rem 2rem;
+  text-align: center;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.slider-3d-title {
+  position: relative;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  margin: 0 0 0.25rem;
+  color: #1a4e65;
+}
+
+.slider-3d-title::after {
+  content: attr(data-content);
+  position: absolute;
+  inset: 0;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(26, 78, 101, 0.9);
+  z-index: 1;
+}
+
+.slider-3d-tagline {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.slider-3d-hint {
+  position: absolute;
+  bottom: 0.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  font-size: 0.85rem;
+  color: #666;
+  pointer-events: none;
+  z-index: 2;
+}

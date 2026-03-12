@@ -315,15 +315,69 @@
   color: var(--on-surface-high);
 }
 
-/* Footer and secondary backgrounds */
-[data-theme="dark"] footer {
-  background-color: var(--surface-0) !important;
+[data-theme="dark"] .services-view-btn {
+  background-color: var(--surface-2);
+  color: #fff;
+  border-color: var(--divider);
+}
+[data-theme="dark"] .services-view-btn:hover {
+  background-color: var(--surface-3);
+  color: var(--on-surface-high);
+}
+[data-theme="dark"] .services-view-btn.active {
+  background-color: var(--primary-dark-toned);
+  border-color: var(--primary-dark-toned);
+  color: #fff;
+}
+
+/* 3D Image Slider (whole cards) */
+[data-theme="dark"] .slider-3d-banner {
+  background: linear-gradient(to bottom, var(--surface-1) 0%, var(--surface-0) 100%);
+}
+[data-theme="dark"] .services-view-peek {
+  background-color: var(--surface-0);
+}
+[data-theme="dark"] .slider-3d-card {
+  background-color: var(--surface-1) !important;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.35), 0 1px 0 var(--divider), 0 6px 14px rgba(0, 0, 0, 0.35);
+}
+[data-theme="dark"] #drag-container .slider-3d-item:hover .slider-3d-card {
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5), 0 1px 0 var(--divider), 0 6px 14px rgba(0, 0, 0, 0.35);
+}
+[data-theme="dark"] .slider-3d-card-body {
+  background-color: var(--surface-1);
+}
+[data-theme="dark"] .slider-3d-card-title {
+  color: #fff;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.85));
+}
+[data-theme="dark"] .slider-3d-card-text {
   color: var(--on-surface-medium);
-  border-top: 1px solid var(--divider);
+}
+[data-theme="dark"] .slider-3d-hint {
+  color: var(--on-surface-low);
+}
+[data-theme="dark"] .slider-3d-title,
+[data-theme="dark"] .slider-3d-title::after {
+  color: var(--on-surface-high);
+  -webkit-text-stroke-color: rgba(255, 255, 255, 0.4);
+}
+[data-theme="dark"] .slider-3d-tagline {
+  color: var(--on-surface-medium);
+}
+
+/* Footer: black to blend with footer image (cityscape) base */
+[data-theme="dark"] footer {
+  background-color: #000 !important;
+  color: var(--on-surface-medium);
+  border-top: none;
 }
 [data-theme="dark"] footer p,
 [data-theme="dark"] footer a {
   color: var(--on-surface-medium);
+}
+[data-theme="dark"] footer a.w3-hover-text-green {
+  color: var(--primary-dark-toned);
 }
 [data-theme="dark"] .bgimg-2,
 [data-theme="dark"] .bgimg-3,

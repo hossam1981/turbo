@@ -59,3 +59,55 @@ function toggleFunction() {
         x.className = x.className.replace(" w3-show", "");
     }
 }
+
+// Services display: 3D carousel, card grid, peek carousel (localStorage; mobile = peek only, desktop = 3d/grid)
+(function initServicesView() {
+    var STORAGE_KEY = 'servicesView';
+    var display = document.getElementById('services-display');
+    if (!display) return;
+
+    var buttons = display.querySelectorAll('.services-view-btn');
+    var mobileBreakpoint = 768;
+
+    function isMobile() {
+        return window.innerWidth <= mobileBreakpoint;
+    }
+
+    function setView(view) {
+        if (view !== 'grid' && view !== 'peek') view = '3d';
+        display.setAttribute('data-view', view);
+        buttons.forEach(function (btn) {
+            var isActive = btn.getAttribute('data-view') === view;
+            btn.classList.toggle('active', isActive);
+            btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+        });
+        try { localStorage.setItem(STORAGE_KEY, view); } catch (e) {}
+    }
+
+    function applyViewportView() {
+        if (isMobile()) {
+            setView('peek');
+        } else {
+            var current = display.getAttribute('data-view');
+            if (current === 'peek') setView('3d');
+        }
+    }
+
+    var saved = '';
+    try { saved = localStorage.getItem(STORAGE_KEY); } catch (e) {}
+    if (isMobile()) {
+        setView('peek');
+    } else {
+        if (saved === 'grid' || saved === 'peek') setView(saved === 'peek' ? '3d' : saved);
+        else setView('3d');
+    }
+    applyViewportView();
+
+    window.addEventListener('resize', function () {
+        applyViewportView();
+    });
+
+    buttons.forEach(function (btn) {
+        btn.addEventListener('click', function () { setView(btn.getAttribute('data-view')); });
+    });
+})();

@@ -13,8 +13,8 @@
 
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
-        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
 
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -22,11 +22,11 @@
 
 
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1"
-        crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 
     <link href="../style/main.css" rel="stylesheet" />
@@ -34,12 +34,12 @@
     <link href="../style/btn_slider.css" rel="stylesheet" />
     <link href="../style/theme-dark.css" rel="stylesheet" />
     <script>
-      (function () {
-        var stored = localStorage.getItem('theme');
-        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-        var theme = stored === 'dark' || stored === 'light' ? stored : (prefersDark ? 'dark' : 'light');
-        document.documentElement.setAttribute('data-theme', theme);
-      })();
+        (function () {
+            var stored = localStorage.getItem('theme');
+            var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            var theme = stored === 'dark' || stored === 'light' ? stored : (prefersDark ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
     </script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -89,20 +89,23 @@
                         <!-- Input field for customer's email with an icon -->
                         <div class="input-container">
                             <i class="fas fa-envelope"></i>
-                            <input type="email" name="email" id="email" placeholder="E-mail" aria-label="Email" required>
+                            <input type="email" name="email" id="email" placeholder="E-mail" aria-label="Email"
+                                required>
                         </div>
 
                         <!-- Phone Input -->
                         <!-- Input field for customer's phone number with an icon -->
                         <div class="input-container">
                             <i class="fas fa-phone"></i>
-                            <input type="tel" name="phone" id="phone" placeholder="Phone number" aria-label="Phone number" required>
+                            <input type="tel" name="phone" id="phone" placeholder="Phone number"
+                                aria-label="Phone number" required>
                         </div>
 
                         <!-- Service Type Selection -->
                         <!-- Dropdown for selecting the type of service required -->
                         <div class="input-container">
-                            <select name="serviceType" id="serviceType" aria-label="Service Type" onchange="toggleHourCounter()" style="padding: 14px 10px 11px 6px">
+                            <select name="serviceType" id="serviceType" aria-label="Service Type"
+                                onchange="toggleHourCounter()" style="padding: 14px 10px 11px 6px">
                                 <option value="">Select Service Type</option>
                                 <option value="One Way">One Way / Point to Point</option>
                                 <option value="Return">Return</option>
@@ -142,12 +145,14 @@
                     <div class="distancetime-container">
                         <div class="input-container">
                             <i class="fas fa-road"></i>
-                            <input type="text" id="total-distance" name="Total_Distance" value="0 miles" readonly aria-live="polite" placeholder="Distance">
+                            <input type="text" id="total-distance" name="Total_Distance" value="0 miles" readonly
+                                aria-live="polite" placeholder="Distance">
                         </div>
 
                         <div class="input-container">
                             <i class="fas fa-clock"></i>
-                            <input type="text" id="total-time" name="Total_Time" value="0 minutes" readonly aria-live="polite" placeholder="Time">
+                            <input type="text" id="total-time" name="Total_Time" value="0 minutes" readonly
+                                aria-live="polite" placeholder="Time">
                         </div>
                     </div>
 
@@ -164,11 +169,13 @@
                                 <i class="fas fa-users"></i> Passengers
                             </label>
                             <div class="controls">
-                                <button type="button" aria-label="Increase passenger count" onclick="incrementCount('passenger-count'); enablePassengerIconActive(); updateCounterIconStates();">
+                                <button type="button" aria-label="Increase passenger count"
+                                    onclick="incrementCount('passenger-count'); enablePassengerIconActive(); updateCounterIconStates();">
                                     <i class="fas fa-plus"></i>
                                 </button>
                                 <input name="Passengers-Count" type="text" id="passenger-count" value="1" readonly>
-                                <button type="button" aria-label="Decrease passenger count" onclick="decrementCount('passenger-count'); enablePassengerIconActive(); updateCounterIconStates();">
+                                <button type="button" aria-label="Decrease passenger count"
+                                    onclick="decrementCount('passenger-count'); enablePassengerIconActive(); updateCounterIconStates();">
                                     <i class="fas fa-minus"></i>
                                 </button>
                             </div>
@@ -180,11 +187,13 @@
                                 <i class="fas fa-suitcase"></i> Luggage
                             </label>
                             <div class="controls">
-                                <button type="button" aria-label="Increase luggage count" onclick="incrementCount('luggage-count'); enableLuggageIconActive(); updateCounterIconStates();">
+                                <button type="button" aria-label="Increase luggage count"
+                                    onclick="incrementCount('luggage-count'); enableLuggageIconActive(); updateCounterIconStates();">
                                     <i class="fas fa-plus"></i>
                                 </button>
                                 <input name="luggage-count" type="text" id="luggage-count" value="0" readonly>
-                                <button type="button" aria-label="Decrease luggage count" onclick="decrementCount('luggage-count'); enableLuggageIconActive(); updateCounterIconStates();">
+                                <button type="button" aria-label="Decrease luggage count"
+                                    onclick="decrementCount('luggage-count'); enableLuggageIconActive(); updateCounterIconStates();">
                                     <i class="fas fa-minus"></i>
                                 </button>
                             </div>
@@ -197,7 +206,8 @@
                                 <i class="fas fa-car"></i>
                             </label>
                             <div class="input-container">
-                                <select id="car-option" name="Car Type" class="custom-select" onchange="toggleHourCounter(); updateCounterIconStates();">
+                                <select id="car-option" name="Car Type" class="custom-select"
+                                    onchange="toggleHourCounter(); updateCounterIconStates();">
                                     <option value="">Select Vehicle</option>
                                     <option value="Sedan">Luxe SEDAN 4 pax</option>
                                     <option value="SUV">Luxe SUV 7-8 pax</option>
@@ -212,11 +222,13 @@
                                 <i class="fas fa-hourglass-half"></i> Hours
                             </label>
                             <div class="controls">
-                                <button type="button" aria-label="Increase hour count" onclick="incrementCount('hour-count')">
+                                <button type="button" aria-label="Increase hour count"
+                                    onclick="incrementCount('hour-count')">
                                     <i class="fas fa-plus"></i>
                                 </button>
                                 <input type="text" id="hour-count" name="hours" value="1" readonly>
-                                <button type="button" aria-label="Decrease hour count" onclick="decrementCount('hour-count')">
+                                <button type="button" aria-label="Decrease hour count"
+                                    onclick="decrementCount('hour-count')">
                                     <i class="fas fa-minus"></i>
                                 </button>
                             </div>
@@ -228,14 +240,17 @@
                                 <i class="fas fa-child"></i> Child Seat
                             </label>
                             <div class="checkbox-container">
-                                <input type="checkbox" id="child-seat-checkbox" name="child_seat" onchange="toggleChildSeatCounter()">
+                                <input type="checkbox" id="child-seat-checkbox" name="child_seat"
+                                    onchange="toggleChildSeatCounter()">
                             </div>
                             <div id="child-seat-counter" class="controls" style="display: none;">
-                                <button type="button" aria-label="Increase child seat count" onclick="changeChildSeatCount(1)">
+                                <button type="button" aria-label="Increase child seat count"
+                                    onclick="changeChildSeatCount(1)">
                                     <i class="fas fa-plus"></i>
                                 </button>
                                 <input type="text" id="child-seat-count" value="1" readonly>
-                                <button type="button" aria-label="Decrease child seat count" onclick="changeChildSeatCount(-1)">
+                                <button type="button" aria-label="Decrease child seat count"
+                                    onclick="changeChildSeatCount(-1)">
                                     <i class="fas fa-minus"></i>
                                 </button>
                             </div>
@@ -246,7 +261,8 @@
                             <label for="accessible-checkbox" class="counter-label counter-label-accessible">
                                 <i class="fas fa-wheelchair"></i> Accessible
                                 <span class="checkbox-container">
-                                    <input type="checkbox" id="accessible-checkbox" name="accessible" class="accessible-checkbox" aria-label="Accessible vehicle option">
+                                    <input type="checkbox" id="accessible-checkbox" name="accessible"
+                                        class="accessible-checkbox" aria-label="Accessible vehicle option">
                                 </span>
                             </label>
                         </div>
@@ -256,7 +272,8 @@
                     <!-- This allows customers to add any special instructions or messages for their booking -->
                     <div class="input-container">
                         <label for="special-instructions"></label>
-                        <textarea id="special-instructions" name="special_instructions" placeholder="Enter any special instructions or messages here"
+                        <textarea id="special-instructions" name="special_instructions"
+                            placeholder="Enter any special instructions or messages here"
                             aria-label="Enter any special instructions" rows="4"></textarea>
                     </div>
 
@@ -358,8 +375,9 @@
 
     <script type="text/javascript" src="../script/bookingform.js"></script>
 
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOSOp6FFbin27a6eN3EW2ftUxX0qA0buk&libraries=places&callback=initMap">
-    </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOSOp6FFbin27a6eN3EW2ftUxX0qA0buk&libraries=places&callback=initMap">
+        </script>
 
 </body>
 

@@ -1,0 +1,12 @@
+---
+description: For the 3D image carousel (drag + auto spin), use the style skill .cursor/skills/style/3d-image-slider/SKILL.md — drag-container and spin-container, JS init() for item positions, applyTranform for camera rotation.
+globs: "**/index.html,**/main.css,**/style/*.css,**/slider*.css,**/slider*.js"
+---
+
+When adding or refining the **3D image slider** or **service cards carousel**:
+
+- Use the **3d-image-slider** skill: `.cursor/skills/style/3d-image-slider/SKILL.md`.
+- Pattern: **drag-container** (camera: `rotateX(-tY) rotateY(tX)` from JS) wraps **spin-container** (one-card size, spin/spinRevert animation). Items get `rotateY(i * 360/n) translateZ(radius)` in **init()**.
+- Card glow: soft white halo (`0 0 8px #fff`), stronger on hover (`0 0 15px`); dark mode use softer white rgba. See skill for full CSS.
+- Do not use `overflow: hidden` on the banner or scene — it flattens 3D.
+- Honor `prefers-reduced-motion` (e.g. disable auto spin).
