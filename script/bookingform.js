@@ -318,3 +318,37 @@ function preventEnterSubmit(event) {
         event.preventDefault(); // Prevents the default action (form submission)
     }
 }
+
+// Confetti on form submit (canvas-confetti from https://github.com/catdad/canvas-confetti)
+function initConfettiOnSubmit() {
+    var form = document.querySelector('.map-form-container form');
+    if (!form || typeof confetti !== 'function') return;
+
+    form.addEventListener('submit', function () {
+        var count = 200;
+        var defaults = {
+            origin: { y: 0.7 },
+            disableForReducedMotion: true
+        };
+
+        function fire(particleRatio, opts) {
+            confetti({
+                ...defaults,
+                ...opts,
+                particleCount: Math.floor(count * particleRatio)
+            });
+        }
+
+        fire(0.25, { spread: 26, startVelocity: 55 });
+        fire(0.2, { spread: 60 });
+        fire(0.35, { spread: 100, decay: 0.91, scalar: 0.8 });
+        fire(0.1, { spread: 120, startVelocity: 25, decay: 0.92, scalar: 1.2 });
+        fire(0.1, { spread: 120, startVelocity: 45 });
+    });
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initConfettiOnSubmit);
+} else {
+    initConfettiOnSubmit();
+}
